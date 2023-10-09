@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.5.5
+%define LKAver 6.5.6
 
 # Define the buildid, if required.
 #define buildid .local
@@ -39,8 +39,7 @@
 %define with_doc 0
 %define doc_build_fail true
 %define zipmodules 1
-### as of kernel-ml-6.5.4, no more perf and bpftool -ay
-%define with_perf 0
+### as of kernel-ml-6.5.4, no more bpftool -ay
 %define with_bpftool 0
 %endif
 
@@ -1141,6 +1140,11 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Fri Oct 06 2023 Akemi Yagi <toracat@elrepo.org> - 6.5.6-1
+- Updated with the 6.5.6 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.5.6]
+- Re-enable perf
+
 * Sat Sep 23 2023 Akemi Yagi <toracat@elrepo.org> - 6.5.5-1
 - Updated with the 6.5.5 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.5.5]
@@ -1148,6 +1152,8 @@ fi
 * Tue Sep 19 2023 Akemi Yagi <toracat@elrepo.org> - 6.5.4-1
 - Updated with the 6.5.4 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.5.4]
+- Disable perf (build error due to bison < 3.81)
+- Disable bpftool (linker error)
 
 * Wed Sep 13 2023 S.Tindall <s10dal@elrepo.org> - 6.5.3-1
 - Updated with the 6.5.3 source tarball.
