@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.1.60
+%global LKAver 6.1.61
 
 # Define the buildid, if required.
 #global buildid .local
@@ -386,6 +386,10 @@ Summary: Development package for building %{name} modules to match the %{?2:%{2}
 Provides: %{name}%{?1:-%{1}}-devel-%{_target_cpu} = %{version}-%{release}\
 Provides: %{name}-devel-%{_target_cpu} = %{version}-%{release}%{?1:+%{1}}\
 Provides: %{name}-devel-uname-r = %{KVERREL}%{?1:+%{1}}\
+Provides: kernel%{?1:-%{1}}-devel-%{_target_cpu} = %{version}-%{release}\
+Provides: kernel-devel-%{_target_cpu} = %{version}-%{release}%{?1:+%{1}}\
+Provides: kernel-devel-uname-r = %{KVERREL}%{?1:+%{1}}\
+Provides: kernel-devel = %{version}-%{release}%{?1:+%{1}}\
 Provides: installonlypkg(kernel)\
 Provides: installonlypkg(kernel-lt)\
 AutoReqProv: no\
@@ -1475,6 +1479,11 @@ fi
 %kernel_lt_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Thu Nov 02 2023 Akemi Yagi <toracat@elrepo.org> - 6.1.61-1
+- Updated with the 6.1.61 source tarball.
+- Provides: add distro kernel to kernel-devel.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.61]
+
 * Wed Oct 25 2023 Akemi Yagi <toracat@elrepo.org> - 6.1.60-1
 - Updated with the 6.1.60 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.60]
