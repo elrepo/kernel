@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.5.10
+%define LKAver 6.6
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1063,7 +1063,7 @@ fi
 %{_mandir}/man8/x86_energy_perf_policy*
 
 %files -n %{name}-tools-libs
-%{_libdir}/libcpupower.so.0
+%{_libdir}/libcpupower.so.1
 %{_libdir}/libcpupower.so.0.0.1
 
 %files -n %{name}-tools-libs-devel
@@ -1140,9 +1140,9 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Thu Nov 02 2023 S.Tindall <s10dal@elrepo.org> - 6.5.10-1
-- Updated with the 6.5.10 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.5.10]
+* Mon Oct 30 2023 Akemi Yagi <toracat@elrepo.org> - 6.6.0-1
+- Updated with the 6.6 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.6]
 
 * Wed Oct 25 2023 Akemi Yagi <toracat@elrepo.org> - 6.5.9-1
 - Updated with the 6.5.9 source tarball.
