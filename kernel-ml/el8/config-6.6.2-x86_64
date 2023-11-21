@@ -1,8 +1,8 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.6.1 Kernel Configuration
+# Linux/x86 6.6.2 Kernel Configuration
 #
-CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-18)"
+CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-20)"
 CONFIG_CC_IS_GCC=y
 CONFIG_GCC_VERSION=80500
 CONFIG_CLANG_VERSION=0
