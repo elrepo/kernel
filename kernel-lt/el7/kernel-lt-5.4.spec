@@ -1,7 +1,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.263
+%define LKAver 5.4.264
 
 # Define the buildid, if required.
 #define buildid .local
@@ -774,6 +774,10 @@ fi
 %endif
 
 %changelog
+* Thu Dec 14 2023 S.Tindall <s10dal@elepo.org> - 5.4.264-1
+- Updated with the 5.4.264 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.264]
+
 * Fri Dec 08 2023 S.Tindall <s10dal@elepo.org> - 5.4.263-1
 - Updated with the 5.4.263 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.263]
