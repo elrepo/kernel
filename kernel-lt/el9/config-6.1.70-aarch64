@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.1.69-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.1.70-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.4.1 20230605 (Red Hat 11.4.1-2)"
 CONFIG_CC_IS_GCC=y
@@ -3159,7 +3159,6 @@ CONFIG_DWMAC_IPQ806X=m
 CONFIG_DWMAC_QCOM_ETHQOS=m
 CONFIG_DWMAC_ROCKCHIP=m
 CONFIG_DWMAC_INTEL_PLAT=m
-CONFIG_DWMAC_LOONGSON=m
 CONFIG_STMMAC_PCI=m
 CONFIG_NET_VENDOR_SUN=y
 CONFIG_HAPPYMEAL=m
