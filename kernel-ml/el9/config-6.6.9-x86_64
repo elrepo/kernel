@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.6.8-1.el9.elrepo.x86_64 Kernel Configuration
+# Linux/x86 6.6.9-1.el9.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.4.1 20230605 (Red Hat 11.4.1-2)"
 CONFIG_CC_IS_GCC=y
@@ -3219,7 +3219,6 @@ CONFIG_DWMAC_DWC_QOS_ETH=m
 CONFIG_DWMAC_GENERIC=m
 CONFIG_DWMAC_INTEL_PLAT=m
 CONFIG_DWMAC_INTEL=m
-CONFIG_DWMAC_LOONGSON=m
 CONFIG_STMMAC_PCI=m
 CONFIG_NET_VENDOR_SUN=y
 CONFIG_HAPPYMEAL=m
@@ -10307,8 +10306,6 @@ CONFIG_DEBUG_LIST=y
 # CONFIG_DEBUG_NOTIFIERS is not set
 # CONFIG_DEBUG_MAPLE_TREE is not set
 # end of Debug kernel data structures
-
-# CONFIG_DEBUG_CREDENTIALS is not set
 
 #
 # RCU Debugging
