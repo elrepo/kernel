@@ -14,7 +14,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.6.9
+%define LKAver 6.6.10
 
 # Define the buildid, if required.
 #define buildid .local
@@ -785,6 +785,11 @@ fi
 %endif
 
 %changelog
+* Fri Jan 05 2024 S.Tindall <s10dal@elrepo.org> - 6.6.10-1
+- Updated with the 6.6.10 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.6.10]
+- Added: CONFIG_ARCH_SUPPORTS_KEXEC_PURGATORY=y
+
 * Mon Jan 01 2024 S.Tindall <s10dal@elrepo.org> - 6.6.9-1
 - Updated with the 6.6.9 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.6.9]
