@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.1.70-1.el9.elrepo.x86_64 Kernel Configuration
+# Linux/x86 6.1.71-1.el9.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.4.1 20230605 (Red Hat 11.4.1-2)"
 CONFIG_CC_IS_GCC=y
