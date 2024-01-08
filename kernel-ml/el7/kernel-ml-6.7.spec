@@ -14,7 +14,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.6.10
+%define LKAver 6.7
 
 # Define the buildid, if required.
 #define buildid .local
@@ -785,6 +785,41 @@ fi
 %endif
 
 %changelog
+* Sun Jan 07 2024 S.Tindall <s10dal@elrepo.org> - 6.7.0-1
+- Updated with the 6.7 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7]
+- Removed: CONFIG_AMD_IOMMU_V2=m
+- Removed: CONFIG_ATH9K_DEBUGFS=y
+- Removed: CONFIG_EEPROM_LEGACY=m
+- Removed: CONFIG_MAC80211_DEBUGFS=y
+- Removed: CONFIG_QLGE=m
+- Removed: CONFIG_RTL8192U=m
+- Removed: CONFIG_SND_SOC_INTEL_SOF_DA7219_MAX98373_MACH=m
+- Removed: CONFIG_SND_SOC_SOF_INTEL_IPC4=y
+- Removed: CONFIG_USERFAULTFD=y
+- Removed: CONFIG_XZ_DEC_IA64=y
+- Added: CONFIG_ARCH_HAS_GENERIC_CRASHKERNEL_RESERVATION=y
+- Added: CONFIG_CLOSURES=y
+- Added: CONFIG_CRYPTO_JITTERENTROPY_MEMORY_BLOCKS=64
+- Added: CONFIG_CRYPTO_JITTERENTROPY_MEMORY_BLOCKSIZE=32
+- Added: CONFIG_CRYPTO_JITTERENTROPY_MEMSIZE_2=y
+- Added: CONFIG_CRYPTO_JITTERENTROPY_OSR=1
+- Added: CONFIG_DPLL=y
+- Added: CONFIG_DRM_GPUVM=m
+- Added: CONFIG_FB_IOMEM_FOPS=y
+- Added: CONFIG_FB_IOMEM_HELPERS_DEFERRED=y
+- Added: CONFIG_FIRMWARE_TABLE=y
+- Added: CONFIG_KVM_MAX_NR_VCPUS=4096
+- Added: CONFIG_PCP_BATCH_SCALE_MAX=5
+- Added: CONFIG_SND_SOC_INTEL_SOF_BOARD_HELPERS=m
+- Added: CONFIG_SND_SOC_INTEL_SOF_NUVOTON_COMMON=m
+- Added: CONFIG_SND_SOC_INTEL_SOF_SSP_COMMON=m
+- Added: CONFIG_SND_SOC_SOF_IPC4=y
+- Added: CONFIG_TCP_SIGPOOL=y
+- Added: CONFIG_USB_CHIPIDEA_NPCM=m
+- Added: CONFIG_USB_PCI_AMD=y
+- Added: CONFIG_USERFAULTFD=y
+
 * Fri Jan 05 2024 S.Tindall <s10dal@elrepo.org> - 6.6.10-1
 - Updated with the 6.6.10 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.6.10]
