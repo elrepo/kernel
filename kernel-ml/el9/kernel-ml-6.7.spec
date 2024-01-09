@@ -38,7 +38,7 @@
 %endif
 
 # Set pkg_release.
-%global pkg_release 1%{?buildid}%{?dist}
+%global pkg_release 2%{?buildid}%{?dist}
 
 # Architectures upon which we can sign the kernel
 # for secure boot authentication.
@@ -1491,6 +1491,10 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Tue Jan 09 2024 Akemi Yagi <toracat@elrepo.org> - 6.7.0-2
+- Enable bcachefs filesystem support
+  [https://elrepo.org/bugs/view.php?id=1414]
+
 * Sun Jan 07 2024 Akemi Yagi <toracat@elrepo.org> - 6.7.0-1
 - Updated with the 6.7 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7]
