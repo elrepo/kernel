@@ -69,7 +69,7 @@
 %endif
 
 # Set pkg_release.
-%define pkg_release 1%{?dist}%{?buildid}
+%define pkg_release 2%{?dist}%{?buildid}
 
 #
 # Three sets of minimum package version requirements in the form of Conflicts.
@@ -785,6 +785,10 @@ fi
 %endif
 
 %changelog
+* Tue Jan 09 2024 Akemi Yagi <toracat@elrepo.org> - 6.7.0-2
+- Enable bcachefs filesystem support
+  [https://elrepo.org/bugs/view.php?id=1414]
+
 * Sun Jan 07 2024 S.Tindall <s10dal@elrepo.org> - 6.7.0-1
 - Updated with the 6.7 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7]
