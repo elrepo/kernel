@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.7
+%global LKAver 6.7.1
 
 # Define the buildid, if required.
 #global buildid .local
@@ -38,7 +38,7 @@
 %endif
 
 # Set pkg_release.
-%global pkg_release 2%{?buildid}%{?dist}
+%global pkg_release 1%{?buildid}%{?dist}
 
 # Architectures upon which we can sign the kernel
 # for secure boot authentication.
@@ -1491,6 +1491,15 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Sat Jan 20 2024 Akemi Yagi <toracat@elrepo.org> - 6.7.1-1
+- Enable SND_SOC_INTEL_SOUNDWIRE_SOF_MACH
+  [https://elrepo.org/bugs/view.php?id=1421]
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.1]
+
+* Thu Jan 11 2024 Akemi Yagi <toracat@elrepo.org> - 6.7.0-3
+- Enable UDMABUF
+  [https://elrepo.org/bugs/view.php?id=1415]
+
 * Tue Jan 09 2024 Akemi Yagi <toracat@elrepo.org> - 6.7.0-2
 - Enable bcachefs filesystem support
   [https://elrepo.org/bugs/view.php?id=1414]
