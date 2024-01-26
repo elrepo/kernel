@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.4.267 Kernel Configuration
+# Linux/x86 5.4.268 Kernel Configuration
 #
 
 #
@@ -6888,7 +6888,12 @@ CONFIG_HYPERV_IOMMU=y
 # CONFIG_RPMSG_VIRTIO is not set
 # end of Rpmsg drivers
 
-# CONFIG_SOUNDWIRE is not set
+CONFIG_SOUNDWIRE=m
+
+#
+# SoundWire Devices
+#
+# CONFIG_SOUNDWIRE_INTEL is not set
 
 #
 # SOC (System On Chip) specific Drivers
