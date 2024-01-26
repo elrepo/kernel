@@ -14,7 +14,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.7.1
+%define LKAver 6.7.2
 
 # Define the buildid, if required.
 #define buildid .local
@@ -785,6 +785,15 @@ fi
 %endif
 
 %changelog
+* Thu Jan 25 2024 S.Tindall <s10dal@elrepo.org> - 6.7.2-1
+- Updated with the 6.7.2 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.2]
+- Added: CONFIG_SND_SOC_SOF_INTEL_SOUNDWIRE=m
+- Added: CONFIG_SOUNDWIRE_CADENCE=m
+- Added: CONFIG_SOUNDWIRE_GENERIC_ALLOCATION=m
+- Added: CONFIG_SOUNDWIRE_INTEL=m
+- Added: CONFIG_SOUNDWIRE=m
+
 * Sat Jan 20 2024 S.Tindall <s10dal@elrepo.org> - 6.7.1-1
 - Updated with the 6.7.1 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.1]
