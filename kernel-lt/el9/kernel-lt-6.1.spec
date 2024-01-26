@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.1.74
+%global LKAver 6.1.75
 
 # Define the buildid, if required.
 #global buildid .local
@@ -1479,6 +1479,13 @@ fi
 %kernel_lt_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Thu Jan 25 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.75-1
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.75]
+
+* Mon Jan 22 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.74-2
+- Enable SND_SOC_INTEL_SOUNDWIRE_SOF_MACH (x86_64)
+  [https://elrepo.org/bugs/view.php?id=1421]
+
 * Sat Jan 20 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.74-1
 - Updated with the 6.1.74 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.74]
