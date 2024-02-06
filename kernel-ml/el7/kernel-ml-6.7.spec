@@ -14,7 +14,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.7.3
+%define LKAver 6.7.4
 
 # Define the buildid, if required.
 #define buildid .local
@@ -785,6 +785,12 @@ fi
 %endif
 
 %changelog
+* Wed Jan 31 2024 S.Tindall <s10dal@elrepo.org> - 6.7.4-1
+- Updated with the 6.7.4 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.4]
+- Removed: CONFIG_MFD_TI_AM335X_TSCADC=m
+- Removed: CONFIG_TOUCHSCREEN_TI_AM335X_TSC=m
+
 * Wed Jan 31 2024 S.Tindall <s10dal@elrepo.org> - 6.7.3-1
 - Updated with the 6.7.3 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.3]
