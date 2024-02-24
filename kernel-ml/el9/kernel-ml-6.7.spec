@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.7.5
+%global LKAver 6.7.6
 
 # Define the buildid, if required.
 #global buildid .local
@@ -1491,6 +1491,11 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Fri Feb 23 2024 Akemi Yagi <toracat@elrepo.org> - 6.7.6-1
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.6]
+- Enable CONFIG_NFS_V2
+  [https://elrepo.org/bugs/view.php?id=1431]
+
 * Fri Feb 16 2024 Akemi Yagi <toracat@elrepo.org> - 6.7.5-1
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.5]
 
