@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.7.5 Kernel Configuration
+# Linux/x86 6.7.6 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 9.3.1 20200408 (Red Hat 9.3.1-2)"
 CONFIG_CC_IS_GCC=y
@@ -9425,7 +9425,7 @@ CONFIG_EROFS_FS_PCPU_KTHREAD=y
 # CONFIG_EROFS_FS_PCPU_KTHREAD_HIPRI is not set
 CONFIG_NETWORK_FILESYSTEMS=y
 CONFIG_NFS_FS=m
-# CONFIG_NFS_V2 is not set
+CONFIG_NFS_V2=m
 CONFIG_NFS_V3=m
 CONFIG_NFS_V3_ACL=y
 CONFIG_NFS_V4=m
