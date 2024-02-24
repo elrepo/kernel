@@ -1,7 +1,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.268
+%define LKAver 5.4.269
 
 # Define the buildid, if required.
 #define buildid .local
@@ -774,6 +774,13 @@ fi
 %endif
 
 %changelog
+* Fri Feb 23 2024 S.Tindall <s10dal@elepo.org> - 5.4.269-1
+- Updated with the 5.4.269 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.269]
+- Removed: CONFIG_MFD_TI_AM335X_TSCADC=m
+- Removed: CONFIG_TOUCHSCREEN_TI_AM335X_TSC=m
+- Added: CONFIG_NFS_V2=m
+
 * Thu Jan 25 2024 S.Tindall <s10dal@elepo.org> - 5.4.268-1
 - Updated with the 5.4.268 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.268]
