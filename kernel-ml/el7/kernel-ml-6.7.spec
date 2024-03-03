@@ -14,7 +14,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.7.7
+%define LKAver 6.7.8
 
 # Define the buildid, if required.
 #define buildid .local
@@ -785,6 +785,10 @@ fi
 %endif
 
 %changelog
+* Sat Mar 02 2024 S.Tindall <s10dal@elrepo.org> - 6.7.8-1
+- Updated with the 6.7.8 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.8]
+
 * Fri Mar 01 2024 Akemi Yagi <toracat@elrepo.org> - 6.7.7-1
 - Updated with the 6.7.7 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.7]
