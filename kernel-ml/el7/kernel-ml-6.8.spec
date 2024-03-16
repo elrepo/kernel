@@ -14,7 +14,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.7.9
+%define LKAver 6.8.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -785,6 +785,78 @@ fi
 %endif
 
 %changelog
+* Wed Mar 06 2024 S.Tindall <s10dal@elrepo.org> - 6.8.1-1
+- Updated with the 6.8.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.8.1]
+- Removed: CONFIG_AIRO_CS=m
+- Removed: CONFIG_AIRO=m
+- Removed: CONFIG_AMD_PMF=m
+- Removed: CONFIG_AS_HAS_NON_CONST_LEB128=y
+- Removed: CONFIG_ATMEL=m
+- Removed: CONFIG_CACHESTAT_SYSCALL=y
+- Removed: CONFIG_CRYPTO_CFB=m
+- Removed: CONFIG_CRYPTO_OFB=m
+- Removed: CONFIG_FB_SYS_FOPS=y
+- Removed: CONFIG_FSCACHE=m
+- Removed: CONFIG_GCC11_NO_ARRAY_BOUNDS=y
+- Removed: CONFIG_HAVE_KVM_EVENTFD=y
+- Removed: CONFIG_HAVE_KVM_IRQFD=y
+- Removed: CONFIG_HERMES_CACHE_FW_ON_INIT=y
+- Removed: CONFIG_HERMES=m
+- Removed: CONFIG_HOSTAP_CS=m
+- Removed: CONFIG_HOSTAP_FIRMWARE_NVRAM=y
+- Removed: CONFIG_HOSTAP_FIRMWARE=y
+- Removed: CONFIG_HOSTAP=m
+- Removed: CONFIG_HOSTAP_PCI=m
+- Removed: CONFIG_HOSTAP_PLX=m
+- Removed: CONFIG_INTEL_PMC_CORE=m
+- Removed: CONFIG_KCMP=y
+- Removed: CONFIG_LIBERTAS_CS=m
+- Removed: CONFIG_MD_LINEAR=m
+- Removed: CONFIG_NORTEL_HERMES=m
+- Removed: CONFIG_ORINOCO_USB=m
+- Removed: CONFIG_PCI_ATMEL=m
+- Removed: CONFIG_PCMCIA_ATMEL=m
+- Removed: CONFIG_PCMCIA_HERMES=m
+- Removed: CONFIG_PCMCIA_RAYCS=m
+- Removed: CONFIG_PCMCIA_SPECTRUM=m
+- Removed: CONFIG_PCMCIA_WL3501=m
+- Removed: CONFIG_PLX_HERMES=m
+- Removed: CONFIG_RSEQ=y
+- Removed: CONFIG_THERMAL_ACPI=y
+- Removed: CONFIG_TMD_HERMES=m
+- Removed: CONFIG_USB_NET_RNDIS_WLAN=m
+- Removed: CONFIG_USB_ZD1201=m
+- Removed: CONFIG_WLAN_VENDOR_CISCO=y
+- Removed: CONFIG_XILINX_AXI_EMAC=m
+- Added: CONFIG_ACPI_THERMAL_LIB=y
+- Added: CONFIG_ARCH_HAS_CPU_PASID=y
+- Added: CONFIG_ARCH_HAS_HW_PTE_YOUNG=y
+- Added: CONFIG_AS_HAS_NON_CONST_ULEB128=y
+- Added: CONFIG_BCACHEFS_SIX_OPTIMISTIC_SPIN=y
+- Added: CONFIG_BLK_DEV_WRITE_MOUNTED=y
+- Added: CONFIG_CACHESTAT_SYSCALL=y
+- Added: CONFIG_CC_NO_STRINGOP_OVERFLOW=y
+- Added: CONFIG_FB_SYSMEM_FOPS=y
+- Added: CONFIG_FSCACHE=y
+- Added: CONFIG_FS_STACK=y
+- Added: CONFIG_GCC10_NO_ARRAY_BOUNDS=y
+- Added: CONFIG_GCC_NO_STRINGOP_OVERFLOW=y
+- Added: CONFIG_GENERIC_CPU_DEVICES=y
+- Added: CONFIG_ICE_HWMON=y
+- Added: CONFIG_IOMMU_MM_DATA=y
+- Added: CONFIG_KCMP=y
+- Added: CONFIG_KVM_COMMON=y
+- Added: CONFIG_KVM_GENERIC_MMU_NOTIFIER=y
+- Added: CONFIG_KVM_HYPERV=y
+- Added: CONFIG_MITIGATION_RFDS=y
+- Added: CONFIG_R8169_LEDS=y
+- Added: CONFIG_RSEQ=y
+- Added: CONFIG_SND_SOC_ES83XX_DSM_COMMON=m
+- Added: CONFIG_STACKDEPOT_MAX_FRAMES=64
+- Added: CONFIG_VIRTIO_PCI_ADMIN_LEGACY=y
+- Added: CONFIG_X86_HAVE_PAE=y
+
 * Wed Mar 06 2024 S.Tindall <s10dal@elrepo.org> - 6.7.9-1
 - Updated with the 6.7.9 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.7.9]
