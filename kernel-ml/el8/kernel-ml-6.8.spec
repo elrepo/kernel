@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.8.1
+%define LKAver 6.8.2
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1140,6 +1140,13 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Wed Mar 27 2024 S.Tindall <s10dal@elrepo.org> - 6.8.2-1
+- Updated with the 6.8.2 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.8.2]
+- Removed: CONFIG_BT_HS=y
+- Added: CONFIG_RPCSEC_GSS_KRB5_ENCTYPES_AES_SHA2=y
+- Added: CONFIG_RPCSEC_GSS_KRB5_ENCTYPES_CAMELLIA=y
+
 * Fri Mar 15 2024 S.Tindall <s10dal@elrepo.org> - 6.8.1-1
 - Updated with the 6.8.1 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.8.1]
