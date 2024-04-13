@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.1.85
+%global LKAver 6.1.86
 
 # Define the buildid, if required.
 #global buildid .local
@@ -245,7 +245,10 @@ Source2001: cpupower.config
 Source2002: kvm_stat.logrotate
 
 # Do not package the source tarball.
+# To build .src.rpm, run with '--with src' 
+%if %{?_with_src:0}%{!?_with_src:1}
 NoSource: 0
+%endif
 
 %if %{signkernel}
 %define secureboot_ca_0 %{_datadir}/pki/sb-certs/secureboot-ca-%{_arch}.cer
@@ -1479,6 +1482,10 @@ fi
 %kernel_lt_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Sat Apr 13 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.86-1
+- Updated with the 6.1.86 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.86]
+
 * Wed Apr 10 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.85-1
 - Updated with the 6.1.85 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.85]
