@@ -14,7 +14,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.8.6
+%define LKAver 6.8.7
 
 # Define the buildid, if required.
 #define buildid .local
@@ -160,8 +160,10 @@ Source1: config-%{version}-x86_64
 Source2: cpupower.service
 Source3: cpupower.config
 
-# Do not package the source tarball.
-NoSOurce: 0
+# To build .src.rpm, run with '--with src'
+%if %{?_with_src:0}%{!?_with_src:1}
+NoSource: 0
+%endif
 
 %description
 This package provides the Linux kernel (vmlinuz), the core of any
@@ -785,6 +787,12 @@ fi
 %endif
 
 %changelog
+* Wed Apr 17 2024 S.Tindall <s10dal@elrepo.org> - 6.8.7-1
+- Updated with the 6.8.7 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.8.7]
+- Removed: CONFIG_SPECTRE_BHI_ON=y
+- Added: CONFIG_MITIGATION_SPECTRE_BHI=y
+
 * Sat Apr 13 2024 S.Tindall <s10dal@elrepo.org> - 6.8.6-1
 - Updated with the 6.8.6 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.8.6]
