@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.8.6
+%global LKAver 6.8.7
 
 # Define the buildid, if required.
 #global buildid .local
@@ -245,8 +245,8 @@ Source2001: cpupower.config
 Source2002: kvm_stat.logrotate
 
 # Do not package the source tarball.
-# To build nosrc.rpm, run with '--with nosrc' 
-%if %{?_with_nosrc:1}%{!?_with_nosrc:0}
+# To build .src.rpm, run with '--with src'
+%if %{?_with_src:0}%{!?_with_src:1}
 NoSource: 0
 %endif
 
@@ -1494,6 +1494,10 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Wed Apr 17 2024 Akemi Yagi <toracat@elrepo.org> - 6.8.7-1
+- Updated with the 6.8.7 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.8.7]
+
 * Sat Apr 13 2024 Akemi Yagi <toracat@elrepo.org> - 6.8.6-1
 - Updated with the 6.8.6 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.8.6]
