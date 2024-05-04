@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.274
+%define LKAver 5.4.275
 
 # Define the buildid, if required.
 #define buildid .local
@@ -123,8 +123,10 @@ Source7: filter-x86_64.sh
 Source8: filter-modules.sh
 Source9: generate_bls_conf.sh
 
-# Do not package the source tarball.
+# To build .src.rpm, run with '--with src'
+%if %{?_with_src:0}%{!?_with_src:1}
 NoSource: 0
+%endif
 
 %description
 The %{name} meta package.
@@ -1145,6 +1147,10 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Thu May 02 2024 S.Tindall <s10dal@elrepo.org> - 5.4.275-1
+- Updated with the 5.4.275 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.275]
+
 * Sat Apr 13 2024 S.Tindall <s10dal@elrepo.org> - 5.4.274-1
 - Updated with the 5.4.274 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.274]
