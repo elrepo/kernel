@@ -14,7 +14,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.8.9
+%define LKAver 6.9.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -787,6 +787,75 @@ fi
 %endif
 
 %changelog
+* Fri May 17 2024 S.Tindall <s10dal@elrepo.org> - 6.9.1-1
+- Updated with the 6.9.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.1]
+
+* Mon May 13 2024 S.Tindall <s10dal@elrepo.org> - 6.9.0-1
+- Updated with the 6.9 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9]
+- Removed: CONFIG_ARCH_HAS_UBSAN_SANITIZE_ALL=y
+- Removed: CONFIG_CALL_DEPTH_TRACKING=y
+- Removed: CONFIG_CHARLCD_BL_FLASH=y
+- Removed: CONFIG_CPU_IBPB_ENTRY=y
+- Removed: CONFIG_CPU_IBRS_ENTRY=y
+- Removed: CONFIG_CPU_SRSO=y
+- Removed: CONFIG_CPU_UNRET_ENTRY=y
+- Removed: CONFIG_CRASH_CORE=y
+- Removed: CONFIG_GENERIC_PCI_IOMAP=y
+- Removed: CONFIG_HAVE_KVM=y
+- Removed: CONFIG_HW_CONSOLE=y
+- Removed: CONFIG_IRQ_BYPASS_MANAGER=m
+- Removed: CONFIG_NET_ACT_IPT=m
+- Removed: CONFIG_PAGE_TABLE_ISOLATION=y
+- Removed: CONFIG_RETHUNK=y
+- Removed: CONFIG_RETPOLINE=y
+- Removed: CONFIG_THERMAL_WRITABLE_TRIPS=y
+- Removed: CONFIG_UNIX_SCM=y
+- Removed: CONFIG_VIDEO_CMDLINE=y
+- Removed: CONFIG_VIDEO_NOMODESET=y
+- Added: CONFIG_AMD_ATL=m
+- Added: CONFIG_ARCH_HAS_UBSAN=y
+- Added: CONFIG_BRIDGE_NF_EBTABLES_LEGACY=m
+- Added: CONFIG_CHARLCD_BL_FLASH=y
+- Added: CONFIG_CRASH_RESERVE=y
+- Added: CONFIG_DRM_DISPLAY_DP_TUNNEL=y
+- Added: CONFIG_DRM_I915_DP_TUNNEL=y
+- Added: CONFIG_FUSE_PASSTHROUGH=y
+- Added: CONFIG_GENERIC_CLOCKEVENTS_BROADCAST_IDLE=y
+- Added: CONFIG_GENERIC_PCI_IOMAP=y
+- Added: CONFIG_HAVE_KVM_READONLY_MEM=y
+- Added: CONFIG_HAVE_PAGE_SIZE_4KB=y
+- Added: CONFIG_HIBERNATION_COMP_LZO=y
+- Added: CONFIG_HIBERNATION_DEF_COMP="lzo"
+- Added: CONFIG_IGC_LEDS=y
+- Added: CONFIG_IOMMU_IOPF=y
+- Added: CONFIG_IP6_NF_IPTABLES_LEGACY=m
+- Added: CONFIG_IP_NF_IPTABLES_LEGACY=m
+- Added: CONFIG_IRQ_BYPASS_MANAGER=y
+- Added: CONFIG_MITIGATION_CALL_DEPTH_TRACKING=y
+- Added: CONFIG_MITIGATION_IBPB_ENTRY=y
+- Added: CONFIG_MITIGATION_IBRS_ENTRY=y
+- Added: CONFIG_MITIGATION_PAGE_TABLE_ISOLATION=y
+- Added: CONFIG_MITIGATION_RETHUNK=y
+- Added: CONFIG_MITIGATION_RETPOLINE=y
+- Added: CONFIG_MITIGATION_SRSO=y
+- Added: CONFIG_MITIGATION_UNRET_ENTRY=y
+- Added: CONFIG_NFT_COMPAT_ARP=m
+- Added: CONFIG_PAGE_SHIFT=12
+- Added: CONFIG_PAGE_SIZE_4KB=y
+- Added: CONFIG_QCOM_NET_PHYLIB=m
+- Added: CONFIG_RAS_FMPM=m
+- Added: CONFIG_SCREEN_INFO=y
+- Added: CONFIG_SND_AMD_SOUNDWIRE_ACPI=m
+- Added: CONFIG_SND_HDA_SCODEC_COMPONENT=m
+- Added: CONFIG_SND_SOC_AMD_SOUNDWIRE_LINK_BASELINE=m
+- Added: CONFIG_SND_SOC_AMD_SOUNDWIRE=m
+- Added: CONFIG_SOUNDWIRE_AMD=m
+- Added: CONFIG_USB_DEFAULT_AUTHORIZATION_MODE=1
+- Added: CONFIG_VIDEO=y
+- Added: CONFIG_VMCORE_INFO=y
+
 * Thu May 02 2024 S.Tindall <s10dal@elrepo.org> - 6.8.9-1
 - Updated with the 6.8.9 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.8.9]
