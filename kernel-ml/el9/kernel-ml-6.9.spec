@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.8.9
+%global LKAver 6.9.1
 
 # Define the buildid, if required.
 #global buildid .local
@@ -38,7 +38,7 @@
 %endif
 
 # Set pkg_release.
-%global pkg_release 1%{?buildid}%{?dist}
+%global pkg_release 2%{?buildid}%{?dist}
 
 # Architectures upon which we can sign the kernel
 # for secure boot authentication.
@@ -1494,6 +1494,17 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Sat May 18 2024 Akemi Yagi <toracat@elrepo.org> - 6.9.1-2
+- Config corrected [https://elrepo.org/bugs/view.php?id=1452]
+
+* Fri May 17 2024 Akemi Yagi <toracat@elrepo.org> - 6.9.1-1
+- Updated with the 6.9.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.1]
+
+* Mon May 13 2024 Akemi Yagi <toracat@elrepo.org> - 6.9.0-1
+- Updated with the 6.9 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9]
+
 * Thu May 02 2024 Akemi Yagi <toracat@elrepo.org> - 6.8.9-1
 - Updated with the 6.8.9 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.8.9]
