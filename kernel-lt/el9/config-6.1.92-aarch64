@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.1.91-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.1.92-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.4.1 20231218 (Red Hat 11.4.1-3)"
 CONFIG_CC_IS_GCC=y
@@ -2033,7 +2033,7 @@ CONFIG_FW_LOADER_USER_HELPER=y
 # CONFIG_FW_LOADER_USER_HELPER_FALLBACK is not set
 CONFIG_FW_LOADER_COMPRESS=y
 CONFIG_FW_LOADER_COMPRESS_XZ=y
-# CONFIG_FW_LOADER_COMPRESS_ZSTD is not set
+CONFIG_FW_LOADER_COMPRESS_ZSTD=y
 # CONFIG_FW_CACHE is not set
 # CONFIG_FW_UPLOAD is not set
 # end of Firmware loader
