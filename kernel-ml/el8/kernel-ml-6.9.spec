@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.9.2
+%define LKAver 6.9.3
 
 # Define the buildid, if required.
 #define buildid .local
@@ -33,8 +33,8 @@
 %define with_bpftool      %{?_without_bpftool:      0} %{?!_without_bpftool:      1}
 # vsdo install
 %define with_vdso_install %{?_without_vdso_install: 0} %{?!_without_vdso_install: 1}
-# gcc9
-%define with_gcc9    %{?_without_gcc9:    0} %{?!_without_gcc9:    1}
+# gcc12
+%define with_gcc12    %{?_without_gcc12:    0} %{?!_without_gcc12:    1}
 
 # Kernel-ml, devel, headers, perf, tools and bpftool.
 %ifarch x86_64
@@ -95,8 +95,8 @@ Provides: installonlypkg(kernel)
 Requires: %{name}-core-uname-r = %{KVERREL}
 Requires: %{name}-modules-uname-r = %{KVERREL}
 
-%if %{with_gcc9}
-BuildRequires: gcc-toolset-9 gcc-toolset-9-binutils gcc-toolset-9-runtime scl-utils
+%if %{with_gcc12}
+BuildRequires: gcc-toolset-12-annobin-plugin-gcc
 %endif
 
 BuildRequires: bash bc binutils bison bzip2 diffutils dwarves elfutils-devel
@@ -112,6 +112,7 @@ BuildRequires: asciidoc audit-libs-devel binutils-devel bison flex
 BuildRequires: java-devel libcap-devel newt-devel numactl-devel
 BuildRequires: perl(ExtUtils::Embed) xmlto xz-devel zlib-devel
 BuildRequires: libtraceevent-devel
+BuildRequires: libasan libubsan
 %endif
 %if %{with_tools}
 BuildRequires: asciidoc gettext libcap-devel libnl3-devel ncurses-devel pciutils-devel
@@ -392,8 +393,8 @@ of the OS: memory allocation, process allocation, device I/O, etc.
 %define _build_id_links none
 
 %prep
-%if %{with_gcc9}
-. /opt/rh/gcc-toolset-9/enable
+%if %{with_gcc12}
+. /opt/rh/gcc-toolset-12/enable
 %endif
 
 %setup -q -n %{name}-%{version} -c
@@ -439,8 +440,8 @@ done | %{_bindir}/xargs --no-run-if-empty pathfix.py -i %{__python3} -p -n | \
 popd > /dev/null
 
 %build
-%if %{with_gcc9}
-. /opt/rh/gcc-toolset-9/enable
+%if %{with_gcc12}
+. /opt/rh/gcc-toolset-12/enable
 %endif
 
 pushd linux-%{KVERREL} > /dev/null
@@ -531,8 +532,8 @@ popd > /dev/null
 popd > /dev/null
 
 %install
-%if %{with_gcc9}
-. /opt/rh/gcc-toolset-9/enable
+%if %{with_gcc12}
+. /opt/rh/gcc-toolset-12/enable
 %endif
 
 pushd linux-%{KVERREL} > /dev/null
@@ -1161,7 +1162,33 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Sat May 25 2024 Akemi Yagi <toracat@elrepo.org> 6.9-2
+* Thu May 30 2024 S.Tindall <s10dal@elrepo.org> - 6.9.3
+- Updated with the 6.9.3 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.3]
+- Removed: CONFIG_AS_VERSION=23200
+- Removed: CONFIG_CC_VERSION_TEXT="gcc (GCC) 9.2.1 20191120 (Red Hat 9.2.1-2)"
+- Removed: CONFIG_GCC_VERSION=90201
+- Removed: CONFIG_LD_VERSION=23200
+- Added: CONFIG_AS_VERSION=23800
+- Added: CONFIG_CC_HAS_ASM_GOTO_OUTPUT=y
+- Added: CONFIG_CC_HAS_ASM_GOTO_TIED_OUTPUT=y
+- Added: CONFIG_CC_HAS_AUTO_VAR_INIT_PATTERN=y
+- Added: CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO_BARE=y
+- Added: CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO=y
+- Added: CONFIG_CC_HAS_NAMED_AS=y
+- Added: CONFIG_CC_HAS_SLS=y
+- Added: CONFIG_CC_HAS_ZERO_CALL_USED_REGS=y
+- Added: CONFIG_CC_NO_ARRAY_BOUNDS=y
+- Added: CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
+- Added: CONFIG_CRYPTO_SIG=y
+- Added: CONFIG_GCC_ASM_GOTO_OUTPUT_WORKAROUND=y
+- Added: CONFIG_GCC_VERSION=120201
+- Added: CONFIG_HAVE_KCSAN_COMPILER=y
+- Added: CONFIG_LD_VERSION=23800
+- Added: CONFIG_TOOLS_SUPPORT_RELR=y
+- Added: CONFIG_USE_X86_SEG_SUPPORT=y
+
+* Mon May 27 2024 Akemi Yagi <toracat@elrepo.org> 6.9-2
 - Updated with the 6.9.2 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.2]
 
