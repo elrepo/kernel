@@ -14,7 +14,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.9.3
+%define LKAver 6.9.4
 
 # Define the buildid, if required.
 #define buildid .local
@@ -787,6 +787,11 @@ fi
 %endif
 
 %changelog
+* Wed Jun 12 2024 Akemi Yagi <toracat@elrepo.org> - 6.9.4-1
+- Updated with the 6.9.4 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.4]
+- Added: CONFIG_ARCH_WANT_FRAME_POINTERS=y
+
 * Thu May 30 2024 S.Tindall <s10dal@elrepo.org> - 6.9.3-1
 - Updated with the 6.9.3 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.3]
