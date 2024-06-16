@@ -1,7 +1,7 @@
 %global __spec_install_pre %{___build_pre}
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.277
+%define LKAver 5.4.278
 
 # Define the buildid, if required.
 #define buildid .local
@@ -776,6 +776,11 @@ fi
 %endif
 
 %changelog
+* Sun Jun 16 2024 S.Tindall <s10dal@elepo.org> - 5.4.278-1
+- Updated with the 5.4.278 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.278]
+- Added: CONFIG_ARCH_WANT_FRAME_POINTERS=y
+
 * Sun May 26 2024 S.Tindall <s10dal@elepo.org> - 5.4.277-1
 - Updated with the 5.4.277 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.277]
