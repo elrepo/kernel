@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.9.7-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.9.8-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.4.1 20231218 (Red Hat 11.4.1-3)"
 CONFIG_CC_IS_GCC=y
@@ -9732,7 +9732,8 @@ CONFIG_NLS_UTF8=m
 CONFIG_NLS_UCS2_UTILS=m
 CONFIG_DLM=m
 # CONFIG_DLM_DEBUG is not set
-# CONFIG_UNICODE is not set
+CONFIG_UNICODE=m
+# CONFIG_UNICODE_NORMALIZATION_SELFTEST is not set
 CONFIG_IO_WQ=y
 # end of File systems
 
