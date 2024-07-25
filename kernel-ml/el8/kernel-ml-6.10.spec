@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.9.10
+%define LKAver 6.10.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -34,7 +34,7 @@
 # vsdo install
 %define with_vdso_install %{?_without_vdso_install: 0} %{?!_without_vdso_install: 1}
 # gcc12
-%define with_gcc12    %{?_without_gcc12:    0} %{?!_without_gcc12:    1}
+# %_define with_gcc12    %_{?_without_gcc12:    0} %_{?!_without_gcc12:    1}
 
 # Kernel-ml, devel, headers, perf, tools and bpftool.
 %ifarch x86_64
@@ -95,9 +95,9 @@ Provides: installonlypkg(kernel)
 Requires: %{name}-core-uname-r = %{KVERREL}
 Requires: %{name}-modules-uname-r = %{KVERREL}
 
-%if %{with_gcc12}
-BuildRequires: gcc-toolset-12-annobin-plugin-gcc
-%endif
+# %if %{with_gcc12}
+# BuildRequires: gcc-toolset-12-annobin-plugin-gcc
+# %endif
 
 BuildRequires: bash bc binutils bison bzip2 diffutils dwarves elfutils-devel
 BuildRequires: findutils flex gawk gcc git gzip hmaccalc hostname kmod m4
@@ -393,9 +393,9 @@ of the OS: memory allocation, process allocation, device I/O, etc.
 %define _build_id_links none
 
 %prep
-%if %{with_gcc12}
-. /opt/rh/gcc-toolset-12/enable
-%endif
+# %if %{with_gcc12}
+# . /opt/rh/gcc-toolset-12/enable
+# %endif
 
 %setup -q -n %{name}-%{version} -c
 %{__mv} linux-%{LKAver} linux-%{version}-%{release}.%{_target_cpu}
@@ -440,9 +440,9 @@ done | %{_bindir}/xargs --no-run-if-empty pathfix.py -i %{__python3} -p -n | \
 popd > /dev/null
 
 %build
-%if %{with_gcc12}
-. /opt/rh/gcc-toolset-12/enable
-%endif
+# %if %{with_gcc12}
+# . /opt/rh/gcc-toolset-12/enable
+# %endif
 
 pushd linux-%{KVERREL} > /dev/null
 
@@ -532,9 +532,9 @@ popd > /dev/null
 popd > /dev/null
 
 %install
-%if %{with_gcc12}
-. /opt/rh/gcc-toolset-12/enable
-%endif
+# %if %{with_gcc12}
+# . /opt/rh/gcc-toolset-12/enable
+# %endif
 
 pushd linux-%{KVERREL} > /dev/null
 
@@ -1162,9 +1162,87 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Thu Jul 18 2024 Akemi Yagi <toracat@elrepo.org> - 6.9.10
-- Updated with the 6.9.10 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.10]
+* Wed Jul 24 2024 S.Tindall <s10dal@elrepo.org> - 6.10.1
+- Updated with the 6.10.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.1]
+- Added: CONFIG_DRM_I915_PXP=y
+- Added: CONFIG_INTEL_MEI_GSC=m
+- Added: CONFIG_INTEL_MEI_HDCP=m
+- Added: CONFIG_INTEL_MEI_PXP=m
+- Added: CONFIG_INTEL_MEI_TXE=m
+
+* Mon Jul 15 2024 S.Tindall <s10dal@elrepo.org> - 6.10.0
+- Updated with the 6.10 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10]
+- Removed: CONFIG_AS_VERSION=23800
+- Removed: CONFIG_BASE_FULL=y
+- Removed: CONFIG_BASE_SMALL=0
+- Removed: CONFIG_CC_HAS_ASM_GOTO_OUTPUT=y
+- Removed: CONFIG_CC_HAS_ASM_GOTO_TIED_OUTPUT=y
+- Removed: CONFIG_CC_HAS_AUTO_VAR_INIT_PATTERN=y
+- Removed: CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO_BARE=y
+- Removed: CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO=y
+- Removed: CONFIG_CC_HAS_NAMED_AS=y
+- Removed: CONFIG_CC_HAS_ZERO_CALL_USED_REGS=y
+- Removed: CONFIG_CC_NO_ARRAY_BOUNDS=y
+- Removed: CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
+- Removed: CONFIG_CRYPTO_ECC=m
+- Removed: CONFIG_CRYPTO_ECDH=m
+- Removed: CONFIG_CRYPTO_KPP=m
+- Removed: CONFIG_DIMLIB=y
+- Removed: CONFIG_DRM_DP_AUX_CHARDEV=y
+- Removed: CONFIG_DRM_PANEL_ORIENTATION_QUIRKS=y
+- Removed: CONFIG_GCC_ASM_GOTO_OUTPUT_WORKAROUND=y
+- Removed: CONFIG_GCC_VERSION=120201
+- Removed: CONFIG_HAVE_FAST_GUP=y
+- Removed: CONFIG_HAVE_KCSAN_COMPILER=y
+- Removed: CONFIG_LD_VERSION=23800
+- Removed: CONFIG_LEDS_TRIGGER_AUDIO=m
+- Removed: CONFIG_PI433=m
+- Removed: CONFIG_PWM_SYSFS=y
+- Removed: CONFIG_SND_SOC_INNO_RK3036=m
+- Removed: CONFIG_SND_SOC_INTEL_BXT_DA7219_MAX98357A_COMMON=m
+- Removed: CONFIG_SND_SOC_INTEL_SOF_SSP_COMMON=m
+- Removed: CONFIG_SND_SOC_RK3328=m
+- Removed: CONFIG_TOOLS_SUPPORT_RELR=y
+- Removed: CONFIG_UIO_PRUSS=m
+- Removed: CONFIG_USE_X86_SEG_SUPPORT=y
+- Added: CONFIG_ACPI_NHLT=y
+- Added: CONFIG_AMD_MP2_STB=y
+- Added: CONFIG_ARCH_HAS_CPU_PASID=y
+- Added: CONFIG_ARCH_HAS_KERNEL_FPU_SUPPORT=y
+- Added: CONFIG_AS_VAES=y
+- Added: CONFIG_AS_VERSION=23000
+- Added: CONFIG_AS_VPCLMULQDQ=y
+- Added: CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-22)"
+- Added: CONFIG_CRYPTO_ECC=y
+- Added: CONFIG_CRYPTO_ECDH=y
+- Added: CONFIG_CRYPTO_KPP=y
+- Added: CONFIG_CRYPTO_LIB_AESCFB=y
+- Added: CONFIG_DIMLIB=m
+- Added: CONFIG_DMA_NEED_SYNC=y
+- Added: CONFIG_DRM_PANEL_ORIENTATION_QUIRKS=y
+- Added: CONFIG_EXECMEM=y
+- Added: CONFIG_GCC_VERSION=80500
+- Added: CONFIG_GENERIC_VDSO_OVERFLOW_PROTECT=y
+- Added: CONFIG_HAVE_GUP_FAST=y
+- Added: CONFIG_HAVE_TRUSTED_KEYS=y
+- Added: CONFIG_IOMMU_IOPF=y
+- Added: CONFIG_IOMMU_MM_DATA=y
+- Added: CONFIG_IOMMU_SVA=y
+- Added: CONFIG_LD_VERSION=23000
+- Added: CONFIG_LIBETH=m
+- Added: CONFIG_LIBIE=m
+- Added: CONFIG_NEED_TASKS_RCU=y
+- Added: CONFIG_PGTABLE_HAS_HUGE_LEAVES=y
+- Added: CONFIG_RTL8192D_COMMON=m
+- Added: CONFIG_RTW88_8723X=m
+- Added: CONFIG_SKB_DECRYPTED=y
+- Added: CONFIG_SLAB_OBJ_EXT=y
+- Added: CONFIG_SND_SOC_AMD_ACP63_TOPLEVEL=m
+- Added: CONFIG_SND_SOC_CS_AMP_LIB=m
+- Added: CONFIG_SND_SOC_SOF_HDA_GENERIC=m
+- Added: CONFIG_TCG_TPM2_HMAC=y
 
 * Thu Jul 11 2024 S.Tindall <s10dal@elrepo.org> - 6.9.9
 - Updated with the 6.9.9 source tarball.
