@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.10.1-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.10.2-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.4.1 20231218 (Red Hat 11.4.1-3)"
 CONFIG_CC_IS_GCC=y
