@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.280
+%define LKAver 5.4.281
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1147,6 +1147,12 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sat Jul 27 2024 S.Tindall <s10dal@elrepo.org> - 5.4.281-1
+- Updated with the 5.4.281 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.281]
+- Added: CONFIG_INTEL_MEI_HDCP=m
+- Added: CONFIG_INTEL_MEI_TXE=m
+
 * Thu Jul 18 2024 S.Tindall <s10dal@elrepo.org> - 5.4.280-1
 - Updated with the 5.4.280 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.280]
