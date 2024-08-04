@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.1.102
+%global LKAver 6.1.103
 
 # Define the buildid, if required.
 #global buildid .local
@@ -126,6 +126,8 @@
 
 %ifarch x86_64 || aarch64
 %define with_doc 0
+# temporary fix to resolve build error in linux-6.1.103
+%define with_bpftool 0
 %endif
 
 %ifarch x86_64
@@ -1482,6 +1484,12 @@ fi
 %kernel_lt_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Sat Aug 03 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.103-1
+- Updated with the 6.1.103 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.103]
+- Disable bpftool to resolve build error
+  https://www.spinics.net/lists/stable/msg763207.html
+
 * Sat Jul 27 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.102-1
 - Updated with the 6.1.102 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.102]
