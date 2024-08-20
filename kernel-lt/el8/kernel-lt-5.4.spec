@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.281
+%define LKAver 5.4.282
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1147,6 +1147,16 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Mon Aug 19 2024 S.Tindall <s10dal@elrepo.org> - 5.4.282-1
+- Updated with the 5.4.282 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.282]
+- Added: CONFIG_MTD_SPI_NOR=m
+- Added: CONFIG_MTD_SPI_NOR_USE_4K_SECTORS=y
+- Added: CONFIG_SPI_ALTERA=m
+- Added: CONFIG_SPI_BITBANG=m
+- Added: CONFIG_SPI_MEM=y
+- Added: CONFIG_SPI_XILINX=m
+
 * Sat Jul 27 2024 S.Tindall <s10dal@elrepo.org> - 5.4.281-1
 - Updated with the 5.4.281 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.281]

@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.4.281 Kernel Configuration
+# Linux/x86 5.4.282 Kernel Configuration
 #
 
 #
@@ -2076,7 +2076,11 @@ CONFIG_MTD_CFI_I2=y
 # CONFIG_MTD_LPDDR is not set
 # end of LPDDR & LPDDR2 PCM memory drivers
 
-# CONFIG_MTD_SPI_NOR is not set
+CONFIG_MTD_SPI_NOR=m
+CONFIG_MTD_SPI_NOR_USE_4K_SECTORS=y
+# CONFIG_SPI_MTK_QUADSPI is not set
+# CONFIG_SPI_INTEL_SPI_PCI is not set
+# CONFIG_SPI_INTEL_SPI_PLATFORM is not set
 CONFIG_MTD_UBI=m
 CONFIG_MTD_UBI_WL_THRESHOLD=4096
 CONFIG_MTD_UBI_BEB_LIMIT=20
@@ -3879,14 +3883,14 @@ CONFIG_I2C_MLXCPLD=m
 CONFIG_SPI=y
 # CONFIG_SPI_DEBUG is not set
 CONFIG_SPI_MASTER=y
-# CONFIG_SPI_MEM is not set
+CONFIG_SPI_MEM=y
 
 #
 # SPI Master Controller Drivers
 #
-# CONFIG_SPI_ALTERA is not set
+CONFIG_SPI_ALTERA=m
 # CONFIG_SPI_AXI_SPI_ENGINE is not set
-# CONFIG_SPI_BITBANG is not set
+CONFIG_SPI_BITBANG=m
 # CONFIG_SPI_BUTTERFLY is not set
 # CONFIG_SPI_CADENCE is not set
 # CONFIG_SPI_DESIGNWARE is not set
@@ -3901,7 +3905,7 @@ CONFIG_SPI_PXA2XX_PCI=m
 # CONFIG_SPI_SIFIVE is not set
 # CONFIG_SPI_MXIC is not set
 # CONFIG_SPI_XCOMM is not set
-# CONFIG_SPI_XILINX is not set
+CONFIG_SPI_XILINX=m
 # CONFIG_SPI_ZYNQMP_GQSPI is not set
 
 #
