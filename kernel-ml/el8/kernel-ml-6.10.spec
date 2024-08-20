@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.10.5
+%define LKAver 6.10.6
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1162,6 +1162,19 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Mon Aug 19 2024 S.Tindall <s10dal@elrepo.org> - 6.10.6
+- Updated with the 6.10.6 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.6]
+- Added: CONFIG_MTD_SPI_NOR=m
+- Added: CONFIG_MTD_SPI_NOR_SWP_DISABLE_ON_VOLATILE=y
+- Added: CONFIG_MTD_SPI_NOR_USE_4K_SECTORS=y
+- Added: CONFIG_PTP_1588_CLOCK_OCP=m
+- Added: CONFIG_SPI_ALTERA_CORE=m
+- Added: CONFIG_SPI_ALTERA=m
+- Added: CONFIG_SPI_BITBANG=m
+- Added: CONFIG_SPI_MEM=y
+- Added: CONFIG_SPI_XILINX=m
+
 * Wed Aug 14 2024 S.Tindall <s10dal@elrepo.org> - 6.10.5
 - Updated with the 6.10.5 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.5]
