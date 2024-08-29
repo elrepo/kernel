@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.10.6
+%define LKAver 6.10.7
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1162,6 +1162,11 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Thu Aug 29 2024 S.Tindall <s10dal@elrepo.org> - 6.10.7
+- Updated with the 6.10.7 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.7]
+- Removed: CONFIG_KALLSYMS_BASE_RELATIVE=y
+
 * Mon Aug 19 2024 S.Tindall <s10dal@elrepo.org> - 6.10.6
 - Updated with the 6.10.6 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.6]
