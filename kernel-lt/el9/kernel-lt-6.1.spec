@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.1.108
+%global LKAver 6.1.109
 
 # Define the buildid, if required.
 #global buildid .local
@@ -341,6 +341,12 @@ Obsoletes: cpufrequtils < 1:009-0.6.p1
 Provides:  cpufrequtils = 1:009-0.6.p1
 Obsoletes: cpuspeed < 1:1.5-16
 Requires: %{name}-tools-libs = %{version}-%{release}
+%if "%{name}" == "kernel-ml"
+Conflicts: kernel-lt-tools
+%else
+# it's kernel-lt
+Conflicts: kernel-ml-tools
+%endif
 %define __requires_exclude ^%{_bindir}/python
 %description -n %{name}-tools
 This package contains the tools/ directory from the Linux kernel
@@ -351,6 +357,12 @@ Summary: Libraries for the %{name}-tools.
 License: GPLv2
 Obsoletes: kernel-tools-libs < %{version}
 Provides:  kernel-tools-libs = %{version}-%{release}
+%if "%{name}" == "kernel-ml"
+Conflicts: kernel-lt-tools-libs
+%else
+# it's kernel-lt
+Conflicts: kernel-ml-tools-libs
+%endif
 %description -n %{name}-tools-libs
 This package contains the libraries built from the tools/ directory
 of the Linux kernel source.
@@ -365,6 +377,12 @@ Provides:  cpupowerutils-devel = 1:009-0.6.p1
 Provides: %{name}-tools-devel
 Requires: %{name}-tools-libs = %{version}-%{release}
 Requires: %{name}-tools = %{version}-%{release}
+%if "%{name}" == "kernel-ml"
+Conflicts: kernel-lt-tools-libs-devel
+%else
+# it's kernel-lt
+Conflicts: kernel-ml-tools-libs-devel
+%endif
 %description -n %{name}-tools-libs-devel
 This package contains the development files for the tools/ directory
 of the Linux kernel source.
@@ -1482,6 +1500,11 @@ fi
 %kernel_lt_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Sun Sep 08 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.109-1
+- Updated with the 6.1.109 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.109]
+- Add conflicts to -tools sections
+
 * Wed Sep 04 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.108-1
 - Updated with the 6.1.108 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.108]
