@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.10.8
+%define LKAver 6.10.9
 
 # Define the buildid, if required.
 #define buildid .local
@@ -234,6 +234,15 @@ Obsoletes: cpuspeed < 1:1.5-16
 Provides:  kernel-tools = %{version}-%{release}
 Conflicts: kernel-tools < %{version}-%{release}
 Requires: %{name}-tools-libs = %{version}-%{release}
+
+# kernel-ml vs kernel-lt conflict
+%if "%{name}" == "kernel-ml"
+Conflicts: kernel-lt-tools
+%else
+# it's kernel-lt
+Conflicts: kernel-ml-tools
+%endif
+
 %define __requires_exclude ^%{_bindir}/python
 %description -n %{name}-tools
 This package contains the tools/ directory and its supporting
@@ -245,6 +254,15 @@ Group: Development/System
 License: GPLv2
 Provides:  kernel-tools-libs = %{version}-%{release}
 Conflicts: kernel-tools-libs < %{version}-%{release}
+
+# kernel-ml vs kernel-lt conflict
+%if "%{name}" == "kernel-ml"
+Conflicts: kernel-lt-tools-libs
+%else
+# it's kernel-lt
+Conflicts: kernel-ml-tools-libs
+%endif
+
 %description -n %{name}-tools-libs
 This package contains the libraries built from the
 tools/ directory, derived from the kernel source.
@@ -259,6 +277,15 @@ Provides:  cpupowerutils-devel = 1:009-0.6.p1
 Obsoletes: cpupowerutils-devel < 1:009-0.6.p1
 Provides:  kernel-tools-libs-devel = %{version}-%{release}
 Conflicts: kernel-tools-libs-devel < %{version}-%{release}
+
+# kernel-ml vs kernel-lt conflict
+%if "%{name}" == "kernel-ml"
+Conflicts: kernel-lt-tools-libs-devel
+%else
+# it's kernel-lt
+Conflicts: kernel-ml-tools-libs-devel
+%endif
+
 %description -n %{name}-tools-libs-devel
 This package contains the development files for the tools/ directory
 libraries, derived from the kernel source.
@@ -1162,6 +1189,10 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sun Sep 08 2024 S.Tindall <s10dal@elrepo.org> - 6.10.9
+- Updated with the 6.10.9 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.9]
+
 * Wed Sep 04 2024 S.Tindall <s10dal@elrepo.org> - 6.10.8
 - Updated with the 6.10.8 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.8]
