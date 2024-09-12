@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.10.9
+%define LKAver 6.10.10
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1189,6 +1189,20 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Thu Sep 12 2024 S.Tindall <s10dal@elrepo.org> - 6.10.10
+- Updated with the 6.10.10 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.10]
+- Removed: CONFIG_DEBUG_INFO_NONE=y
+- Added: CONFIG_DEBUG_INFO_BTF_MODULES=y
+- Added: CONFIG_DEBUG_INFO_BTF=y
+- Added: CONFIG_DEBUG_INFO_COMPRESSED_NONE=y
+- Added: CONFIG_DEBUG_INFO_DWARF5=y
+- Added: CONFIG_DEBUG_INFO=y
+- Added: CONFIG_GDB_SCRIPTS=y
+- Added: CONFIG_MODULE_ALLOW_BTF_MISMATCH=y
+- Added: CONFIG_PAHOLE_HAS_SPLIT_BTF=y
+- Added: CONFIG_PROBE_EVENTS_BTF_ARGS=y
+
 * Sun Sep 08 2024 S.Tindall <s10dal@elrepo.org> - 6.10.9
 - Updated with the 6.10.9 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.9]
