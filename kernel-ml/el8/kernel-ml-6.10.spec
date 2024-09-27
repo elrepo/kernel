@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.11
+%define LKAver 6.10.11
 
 # Define the buildid, if required.
 #define buildid .local
@@ -34,7 +34,7 @@
 # vsdo install
 %define with_vdso_install %{?_without_vdso_install: 0} %{?!_without_vdso_install: 1}
 # gcc12
-%define with_gcc12    %{?_without_gcc12:    0} %{?!_without_gcc12:    1}
+# %_define with_gcc12    %_{?_without_gcc12:    0} %_{?!_without_gcc12:    1}
 
 # Kernel-ml, devel, headers, perf, tools and bpftool.
 %ifarch x86_64
@@ -95,9 +95,9 @@ Provides: installonlypkg(kernel)
 Requires: %{name}-core-uname-r = %{KVERREL}
 Requires: %{name}-modules-uname-r = %{KVERREL}
 
-%if %{with_gcc12}
-BuildRequires: gcc-toolset-12-annobin-plugin-gcc
-%endif
+# %if %{with_gcc12}
+# BuildRequires: gcc-toolset-12-annobin-plugin-gcc
+# %endif
 
 BuildRequires: bash bc binutils bison bzip2 diffutils dwarves elfutils-devel
 BuildRequires: findutils flex gawk gcc git gzip hmaccalc hostname kmod m4
@@ -420,9 +420,9 @@ of the OS: memory allocation, process allocation, device I/O, etc.
 %define _build_id_links none
 
 %prep
-%if %{with_gcc12}
-. /opt/rh/gcc-toolset-12/enable
-%endif
+# %if %{with_gcc12}
+# . /opt/rh/gcc-toolset-12/enable
+# %endif
 
 %setup -q -n %{name}-%{version} -c
 %{__mv} linux-%{LKAver} linux-%{version}-%{release}.%{_target_cpu}
@@ -467,9 +467,9 @@ done | %{_bindir}/xargs --no-run-if-empty pathfix.py -i %{__python3} -p -n | \
 popd > /dev/null
 
 %build
-%if %{with_gcc12}
-. /opt/rh/gcc-toolset-12/enable
-%endif
+# %if %{with_gcc12}
+# . /opt/rh/gcc-toolset-12/enable
+# %endif
 
 pushd linux-%{KVERREL} > /dev/null
 
@@ -559,9 +559,9 @@ popd > /dev/null
 popd > /dev/null
 
 %install
-%if %{with_gcc12}
-. /opt/rh/gcc-toolset-12/enable
-%endif
+# %if %{with_gcc12}
+# . /opt/rh/gcc-toolset-12/enable
+# %endif
 
 pushd linux-%{KVERREL} > /dev/null
 
@@ -1189,52 +1189,9 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Sun Sep 15 2024 S.Tindall <s10dal@elrepo.org> - 6.11.0
-- Updated with the 6.11 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11]
-- Removed: CONFIG_AS_VERSION=23000
-- Removed: CONFIG_BLK_DEV_INTEGRITY_T10=m
-- Removed: CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-22)"
-- Removed: CONFIG_CRC64=m
-- Removed: CONFIG_CRC64_ROCKSOFT=m
-- Removed: CONFIG_CRYPTO_CRC64_ROCKSOFT=m
-- Removed: CONFIG_CRYPTO_SM2=m
-- Removed: CONFIG_DIMLIB=m
-- Removed: CONFIG_GCC_VERSION=80500
-- Removed: CONFIG_LD_VERSION=23000
-- Removed: CONFIG_MEMCG_KMEM=y
-- Removed: CONFIG_MEMSTICK_REALTEK_PCI=m
-- Added: CONFIG_ACPI_MADT_WAKEUP=y
-- Added: CONFIG_AS_VERSION=23800
-- Added: CONFIG_ATH10K_LEDS=y
-- Added: CONFIG_CC_HAS_AUTO_VAR_INIT_PATTERN=y
-- Added: CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO_BARE=y
-- Added: CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO=y
-- Added: CONFIG_CC_HAS_NAMED_AS=y
-- Added: CONFIG_CC_HAS_ZERO_CALL_USED_REGS=y
-- Added: CONFIG_CC_NO_ARRAY_BOUNDS=y
-- Added: CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
-- Added: CONFIG_CRC64_ROCKSOFT=y
-- Added: CONFIG_CRC64=y
-- Added: CONFIG_CRYPTO_CRC64_ROCKSOFT=y
-- Added: CONFIG_DELL_PC=m
-- Added: CONFIG_DIMLIB=y
-- Added: CONFIG_GCC_ASM_GOTO_OUTPUT_BROKEN=y
-- Added: CONFIG_GCC_VERSION=120201
-- Added: CONFIG_HAVE_KCSAN_COMPILER=y
-- Added: CONFIG_HAVE_KVM_ARCH_GMEM_INVALIDATE=y
-- Added: CONFIG_HAVE_KVM_ARCH_GMEM_PREPARE=y
-- Added: CONFIG_HAVE_ZSMALLOC=y
-- Added: CONFIG_KVM_GENERIC_MEMORY_ATTRIBUTES=y
-- Added: CONFIG_KVM_GENERIC_PRE_FAULT_MEMORY=y
-- Added: CONFIG_KVM_GENERIC_PRIVATE_MEM=y
-- Added: CONFIG_KVM_PRIVATE_MEM=y
-- Added: CONFIG_LD_VERSION=23800
-- Added: CONFIG_NET_VENDOR_META=y
-- Added: CONFIG_RTW89_8852B_COMMON=m
-- Added: CONFIG_TOOLS_SUPPORT_RELR=y
-- Added: CONFIG_USE_X86_SEG_SUPPORT=y
-- Added: CONFIG_VDSO_GETRANDOM=y
+* Wed Sep 18 2024 S.Tindall <s10dal@elrepo.org> - 6.10.11
+- Updated with the 6.10.11 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.11]
 
 * Thu Sep 12 2024 S.Tindall <s10dal@elrepo.org> - 6.10.10
 - Updated with the 6.10.10 source tarball.
