@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.11
+%global LKAver 6.10.11
 
 # Define the buildid, if required.
 #global buildid .local
@@ -38,7 +38,7 @@
 %endif
 
 # Set pkg_release.
-%global pkg_release 1bug1484%{?buildid}%{?dist}
+%global pkg_release 1%{?buildid}%{?dist}
 
 # Architectures upon which we can sign the kernel
 # for secure boot authentication.
@@ -1512,13 +1512,9 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
-* Tue Sep 24 2024 Akemi Yagi <toracat@elrepo.org> - 6.11.0-1bug1484
-- Config mods enable DPAA
-  [https://elrepo.org/bugs/view.php?id=1484]
-
-* Sun Sep 15 2024 Akemi Yagi <toracat@elrepo.org> - 6.11.0-1
-- Updated with the 6.11 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11]
+* Wed Sep 18 2024 Akemi Yagi <toracat@elrepo.org> - 6.10.11-1
+- Updated with the 6.10.11 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.10.11]
 
 * Thu Sep 12 2024 Akemi Yagi <toracat@elrepo.org> - 6.10.10-1
 - Updated with the 6.10.10 source tarball.
