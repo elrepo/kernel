@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.11
+%define LKAver 6.11.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1189,6 +1189,21 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Mon Sep 30 2024 S.Tindall <s10dal@elrepo.org> - 6.11.1
+- Updated with the 6.11.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.1]
+- Added: CONFIG_GPIO_LJCA=m
+- Added: CONFIG_I2C_LJCA=m
+- Added: CONFIG_MEDIA_PCI_SUPPORT=y
+- Added: CONFIG_MEDIA_PLATFORM_DRIVERS=y
+- Added: CONFIG_SPI_LJCA=m
+- Added: CONFIG_USB_LJCA=m
+- Added: CONFIG_VIDEOBUF2_DMA_CONTIG=m
+- Added: CONFIG_VIDEO_HI556=m
+- Added: CONFIG_VIDEO_INTEL_IPU6=m
+- Added: CONFIG_VIDEO_OV01A10=m
+- Added: CONFIG_VIDEO_OV2740=m
+
 * Sun Sep 15 2024 S.Tindall <s10dal@elrepo.org> - 6.11.0
 - Updated with the 6.11 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11]

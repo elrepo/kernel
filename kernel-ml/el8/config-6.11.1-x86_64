@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.11.0 Kernel Configuration
+# Linux/x86 6.11.1 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
 CONFIG_CC_IS_GCC=y
@@ -4376,6 +4376,7 @@ CONFIG_I2C_SIMTEC=m
 # External I2C/SMBus adapter drivers
 #
 CONFIG_I2C_DIOLAN_U2C=m
+CONFIG_I2C_LJCA=m
 CONFIG_I2C_CP2615=m
 CONFIG_I2C_PARPORT=m
 # CONFIG_I2C_PCI1XXXX is not set
@@ -4419,6 +4420,7 @@ CONFIG_SPI_BITBANG=m
 # CONFIG_SPI_INTEL_PCI is not set
 # CONFIG_SPI_INTEL_PLATFORM is not set
 # CONFIG_SPI_LM70_LLP is not set
+CONFIG_SPI_LJCA=m
 # CONFIG_SPI_MICROCHIP_CORE is not set
 # CONFIG_SPI_MICROCHIP_CORE_QSPI is not set
 # CONFIG_SPI_LANTIQ_SSC is not set
@@ -4578,6 +4580,7 @@ CONFIG_GPIO_TPIC2810=m
 # MFD GPIO expanders
 #
 # CONFIG_GPIO_ELKHARTLAKE is not set
+CONFIG_GPIO_LJCA=m
 # end of MFD GPIO expanders
 
 #
@@ -5503,9 +5506,165 @@ CONFIG_VIDEO_EM28XX_RC=m
 # CONFIG_USB_AIRSPY is not set
 # CONFIG_USB_HACKRF is not set
 # CONFIG_USB_MSI2500 is not set
-# CONFIG_MEDIA_PCI_SUPPORT is not set
+CONFIG_MEDIA_PCI_SUPPORT=y
+
+#
+# Media capture support
+#
+# CONFIG_VIDEO_MGB4 is not set
+# CONFIG_VIDEO_SOLO6X10 is not set
+# CONFIG_VIDEO_TW5864 is not set
+# CONFIG_VIDEO_TW68 is not set
+# CONFIG_VIDEO_TW686X is not set
+# CONFIG_VIDEO_ZORAN is not set
+
+#
+# Media capture/analog TV support
+#
+# CONFIG_VIDEO_DT3155 is not set
+# CONFIG_VIDEO_IVTV is not set
+# CONFIG_VIDEO_HEXIUM_GEMINI is not set
+# CONFIG_VIDEO_HEXIUM_ORION is not set
+# CONFIG_VIDEO_MXB is not set
+
+#
+# Media capture/analog/hybrid TV support
+#
+# CONFIG_VIDEO_BT848 is not set
+# CONFIG_VIDEO_CX18 is not set
+# CONFIG_VIDEO_CX23885 is not set
+# CONFIG_VIDEO_CX25821 is not set
+# CONFIG_VIDEO_CX88 is not set
+# CONFIG_VIDEO_SAA7134 is not set
+# CONFIG_VIDEO_SAA7164 is not set
+
+#
+# Media digital TV PCI Adapters
+#
+# CONFIG_DVB_B2C2_FLEXCOP_PCI is not set
+# CONFIG_DVB_DDBRIDGE is not set
+# CONFIG_DVB_DM1105 is not set
+# CONFIG_MANTIS_CORE is not set
+# CONFIG_DVB_NETUP_UNIDVB is not set
+# CONFIG_DVB_NGENE is not set
+# CONFIG_DVB_PLUTO2 is not set
+# CONFIG_DVB_PT1 is not set
+# CONFIG_DVB_PT3 is not set
+# CONFIG_DVB_SMIPCIE is not set
+# CONFIG_DVB_BUDGET_CORE is not set
+# CONFIG_VIDEO_IPU3_CIO2 is not set
+CONFIG_VIDEO_INTEL_IPU6=m
+# CONFIG_INTEL_VSC is not set
+# CONFIG_IPU_BRIDGE is not set
 # CONFIG_RADIO_ADAPTERS is not set
-# CONFIG_MEDIA_PLATFORM_DRIVERS is not set
+CONFIG_MEDIA_PLATFORM_DRIVERS=y
+# CONFIG_V4L_PLATFORM_DRIVERS is not set
+# CONFIG_SDR_PLATFORM_DRIVERS is not set
+# CONFIG_DVB_PLATFORM_DRIVERS is not set
+# CONFIG_V4L_MEM2MEM_DRIVERS is not set
+
+#
+# Allegro DVT media platform drivers
+#
+
+#
+# Amlogic media platform drivers
+#
+
+#
+# Amphion drivers
+#
+
+#
+# Aspeed media platform drivers
+#
+
+#
+# Atmel media platform drivers
+#
+
+#
+# Cadence media platform drivers
+#
+# CONFIG_VIDEO_CADENCE_CSI2RX is not set
+# CONFIG_VIDEO_CADENCE_CSI2TX is not set
+
+#
+# Chips&Media media platform drivers
+#
+# CONFIG_VIDEO_E5010_JPEG_ENC is not set
+
+#
+# Intel media platform drivers
+#
+
+#
+# Marvell media platform drivers
+#
+
+#
+# Mediatek media platform drivers
+#
+
+#
+# Microchip Technology, Inc. media platform drivers
+#
+
+#
+# Nuvoton media platform drivers
+#
+
+#
+# NVidia media platform drivers
+#
+
+#
+# NXP media platform drivers
+#
+
+#
+# Qualcomm media platform drivers
+#
+
+#
+# Raspberry Pi media platform drivers
+#
+
+#
+# Renesas media platform drivers
+#
+
+#
+# Rockchip media platform drivers
+#
+
+#
+# Samsung media platform drivers
+#
+
+#
+# STMicroelectronics media platform drivers
+#
+
+#
+# Sunxi media platform drivers
+#
+
+#
+# Texas Instruments drivers
+#
+
+#
+# Verisilicon media platform drivers
+#
+
+#
+# VIA media platform drivers
+#
+
+#
+# Xilinx media platform drivers
+#
 
 #
 # MMC/SDIO DVB adapters
@@ -5534,6 +5693,7 @@ CONFIG_SMS_SIANO_MDTV=m
 CONFIG_VIDEOBUF2_CORE=m
 CONFIG_VIDEOBUF2_V4L2=m
 CONFIG_VIDEOBUF2_MEMOPS=m
+CONFIG_VIDEOBUF2_DMA_CONTIG=m
 CONFIG_VIDEOBUF2_VMALLOC=m
 CONFIG_VIDEOBUF2_DMA_SG=m
 # end of Media drivers
@@ -5556,7 +5716,7 @@ CONFIG_VIDEO_CAMERA_SENSOR=y
 # CONFIG_VIDEO_GC05A2 is not set
 # CONFIG_VIDEO_GC08A3 is not set
 # CONFIG_VIDEO_GC2145 is not set
-# CONFIG_VIDEO_HI556 is not set
+CONFIG_VIDEO_HI556=m
 # CONFIG_VIDEO_HI846 is not set
 # CONFIG_VIDEO_HI847 is not set
 # CONFIG_VIDEO_IMX208 is not set
@@ -5578,7 +5738,7 @@ CONFIG_VIDEO_MT9V011=m
 # CONFIG_VIDEO_MT9V032 is not set
 # CONFIG_VIDEO_MT9V111 is not set
 # CONFIG_VIDEO_OG01A1B is not set
-# CONFIG_VIDEO_OV01A10 is not set
+CONFIG_VIDEO_OV01A10=m
 # CONFIG_VIDEO_OV02A10 is not set
 # CONFIG_VIDEO_OV08D10 is not set
 # CONFIG_VIDEO_OV08X40 is not set
@@ -5588,7 +5748,7 @@ CONFIG_VIDEO_OV2640=m
 # CONFIG_VIDEO_OV2659 is not set
 # CONFIG_VIDEO_OV2680 is not set
 # CONFIG_VIDEO_OV2685 is not set
-# CONFIG_VIDEO_OV2740 is not set
+CONFIG_VIDEO_OV2740=m
 # CONFIG_VIDEO_OV4689 is not set
 # CONFIG_VIDEO_OV5647 is not set
 # CONFIG_VIDEO_OV5648 is not set
@@ -7252,7 +7412,7 @@ CONFIG_USB_LCD=m
 CONFIG_USB_IDMOUSE=m
 CONFIG_USB_APPLEDISPLAY=m
 CONFIG_APPLE_MFI_FASTCHARGE=m
-# CONFIG_USB_LJCA is not set
+CONFIG_USB_LJCA=m
 CONFIG_USB_SISUSBVGA=m
 CONFIG_USB_LD=m
 # CONFIG_USB_TRANCEVIBRATOR is not set
