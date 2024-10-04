@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.11.1 Kernel Configuration
+# Linux/x86 6.11.2 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
 CONFIG_CC_IS_GCC=y
@@ -5592,7 +5592,6 @@ CONFIG_MEDIA_PLATFORM_DRIVERS=y
 #
 # Chips&Media media platform drivers
 #
-# CONFIG_VIDEO_E5010_JPEG_ENC is not set
 
 #
 # Intel media platform drivers
