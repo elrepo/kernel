@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.11.3
+%define LKAver 6.11.4
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1189,6 +1189,14 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Thu Oct 17 2024 S.Tindall <s10dal@elrepo.org> - 6.11.4
+- Updated with the 6.11.4 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.4]
+- Removed: CONFIG_LSM="lockdown,yama,integrity,selinux,bpf"
+- Added: CONFIG_LSM="landlock,lockdown,yama,loadpin,safesetid,selinux,smack,tomoyo,apparmor,bpf"
+- Added: CONFIG_MEMCG_V1=y
+- Added: CONFIG_SECURITY_LANDLOCK=y
+
 * Thu Oct 10 2024 S.Tindall <s10dal@elrepo.org> - 6.11.3
 - Updated with the 6.11.3 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.3]

@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.11.3 Kernel Configuration
+# Linux/x86 6.11.4 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
 CONFIG_CC_IS_GCC=y
@@ -9484,7 +9484,7 @@ CONFIG_SECURITY_LOCKDOWN_LSM_EARLY=y
 CONFIG_LOCK_DOWN_KERNEL_FORCE_NONE=y
 # CONFIG_LOCK_DOWN_KERNEL_FORCE_INTEGRITY is not set
 # CONFIG_LOCK_DOWN_KERNEL_FORCE_CONFIDENTIALITY is not set
-# CONFIG_SECURITY_LANDLOCK is not set
+CONFIG_SECURITY_LANDLOCK=y
 CONFIG_INTEGRITY=y
 CONFIG_INTEGRITY_SIGNATURE=y
 CONFIG_INTEGRITY_ASYMMETRIC_KEYS=y
@@ -9522,7 +9522,7 @@ CONFIG_EVM_ATTR_FSUUID=y
 # CONFIG_EVM_LOAD_X509 is not set
 CONFIG_DEFAULT_SECURITY_SELINUX=y
 # CONFIG_DEFAULT_SECURITY_DAC is not set
-CONFIG_LSM="lockdown,yama,integrity,selinux,bpf"
+CONFIG_LSM="landlock,lockdown,yama,loadpin,safesetid,selinux,smack,tomoyo,apparmor,bpf"
 
 #
 # Kernel hardening options
