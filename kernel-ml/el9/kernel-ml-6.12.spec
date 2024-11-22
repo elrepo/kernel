@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.11.9
+%global LKAver 6.12.1
 
 # Define the buildid, if required.
 #global buildid .local
@@ -885,7 +885,7 @@ cp -a --parents tools/include/tools/le_byteshift.h $RPM_BUILD_ROOT/lib/modules/%
 cp -a --parents tools/include/linux/compiler* $RPM_BUILD_ROOT/lib/modules/%{KVERREL}/build
 cp -a --parents tools/include/linux/types.h $RPM_BUILD_ROOT/lib/modules/%{KVERREL}/build
 cp -a --parents tools/build/Build.include $RPM_BUILD_ROOT/lib/modules/%{KVERREL}/build
-cp --parents tools/build/Build $RPM_BUILD_ROOT/lib/modules/%{KVERREL}/build
+# cp --parents tools/build/Build $RPM_BUILD_ROOT/lib/modules/%{KVERREL}/build
 cp --parents tools/build/fixdep.c $RPM_BUILD_ROOT/lib/modules/%{KVERREL}/build
 cp --parents tools/objtool/sync-check.sh $RPM_BUILD_ROOT/lib/modules/%{KVERREL}/build
 cp -a --parents tools/bpf/resolve_btfids $RPM_BUILD_ROOT/lib/modules/%{KVERREL}/build
@@ -1512,6 +1512,16 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Fri Nov 22 2024 Akemi Yagi <toracat@elrepo.org> - 6.12.1-1
+- Updated with the 6.12.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.12.1]
+- Enabled DRBD
+  [https://elrepo.org/bugs/view.php?id=1492]
+
+* Sun Nov 17 2024 Akemi Yagi <toracat@elrepo.org> - 6.12.0-1
+- Updated with the 6.12 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.12]
+
 * Sun Nov 17 2024 Akemi Yagi <toracat@elrepo.org> - 6.11.9-1
 - Updated with the 6.11.9 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.9]
