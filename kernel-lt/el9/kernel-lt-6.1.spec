@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.1.118
+%global LKAver 6.1.119
 
 # Define the buildid, if required.
 #global buildid .local
@@ -1500,6 +1500,12 @@ fi
 %kernel_lt_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Fri Nov 22 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.119
+- Updated with the 6.1.119 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.119]
+- Enabled DRBD
+  [https://elrepo.org/bugs/view.php?id=1492]
+
 * Sun Nov 17 2024 Akemi Yagi <toracat@elrepo.org> - 6.1.118
 - Updated with the 6.1.118 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.118]
