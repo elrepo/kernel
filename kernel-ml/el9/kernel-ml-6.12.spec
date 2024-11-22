@@ -1512,12 +1512,6 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
-* Fri Nov 22 2024 Akemi Yagi <toracat@elrepo.org> - 6.12.1-1
-- Updated with the 6.12.1 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.12.1]
-- Enabled DRBD
-  [https://elrepo.org/bugs/view.php?id=1492]
-
 * Sun Nov 17 2024 Akemi Yagi <toracat@elrepo.org> - 6.12.0-1
 - Updated with the 6.12 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.12]
