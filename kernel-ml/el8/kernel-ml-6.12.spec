@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.12.6
+%define LKAver 6.12.7
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1189,6 +1189,29 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Fri Dec 27 2024 S.Tindall <s10dal@elrepo.org> - 6.12.7
+- Updated with the 6.12.7 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.12.7]
+- Added: CONFIG_ACPI_HMAT=y
+- Added: CONFIG_ACPI_TABLE_LIB=y
+- Added: CONFIG_CXL_ACPI=m
+- Added: CONFIG_CXL_BUS=m
+- Added: CONFIG_CXL_MEM=m
+- Added: CONFIG_CXL_MEM_RAW_COMMANDS=y
+- Added: CONFIG_CXL_PCI=m
+- Added: CONFIG_CXL_PMEM=m
+- Added: CONFIG_CXL_PORT=m
+- Added: CONFIG_CXL_REGION=y
+- Added: CONFIG_CXL_SUSPEND=y
+- Added: CONFIG_DEV_DAX_CXL=m
+- Added: CONFIG_DEV_DAX_HMEM_DEVICES=y
+- Added: CONFIG_DEV_DAX_HMEM=m
+- Added: CONFIG_EFI_SOFT_RESERVE=y
+- Added: CONFIG_FW_UPLOAD=y
+- Added: CONFIG_HMEM_REPORTING=y
+- Added: CONFIG_PCI_DOE=y
+- Added: CONFIG_PCIEAER_CXL=y
+
 * Thu Dec 19 2024 Akemi Yagi <toracat@elrepo.org> - 6.12.6
 - Updated with the 6.12.6 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.12.6]
