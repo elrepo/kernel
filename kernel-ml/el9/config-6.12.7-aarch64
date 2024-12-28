@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.12.6-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.12.7-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-2)"
 CONFIG_CC_IS_GCC=y
@@ -2120,7 +2120,7 @@ CONFIG_PCI_PWRCTL=m
 CONFIG_PCI_PWRCTL_PWRSEQ=m
 CONFIG_CXL_BUS=y
 CONFIG_CXL_PCI=y
-# CONFIG_CXL_MEM_RAW_COMMANDS is not set
+CONFIG_CXL_MEM_RAW_COMMANDS=y
 CONFIG_CXL_ACPI=y
 CONFIG_CXL_PMEM=m
 CONFIG_CXL_MEM=m

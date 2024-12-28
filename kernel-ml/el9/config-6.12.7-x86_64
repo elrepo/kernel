@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.12.6-1.el9.elrepo.x86_64 Kernel Configuration
+# Linux/x86 6.12.7-1.el9.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-2)"
 CONFIG_CC_IS_GCC=y
@@ -2187,7 +2187,7 @@ CONFIG_PCI_SW_SWITCHTEC=m
 
 CONFIG_CXL_BUS=y
 CONFIG_CXL_PCI=y
-# CONFIG_CXL_MEM_RAW_COMMANDS is not set
+CONFIG_CXL_MEM_RAW_COMMANDS=y
 CONFIG_CXL_ACPI=y
 CONFIG_CXL_PMEM=m
 CONFIG_CXL_MEM=m
@@ -2330,6 +2330,7 @@ CONFIG_UNACCEPTED_MEMORY=y
 
 CONFIG_UEFI_CPER=y
 CONFIG_UEFI_CPER_X86=y
+# CONFIG_IMX_SCMI_MISC_DRV is not set
 
 #
 # Qualcomm firmware drivers
