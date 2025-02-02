@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.4.289 Kernel Configuration
+# Linux/x86 5.4.290 Kernel Configuration
 #
 
 #
@@ -1880,7 +1880,7 @@ CONFIG_PCIEASPM_DEFAULT=y
 # CONFIG_PCIEASPM_PERFORMANCE is not set
 CONFIG_PCIE_PME=y
 CONFIG_PCIE_DPC=y
-# CONFIG_PCIE_PTM is not set
+CONFIG_PCIE_PTM=y
 # CONFIG_PCIE_BW is not set
 CONFIG_PCI_MSI=y
 CONFIG_PCI_MSI_IRQ_DOMAIN=y

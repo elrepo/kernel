@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.289
+%define LKAver 5.4.290
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1147,6 +1147,11 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sat Feb 01 2025 S.Tindall <s10dal@elrepo.org> - 5.4.290-1
+- Updated with the 5.4.290 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.290]
+- Added: CONFIG_PCIE_PTM=y
+
 * Thu Jan 09 2025 S.Tindall <s10dal@elrepo.org> - 5.4.289-1
 - Updated with the 5.4.289 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.289]
