@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.12.11
+%define LKAver 6.13.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1189,9 +1189,56 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Thu Jan 23 2025 S.Tindall <s10dal@elrepo.org> - 6.12.11
-- Updated with the 6.12.11 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.12.11]
+* Sat Feb 01 2025 S.Tindall <s10dal@elrepo.org> - 6.13.1
+- Updated with the 6.13.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.1]
+- Added: CONFIG_AMD_3D_VCACHE=m
+- Added: CONFIG_PCIE_PTM=y
+
+* Sun Jan 19 2025 S.Tindall <s10dal@elrepo.org> - 6.13.0
+- Updated with the 6.13 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13]
+- Removed: CONFIG_AMD_HSMP=m
+- Removed: CONFIG_CFG80211_WEXT_EXPORT=y
+- Removed: CONFIG_EEPROM_93CX6=m
+- Removed: CONFIG_I2C_AMD756_S4882=m
+- Removed: CONFIG_I2C_NFORCE2_S4985=m
+- Removed: CONFIG_LIB80211_CRYPT_CCMP=m
+- Removed: CONFIG_LIB80211_CRYPT_TKIP=m
+- Removed: CONFIG_LIB80211_CRYPT_WEP=m
+- Removed: CONFIG_LIB80211=m
+- Removed: CONFIG_R8712U=m
+- Removed: CONFIG_RTL8192E=m
+- Removed: CONFIG_RTLLIB_CRYPTO_CCMP=m
+- Removed: CONFIG_RTLLIB_CRYPTO_TKIP=m
+- Removed: CONFIG_RTLLIB_CRYPTO_WEP=m
+- Removed: CONFIG_RTLLIB=m
+- Removed: CONFIG_RTS5208=m
+- Removed: CONFIG_SUNDANCE=m
+- Removed: CONFIG_WEXT_SPY=y
+- Added: CONFIG_ACPI_EC=y
+- Added: CONFIG_ARCH_HAS_PREEMPT_LAZY=y
+- Added: CONFIG_ARCH_SUPPORTS_AUTOFDO_CLANG=y
+- Added: CONFIG_ARCH_SUPPORTS_PROPELLER_CLANG=y
+- Added: CONFIG_CRYPTO_LIB_AESGCM=m
+- Added: CONFIG_DRM_CLIENT_LIB=m
+- Added: CONFIG_DRM_CLIENT_SELECTION=m
+- Added: CONFIG_DRM_CLIENT_SETUP=y
+- Added: CONFIG_DRM_CLIENT=y
+- Added: CONFIG_DRM_DISPLAY_DSC_HELPER=y
+- Added: CONFIG_EEPROM_93CX6=y
+- Added: CONFIG_KVM_ELIDE_TLB_FLUSH_IF_YOUNG=y
+- Added: CONFIG_MIN_HEAP=y
+- Added: CONFIG_MMC_SDHCI_UHS2=m
+- Added: CONFIG_MTK_NET_PHYLIB=m
+- Added: CONFIG_NET_SHAPER=y
+- Added: CONFIG_NET_VENDOR_HISILICON=y
+- Added: CONFIG_PTP_1588_CLOCK_VMCLOCK=m
+- Added: CONFIG_SND_SOC_ACPI_INTEL_SDCA_QUIRKS=m
+- Added: CONFIG_SND_SOC_SDCA=m
+- Added: CONFIG_SND_SOC_SDCA_OPTIONAL=m
+- Added: CONFIG_UNION_FIND=y
+- Added: CONFIG_X86_BUS_LOCK_DETECT=y
 
 * Fri Jan 17 2025 S.Tindall <s10dal@elrepo.org> - 6.12.10
 - Updated with the 6.12.10 source tarball.
