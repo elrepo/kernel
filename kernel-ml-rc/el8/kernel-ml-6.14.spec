@@ -81,6 +81,11 @@
 %define kernel_prereq  coreutils, systemd >= 203-2, systemd-udev >= 203-2
 %define initrd_prereq  dracut >= 027
 
+# rc-specific definitions/overrides (Update rcX)
+%global LKAver 6.14-rc1
+%global pkg_version 6.14.0
+%global pkg_release 1.rc1%{?buildid}%{?dist}
+
 Name: kernel-ml
 Summary: The Linux kernel. (The core of any Linux-based operating system.)
 Group: System Environment/Kernel
@@ -123,7 +128,7 @@ BuildRequires: binutils-devel python3-docutils zlib-devel
 BuildConflicts: rhbuildsys(DiskFree) < 500Mb
 
 # Sources.
-Source0: https://www.kernel.org/pub/linux/kernel/v6.x/linux-%{LKAver}.tar.xz
+Source0: https://www.kernel.org/pub/linux/kernel/v6.x/linux-%{LKAver}.tar.gz
 Source1: config-%{version}-x86_64
 Source2: cpupower.service
 Source3: cpupower.config
@@ -489,7 +494,7 @@ pushd linux-%{KVERREL} > /dev/null
 %endif
 
 %global perf_make \
-    %{__make} -s -C tools/perf prefix=%{_prefix} EXTRA_CFLAGS="${RPM_OPT_FLAGS}" LDFLAGS="%{__global_ldflags}" PYTHON=%{__python3} WERROR=0 HAVE_CPLUS_DEMANGLE=1 NO_BIONIC=1 NO_GTK2=1 NO_LIBBABELTRACE=1 NO_LIBUNWIND=1 NO_LIBZSTD=1 NO_PERF_READ_VDSO32=1 NO_PERF_READ_VDSOX32=1 NO_STRLCPY=1
+    %{__make} -s -C tools/perf prefix=%{_prefix} EXTRA_CFLAGS="${RPM_OPT_FLAGS}" LDFLAGS="%{__global_ldflags}" PYTHON=%{__python3} WERROR=0 HAVE_CPLUS_DEMANGLE=1 NO_BIONIC=1 NO_GTK2=1 NO_LIBBABELTRACE=1 NO_LIBUNWIND=1 NO_PERF_READ_VDSO32=1 NO_PERF_READ_VDSOX32=1 NO_STRLCPY=1
 
 %if %{with_perf}
 # Make sure that check-headers.sh is executable.
@@ -1076,7 +1081,6 @@ fi
 %{_libdir}/libperf-jvmti.so
 %dir %{_libexecdir}/perf-core
 %{_libexecdir}/perf-core/*
-%{_datadir}/perf-core/*
 %{_mandir}/man[1-8]/perf*
 %{_sysconfdir}/bash_completion.d/perf
 
@@ -1189,6 +1193,48 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Mon Feb 03 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-1.rc1
+- Updated with the 6.14-rc1 source tarball.
+- Spec file modified: Removed perf options NO_LIBZSTD=1 and %{_datadir}/perf-core/*
+
+* Sun Feb 02 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc1
+- Updated with the 6.14-rc1 source tarball.
+- Removed: CONFIG_CRC32_SLICEBY8=y
+- Removed: CONFIG_CRYPTO_CRC32C_INTEL=m
+- Removed: CONFIG_CRYPTO_CRC32_PCLMUL=m
+- Removed: CONFIG_CRYPTO_CRCT10DIF_PCLMUL=m
+- Removed: CONFIG_CRYPTO_KEYWRAP=m
+- Removed: CONFIG_CRYPTO_LIB_AESGCM=m
+- Removed: CONFIG_CRYPTO_VMAC=m
+- Removed: CONFIG_HAVE_FUNCTION_GRAPH_RETVAL=y
+- Added: CONFIG_AMD_NODE=y
+- Added: CONFIG_ARCH_HAS_CRC32=y
+- Added: CONFIG_ARCH_HAS_CRC_T10DIF=y
+- Added: CONFIG_ARCH_SUPPORTS_PT_RECLAIM=y
+- Added: CONFIG_BASIC_MODVERSIONS=y
+- Added: CONFIG_CEC_CORE=m
+- Added: CONFIG_CEC_NOTIFIER=y
+- Added: CONFIG_CRC32_ARCH=y
+- Added: CONFIG_CRC_OPTIMIZATIONS=y
+- Added: CONFIG_CRC_T10DIF_ARCH=y
+- Added: CONFIG_CRYPTO_LIB_AESGCM=y
+- Added: CONFIG_DRM_CLIENT_DEFAULT="fbdev"
+- Added: CONFIG_DRM_CLIENT_DEFAULT_FBDEV=y
+- Added: CONFIG_DRM_PANEL_BACKLIGHT_QUIRKS=m
+- Added: CONFIG_FUSE_IO_URING=y
+- Added: CONFIG_GENKSYMS=y
+- Added: CONFIG_HAS_SECURITY_AUDIT=y
+- Added: CONFIG_HAVE_FTRACE_GRAPH_FUNC=y
+- Added: CONFIG_HAVE_FTRACE_REGS_HAVING_PT_REGS=y
+- Added: CONFIG_HAVE_FUNCTION_GRAPH_FREGS=y
+- Added: CONFIG_MHP_DEFAULT_ONLINE_TYPE_OFFLINE=y
+- Added: CONFIG_MICROCHIP_PHY_RDS_PTP=m
+- Added: CONFIG_PACKING=y
+- Added: CONFIG_PT_RECLAIM=y
+- Added: CONFIG_REALTEK_PHY_HWMON=y
+- Added: CONFIG_RTW88_LEDS=y
+- Added: CONFIG_SND_COMPRESS_ACCEL=y
+
 * Sat Feb 01 2025 S.Tindall <s10dal@elrepo.org> - 6.13.1
 - Updated with the 6.13.1 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.1]
