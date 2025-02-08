@@ -24,7 +24,9 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.13.1
+### BCAT
+%global LKAver 6.14-rc1
+### BCAT
 
 # Define the buildid, if required.
 #global buildid .local
@@ -36,9 +38,15 @@
 %else
 %global pkg_version %{LKAver}
 %endif
+### BCAT
+%global pkg_version 6.14.0
+### BCAT
 
 # Set pkg_release.
 %global pkg_release 1%{?buildid}%{?dist}
+### BCAT
+%global pkg_release 0.rc1%{?buildid}%{?dist}
+### BCAT
 
 # Architectures upon which we can sign the kernel
 # for secure boot authentication.
@@ -223,7 +231,7 @@ BuildConflicts: rhbuildsys(DiskFree) < 500Mb
 ###
 ### Sources
 ###
-Source0: https://www.kernel.org/pub/linux/kernel/v6.x/linux-%{LKAver}.tar.xz
+Source0: https://www.kernel.org/pub/linux/kernel/v6.x/linux-%{LKAver}.tar.gz
 
 Source2: config-%{version}-x86_64
 Source4: config-%{version}-aarch64
@@ -1380,7 +1388,7 @@ fi
 %{_libdir}/libperf-jvmti.so
 %dir %{_libexecdir}/perf-core
 %{_libexecdir}/perf-core/*
-%{_datadir}/perf-core/*
+# %%{_datadir}/perf-core/*
 %{_mandir}/man[1-8]/perf*
 %{_sysconfdir}/bash_completion.d/perf
 %doc linux-%{KVERREL}/tools/perf/Documentation/examples.txt
@@ -1512,6 +1520,9 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Sun Feb 02 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc1
+- Updated with the 6.14-rc1 source tarball.
+
 * Sat Feb 01 2025 Akemi Yagi <toracat@elrepo.org> - 6.13.1-1
 - Updated with the 6.13.1 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.1]
