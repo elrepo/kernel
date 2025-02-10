@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.14.0-0.rc1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.14.0-0.rc2.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-2)"
 CONFIG_CC_IS_GCC=y
@@ -9584,7 +9584,6 @@ CONFIG_BCM7038_L1_IRQ=y
 CONFIG_BCM7120_L2_IRQ=y
 CONFIG_BRCMSTB_L2_IRQ=y
 CONFIG_HISILICON_IRQ_MBIGEN=y
-# CONFIG_LAN966X_OIC is not set
 # CONFIG_XILINX_INTC is not set
 CONFIG_IMX_GPCV2=y
 CONFIG_LS_EXTIRQ=y

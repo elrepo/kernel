@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.14.0-0.rc1.el9.elrepo.x86_64 Kernel Configuration
+# Linux/x86 6.14.0-0.rc2.el9.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-2)"
 CONFIG_CC_IS_GCC=y
@@ -9616,7 +9616,6 @@ CONFIG_PWM_XILINX=m
 #
 CONFIG_IRQCHIP=y
 # CONFIG_AL_FIC is not set
-# CONFIG_LAN966X_OIC is not set
 # CONFIG_XILINX_INTC is not set
 # end of IRQ chip support
 
