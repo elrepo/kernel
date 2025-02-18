@@ -25,7 +25,7 @@
 
 # Define the version of the Linux Kernel Archive tarball.
 ### BCAT
-%global LKAver 6.14-rc2
+%global LKAver 6.14-rc3
 ### BCAT
 
 # Define the buildid, if required.
@@ -45,7 +45,7 @@
 # Set pkg_release.
 %global pkg_release 1%{?buildid}%{?dist}
 ### BCAT
-%global pkg_release 0.rc2%{?buildid}%{?dist}
+%global pkg_release 0.rc3%{?buildid}%{?dist}
 ### BCAT
 
 # Architectures upon which we can sign the kernel
@@ -1520,6 +1520,9 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Mon Feb 17 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc3
+- Updated with the 6.14-rc3 source tarball.
+
 * Sun Feb 09 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc2
 - Updated with the 6.14-rc2 source tarball.
 
