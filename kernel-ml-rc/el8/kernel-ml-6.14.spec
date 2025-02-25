@@ -82,9 +82,9 @@
 %define initrd_prereq  dracut >= 027
 
 # rc-specific definitions/overrides (Update rcX)
-%global LKAver 6.14-rc3
+%global LKAver 6.14-rc4
 %global pkg_version 6.14.0
-%global pkg_release 0.rc3%{?buildid}%{?dist}
+%global pkg_release 0.rc4%{?buildid}%{?dist}
 
 Name: kernel-ml
 Summary: The Linux kernel. (The core of any Linux-based operating system.)
@@ -1193,6 +1193,9 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sun Feb 23 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc4
+- Updated with the 6.14-rc4 source tarball.
+
 * Mon Feb 17 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc3
 - Updated with the 6.14-rc3 source tarball.
 - Added: CONFIG_MEMTEST=y
