@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.13.4 Kernel Configuration
+# Linux/x86 6.13.5 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
 CONFIG_CC_IS_GCC=y
@@ -2293,7 +2293,6 @@ CONFIG_UNACCEPTED_MEMORY=y
 
 CONFIG_UEFI_CPER=y
 CONFIG_UEFI_CPER_X86=y
-# CONFIG_IMX_SCMI_MISC_DRV is not set
 
 #
 # Qualcomm firmware drivers
@@ -8113,7 +8112,6 @@ CONFIG_CHROMEOS_TBMC=m
 CONFIG_CROS_KBD_LED_BACKLIGHT=m
 # CONFIG_CROS_HPS_I2C is not set
 # CONFIG_CHROMEOS_PRIVACY_SCREEN is not set
-# CONFIG_CZNIC_PLATFORMS is not set
 # CONFIG_MELLANOX_PLATFORM is not set
 # CONFIG_SURFACE_PLATFORMS is not set
 CONFIG_X86_PLATFORM_DEVICES=y
