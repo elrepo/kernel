@@ -82,9 +82,9 @@
 %define initrd_prereq  dracut >= 027
 
 # rc-specific definitions/overrides (Update rcX)
-%global LKAver 6.14-rc6
+%global LKAver 6.14-rc7
 %global pkg_version 6.14.0
-%global pkg_release 0.rc6%{?buildid}%{?dist}
+%global pkg_release 0.rc7%{?buildid}%{?dist}
 
 Name: kernel-ml
 Summary: The Linux kernel. (The core of any Linux-based operating system.)
@@ -1193,6 +1193,10 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sun Mar 16 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc7
+- Updated with the 6.14-rc7 source tarball.
+- Added: CONFIG_BT_HCIBTUSB_AUTO_ISOC_ALT=y
+
 * Sun Mar 09 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc6
 - Updated with the 6.14-rc6 source tarball.
 
