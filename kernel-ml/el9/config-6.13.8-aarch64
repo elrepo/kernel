@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.13.7-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.13.8-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-5)"
 CONFIG_CC_IS_GCC=y
@@ -6258,6 +6258,7 @@ CONFIG_DRM_CLIENT=y
 CONFIG_DRM_CLIENT_LIB=m
 CONFIG_DRM_CLIENT_SELECTION=m
 CONFIG_DRM_CLIENT_SETUP=y
+CONFIG_DRM_XE=m
 
 #
 # Supported DRM clients
