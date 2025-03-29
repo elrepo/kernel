@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.13.8
+%define LKAver 6.13.9
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1189,10 +1189,13 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sat Mar 22 2025 S.Tindall <s10dal@elrepo.org> - 6.13.9
+- Updated with the 6.13.9 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.9]
+
 * Sat Mar 22 2025 S.Tindall <s10dal@elrepo.org> - 6.13.8
 - Updated with the 6.13.8 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.8]
-
 - Added: CONFIG_DRM_XE_DISPLAY=y
 - Added: CONFIG_DRM_XE_ENABLE_SCHEDTIMEOUT_LIMIT=y
 - Added: CONFIG_DRM_XE_FORCE_PROBE=""
