@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.291
+%define LKAver 5.4.292
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1147,6 +1147,11 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Thu Apr 10 2025 Akemi Yagi <toracat@elrepo.org> - 5.4.292-1
+- Updated with the 5.4.292 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.292]
+- Removed: CONFIG_HAVE_EISA=y
+
 * Thu Mar 13 2025 S.Tindall <s10dal@elrepo.org> - 5.4.291-1
 - Updated with the 5.4.291 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.291]
