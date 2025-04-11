@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.1.133-1.el9.elrepo.x86_64 Kernel Configuration
+# Linux/x86 6.1.134-1.el9.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-5)"
 CONFIG_CC_IS_GCC=y
@@ -1971,8 +1971,6 @@ CONFIG_NETDEV_ADDR_LIST_TEST=m
 #
 # Device Drivers
 #
-CONFIG_HAVE_EISA=y
-# CONFIG_EISA is not set
 CONFIG_HAVE_PCI=y
 CONFIG_PCI=y
 CONFIG_PCI_DOMAINS=y
