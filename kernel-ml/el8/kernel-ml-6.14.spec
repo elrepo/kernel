@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.14.1
+%define LKAver 6.14.2
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1188,6 +1188,13 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Thu Apr 10 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.2
+- Updated with the 6.14.2 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.2]
+- Removed: CONFIG_HAVE_EISA=y
+- Added: CONFIG_LD_CAN_USE_KEEP_IN_OVERLAY=y
+- Added: CONFIG_IIO_GTS_HELPER=m
+
 * Mon Apr 07 2025 S.Tindall <s10dal@elrepo.org> - 6.14.1
 - Updated with the 6.14.1 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.1]
