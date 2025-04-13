@@ -25,7 +25,7 @@
 
 # Define the version of the Linux Kernel Archive tarball.
 ### BCAT
-%global LKAver 6.14-rc7
+%global LKAver 6.15-rc2
 ### BCAT
 
 # Define the buildid, if required.
@@ -39,13 +39,13 @@
 %global pkg_version %{LKAver}
 %endif
 ### BCAT
-%global pkg_version 6.14.0
+%global pkg_version 6.15.0
 ### BCAT
 
 # Set pkg_release.
 %global pkg_release 1%{?buildid}%{?dist}
 ### BCAT
-%global pkg_release 0.rc7%{?buildid}%{?dist}
+%global pkg_release 0.rc2%{?buildid}%{?dist}
 ### BCAT
 
 # Architectures upon which we can sign the kernel
@@ -1388,7 +1388,6 @@ fi
 %{_libdir}/libperf-jvmti.so
 %dir %{_libexecdir}/perf-core
 %{_libexecdir}/perf-core/*
-# %%{_datadir}/perf-core/*
 %{_mandir}/man[1-8]/perf*
 %{_sysconfdir}/bash_completion.d/perf
 %doc linux-%{KVERREL}/tools/perf/Documentation/examples.txt
@@ -1437,7 +1436,7 @@ fi
 
 %files -n %{name}-tools-libs
 %{_libdir}/libcpupower.so.1
-%{_libdir}/libcpupower.so.0.0.1
+%{_libdir}/libcpupower.so.1.0.1
 
 %files -n %{name}-tools-libs-devel
 %{_libdir}/libcpupower.so
@@ -1520,26 +1519,43 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
-* Sun Mar 16 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc7
-- Updated with the 6.14-rc7 ource tarball.
+* Sun Apr 13 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.0-rc2
+- Updated with the 6.15-rc2 source tarball.
 
-* Sun Mar 09 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc6
-- Updated with the 6.14-rc6 source tarball.
+* Sun Apr 06 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.0-rc1
+- Updated with the 6.15-rc1 source tarball.
 
-* Sun Mar 02 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc5
-- Updated with the 6.14-rc5 source tarball.
+* Mon Mar 24 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-1
+- Updated with the 6.14 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14]
 
-* Sun Feb 23 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc4
-- Updated with the 6.14-rc4 source tarball.
+* Sat Mar 22 2025 Akemi Yagi <toracat@elrepo.org> - 6.13.8-1
+- Updated with the 6.13.8 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.8]
 
-* Mon Feb 17 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc3
-- Updated with the 6.14-rc3 source tarball.
+* Thu Mar 13 2025 Akemi Yagi <toracat@elrepo.org> - 6.13.7-1
+- Updated with the 6.13.7 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.7]
 
-* Sun Feb 09 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc2
-- Updated with the 6.14-rc2 source tarball.
+* Fri Mar 07 2025 Akemi Yagi <toracat@elrepo.org> - 6.13.6-1
+- Updated with the 6.13.6 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.6]
 
-* Sun Feb 02 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.0-rc1
-- Updated with the 6.14-rc1 source tarball.
+* Thu Feb 27 2025 Akemi Yagi <toracat@elrepo.org> - 6.13.5-1
+- Updated with the 6.13.5 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.5]
+
+* Fri Feb 21 2025 Akemi Yagi <toracat@elrepo.org> - 6.13.4-1
+- Updated with the 6.13.4 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.4]
+
+* Mon Feb 17 2025 Akemi Yagi <toracat@elrepo.org> - 6.13.3-1
+- Updated with the 6.13.3 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.3]
+
+* Sat Feb 08 2025 Akemi Yagi <toracat@elrepo.org> - 6.13.2-1
+- Updated with the 6.13.2 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.2]
 
 * Sat Feb 01 2025 Akemi Yagi <toracat@elrepo.org> - 6.13.1-1
 - Updated with the 6.13.1 source tarball.
