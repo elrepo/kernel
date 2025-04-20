@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.14.2
+%define LKAver 6.14.3
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1188,6 +1188,15 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sun Apr 20 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.3
+- Updated with the 6.14.3 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.3]
+- Removed: CONFIG_HAVE_KVM_IRQ_BYPASS=y
+- Removed: CONFIG_IRQ_BYPASS_MANAGER=y
+- Added: CONFIG_CC_HAS_NAMED_AS_FIXED_SANITIZERS=y
+- Added: CONFIG_HAVE_KVM_IRQ_BYPASS=m
+- Added: CONFIG_IRQ_BYPASS_MANAGER=m
+
 * Thu Apr 10 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.2
 - Updated with the 6.14.2 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.2]
