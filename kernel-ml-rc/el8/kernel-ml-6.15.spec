@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.13.1
+%define LKAver 6.14
 
 # Define the buildid, if required.
 #define buildid .local
@@ -82,9 +82,9 @@
 %define initrd_prereq  dracut >= 027
 
 # rc-specific definitions/overrides (Update rcX)
-%global LKAver 6.14-rc7
-%global pkg_version 6.14.0
-%global pkg_release 0.rc7%{?buildid}%{?dist}
+%global LKAver 6.15-rc4
+%global pkg_version 6.15.0
+%global pkg_release 0.rc4%{?buildid}%{?dist}
 
 Name: kernel-ml
 Summary: The Linux kernel. (The core of any Linux-based operating system.)
@@ -1117,7 +1117,7 @@ fi
 
 %files -n %{name}-tools-libs
 %{_libdir}/libcpupower.so.1
-%{_libdir}/libcpupower.so.0.0.1
+%{_libdir}/libcpupower.so.1.0.1
 
 %files -n %{name}-tools-libs-devel
 %{_libdir}/libcpupower.so
@@ -1193,32 +1193,122 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Sun Mar 16 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc7
-- Updated with the 6.14-rc7 source tarball.
-- Added: CONFIG_BT_HCIBTUSB_AUTO_ISOC_ALT=y
+* Sun Apr 27 2025 S.Tindall <s10dal@elrepo.org> - 6.15.0-0.rc4
+- Updated with the 6.15-rc4 source tarball.
+- Removed: CONFIG_SYSFS_SYSCALL=y
+- Added: CONFIG_SYSFS_SYSCALL=y
 
-* Sun Mar 09 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc6
-- Updated with the 6.14-rc6 source tarball.
+* Sun Apr 13 2025 S.Tindall <s10dal@elrepo.org> - 6.15.0-0.rc2
+- Updated with the 6.15-rc2 source tarball.
+- Removed: CONFIG_CRC16=y
+- Removed: CONFIG_HAVE_KVM_IRQ_BYPASS=y
+- Removed: CONFIG_IRQ_BYPASS_MANAGER=y
+- Removed: CONFIG_LIBCRC32C=m
+- Added: CONFIG_CRC16=m
+- Added: CONFIG_HAVE_KVM_IRQ_BYPASS=m
+- Added: CONFIG_IRQ_BYPASS_MANAGER=m
 
-* Sun Mar 02 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc5
-- Updated with the 6.14-rc5 source tarball.
+* Sun Apr 06 2025 S.Tindall <s10dal@elrepo.org> - 6.15.0-1.rc1
+- Updated with the 6.15-rc1 source tarball.
 
-* Sun Feb 23 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc4
-- Updated with the 6.14-rc4 source tarball.
+* Sun Apr 06 2025 S.Tindall <s10dal@elrepo.org> - 6.15.0-0.rc1
+- Updated with the 6.15-rc1 source tarball.
+- Removed: CONFIG_CC_HAS_SANE_STACKPROTECTOR=y
+- Removed: CONFIG_CRC4=m
+- Removed: CONFIG_CRC64_ROCKSOFT=y
+- Removed: CONFIG_CRYPTO_ARCH_HAVE_LIB_CHACHA=m
+- Removed: CONFIG_CRYPTO_ARCH_HAVE_LIB_CURVE25519=m
+- Removed: CONFIG_CRYPTO_ARCH_HAVE_LIB_POLY1305=m
+- Removed: CONFIG_CRYPTO_CRC64_ROCKSOFT=y
+- Removed: CONFIG_CRYPTO_CRCT10DIF=y
+- Removed: CONFIG_DRM_I2C_CH7006=m
+- Removed: CONFIG_DRM_I2C_SIL164=m
+- Removed: CONFIG_FORTIFY_SOURCE=y
+- Removed: CONFIG_GENERIC_CPU=y
+- Removed: CONFIG_GENERIC_PTDUMP=y
+- Removed: CONFIG_HARDENED_USERCOPY=y
+- Removed: CONFIG_HAVE_EISA=y
+- Removed: CONFIG_IRQ_MSI_IOMMU=y
+- Removed: CONFIG_KALLSYMS_ABSOLUTE_PERCPU=y
+- Removed: CONFIG_MLX_PLATFORM=m
+- Removed: CONFIG_PROC_PID_CPUSET=y
+- Removed: CONFIG_SCHED_DEBUG=y
+- Removed: CONFIG_VFIO_PCI_MMAP=y
+- Removed: CONFIG_X86_CMPXCHG64=y
+- Removed: CONFIG_ZBUD=y
+- Removed: CONFIG_ZSWAP_ZPOOL_DEFAULT="zbud"
+- Removed: CONFIG_ZSWAP_ZPOOL_DEFAULT_ZBUD=y
+- Added: CONFIG_ALIENWARE_WMI_LEGACY=y
+- Added: CONFIG_ALIENWARE_WMI_WMAX=y
+- Added: CONFIG_ARCH_HAS_CRC64=y
+- Added: CONFIG_ARCH_HAS_EXECMEM_ROX=y
+- Added: CONFIG_ARCH_HAS_PTDUMP=y
+- Added: CONFIG_ARCH_SUPPORTS_MSEAL_SYSTEM_MAPPINGS=y
+- Added: CONFIG_ARCH_VMLINUX_NEEDS_RELOCS=y
+- Added: CONFIG_ARCH_WANT_HUGETLB_VMEMMAP_PREINIT=y
+- Added: CONFIG_BROADCAST_TLB_FLUSH=y
+- Added: CONFIG_CC_HAS_NAMED_AS_FIXED_SANITIZERS=y
+- Added: CONFIG_CPUFREQ_ARCH_CUR_FREQ=y
+- Added: CONFIG_CRC64_ARCH=y
+- Added: CONFIG_CRYPTO_ARCH_HAVE_LIB_CHACHA=y
+- Added: CONFIG_CRYPTO_ARCH_HAVE_LIB_CURVE25519=y
+- Added: CONFIG_CRYPTO_ARCH_HAVE_LIB_POLY1305=y
+- Added: CONFIG_CRYPTO_LIB_CHACHA_INTERNAL=m
+- Added: CONFIG_CRYPTO_LIB_CURVE25519_INTERNAL=m
+- Added: CONFIG_CRYPTO_LIB_POLY1305_INTERNAL=m
+- Added: CONFIG_CXL_MCE=y
+- Added: CONFIG_DETECT_HUNG_TASK_BLOCKER=y
+- Added: CONFIG_DRM_GPUSVM=m
+- Added: CONFIG_DRM_NOUVEAU_CH7006=m
+- Added: CONFIG_DRM_NOUVEAU_SIL164=m
+- Added: CONFIG_DRM_XE_DEVMEM_MIRROR=y
+- Added: CONFIG_DRM_XE_DP_TUNNEL=y
+- Added: CONFIG_FORTIFY_SOURCE=y
+- Added: CONFIG_FUNCTION_TRACE_ARGS=y
+- Added: CONFIG_GENERIC_VDSO_DATA_STORE=y
+- Added: CONFIG_HARDENED_USERCOPY_DEFAULT_ON=y
+- Added: CONFIG_HARDENED_USERCOPY=y
+- Added: CONFIG_IIO_GTS_HELPER=m
+- Added: CONFIG_IO_URING_ZCRX=y
+- Added: CONFIG_KVFREE_RCU_BATCHED=y
+- Added: CONFIG_KVM_MMU_LOCKLESS_AGING=y
+- Added: CONFIG_LD_CAN_USE_KEEP_IN_OVERLAY=y
+- Added: CONFIG_MM_ID=y
+- Added: CONFIG_PAGE_MAPCOUNT=y
+- Added: CONFIG_SND_PCM_ELD=y
+- Added: CONFIG_SND_SOC_AMD_ACPI_MACH=m
+- Added: CONFIG_SND_SOF_SOF_HDA_SDW_BPT=m
+- Added: CONFIG_SPARSEMEM_VMEMMAP_PREINIT=y
+- Added: CONFIG_UFS_FS=m
+- Added: CONFIG_X86_CX8=y
+- Added: CONFIG_X86_DISABLED_FEATURE_CENTAUR_MCR=y
+- Added: CONFIG_X86_DISABLED_FEATURE_CYRIX_ARR=y
+- Added: CONFIG_X86_DISABLED_FEATURE_ENQCMD=y
+- Added: CONFIG_X86_DISABLED_FEATURE_FRED=y
+- Added: CONFIG_X86_DISABLED_FEATURE_IBT=y
+- Added: CONFIG_X86_DISABLED_FEATURE_K6_MTRR=y
+- Added: CONFIG_X86_DISABLED_FEATURE_LAM=y
+- Added: CONFIG_X86_DISABLED_FEATURE_SGX=y
+- Added: CONFIG_X86_DISABLED_FEATURE_USER_SHSTK=y
+- Added: CONFIG_X86_DISABLED_FEATURE_VME=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_ALWAYS=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_CMOV=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_CPUID=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_CX8=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_FPU=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_FXSR=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_LM=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_MSR=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_NOPL=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_PAE=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_XMM2=y
+- Added: CONFIG_X86_REQUIRED_FEATURE_XMM=y
+- Added: CONFIG_ZSWAP_ZPOOL_DEFAULT="zsmalloc"
+- Added: CONFIG_ZSWAP_ZPOOL_DEFAULT_ZSMALLOC=y
 
-* Mon Feb 17 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc3
-- Updated with the 6.14-rc3 source tarball.
-- Added: CONFIG_MEMTEST=y
-
-* Sun Feb 09 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc2
-- Updated with the 6.14-rc2 source tarball.
-
-* Mon Feb 03 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-1.rc1
-- Updated with the 6.14-rc1 source tarball.
-- Spec file modified: Removed perf options NO_LIBZSTD=1 and %{_datadir}/perf-core/*
-
-* Sun Feb 02 2025 S.Tindall <s10dal@elrepo.org> - 6.14.0-0.rc1
-- Updated with the 6.14-rc1 source tarball.
+* Sat Mar 22 2025 S.Tindall <s10dal@elrepo.org> - 6.14
+- Updated with the 6.14 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14]
 - Removed: CONFIG_CRC32_SLICEBY8=y
 - Removed: CONFIG_CRYPTO_CRC32C_INTEL=m
 - Removed: CONFIG_CRYPTO_CRC32_PCLMUL=m
@@ -1227,11 +1317,15 @@ fi
 - Removed: CONFIG_CRYPTO_LIB_AESGCM=m
 - Removed: CONFIG_CRYPTO_VMAC=m
 - Removed: CONFIG_HAVE_FUNCTION_GRAPH_RETVAL=y
+- Removed: CONFIG_HID_PID=y
+- Removed: CONFIG_USB_HIDDEV=y
+- Removed: CONFIG_USB_HID=y
 - Added: CONFIG_AMD_NODE=y
 - Added: CONFIG_ARCH_HAS_CRC32=y
 - Added: CONFIG_ARCH_HAS_CRC_T10DIF=y
 - Added: CONFIG_ARCH_SUPPORTS_PT_RECLAIM=y
 - Added: CONFIG_BASIC_MODVERSIONS=y
+- Added: CONFIG_BT_HCIBTUSB_AUTO_ISOC_ALT=y
 - Added: CONFIG_CEC_CORE=m
 - Added: CONFIG_CEC_NOTIFIER=y
 - Added: CONFIG_CRC32_ARCH=y
@@ -1240,13 +1334,13 @@ fi
 - Added: CONFIG_CRYPTO_LIB_AESGCM=y
 - Added: CONFIG_DRM_CLIENT_DEFAULT="fbdev"
 - Added: CONFIG_DRM_CLIENT_DEFAULT_FBDEV=y
-- Added: CONFIG_DRM_PANEL_BACKLIGHT_QUIRKS=m
 - Added: CONFIG_FUSE_IO_URING=y
 - Added: CONFIG_GENKSYMS=y
 - Added: CONFIG_HAS_SECURITY_AUDIT=y
 - Added: CONFIG_HAVE_FTRACE_GRAPH_FUNC=y
 - Added: CONFIG_HAVE_FTRACE_REGS_HAVING_PT_REGS=y
 - Added: CONFIG_HAVE_FUNCTION_GRAPH_FREGS=y
+- Added: CONFIG_HID_PID=y
 - Added: CONFIG_MHP_DEFAULT_ONLINE_TYPE_OFFLINE=y
 - Added: CONFIG_MICROCHIP_PHY_RDS_PTP=m
 - Added: CONFIG_PACKING=y
@@ -1254,6 +1348,50 @@ fi
 - Added: CONFIG_REALTEK_PHY_HWMON=y
 - Added: CONFIG_RTW88_LEDS=y
 - Added: CONFIG_SND_COMPRESS_ACCEL=y
+- Added: CONFIG_USB_HIDDEV=y
+- Added: CONFIG_USB_HID=y
+
+* Sat Mar 22 2025 S.Tindall <s10dal@elrepo.org> - 6.13.8
+- Updated with the 6.13.8 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.8]
+
+- Added: CONFIG_DRM_XE_DISPLAY=y
+- Added: CONFIG_DRM_XE_ENABLE_SCHEDTIMEOUT_LIMIT=y
+- Added: CONFIG_DRM_XE_FORCE_PROBE=""
+- Added: CONFIG_DRM_XE_JOB_TIMEOUT_MAX=10000
+- Added: CONFIG_DRM_XE_JOB_TIMEOUT_MIN=1
+- Added: CONFIG_DRM_XE=m
+- Added: CONFIG_DRM_XE_PREEMPT_TIMEOUT=640000
+- Added: CONFIG_DRM_XE_PREEMPT_TIMEOUT_MAX=10000000
+- Added: CONFIG_DRM_XE_PREEMPT_TIMEOUT_MIN=1
+- Added: CONFIG_DRM_XE_TIMESLICE_MAX=10000000
+- Added: CONFIG_DRM_XE_TIMESLICE_MIN=1
+
+* Thu Mar 13 2025 S.Tindall <s10dal@elrepo.org> - 6.13.7
+- Updated with the 6.13.7 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.7]
+
+* Fri Mar 07 2025 S.Tindall <s10dal@elrepo.org> - 6.13.6
+- Updated with the 6.13.6 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.6]
+
+* Thu Feb 27 2025 S.Tindall <s10dal@elrepo.org> - 6.13.5
+- Updated with the 6.13.5 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.5]
+
+* Fri Feb 21 2025 S.Tindall <s10dal@elrepo.org> - 6.13.4
+- Updated with the 6.13.4 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.4]
+
+* Mon Feb 17 2025 S.Tindall <s10dal@elrepo.org> - 6.13.3
+- Updated with the 6.13.3 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.3]
+- Added: CONFIG_DRM_PANEL_BACKLIGHT_QUIRKS=m
+- Added: CONFIG_MEMTEST=y
+
+* Sat Feb 08 2025 S.Tindall <s10dal@elrepo.org> - 6.13.2
+- Updated with the 6.13.2 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.13.2]
 
 * Sat Feb 01 2025 S.Tindall <s10dal@elrepo.org> - 6.13.1
 - Updated with the 6.13.1 source tarball.
