@@ -25,7 +25,7 @@
 
 # Define the version of the Linux Kernel Archive tarball.
 ### BCAT
-%global LKAver 6.15-rc2
+%global LKAver 6.15-rc4
 ### BCAT
 
 # Define the buildid, if required.
@@ -45,7 +45,7 @@
 # Set pkg_release.
 %global pkg_release 1%{?buildid}%{?dist}
 ### BCAT
-%global pkg_release 0.rc2%{?buildid}%{?dist}
+%global pkg_release 0.rc4%{?buildid}%{?dist}
 ### BCAT
 
 # Architectures upon which we can sign the kernel
@@ -187,6 +187,9 @@ BuildRequires: findutils, flex, gawk, gcc, gcc-c++, gcc-plugin-devel, git-core, 
 BuildRequires: gzip, hmaccalc, hostname, kernel-rpm-macros >= 185-9, kmod, m4, make, net-tools
 BuildRequires: patch, perl-Carp, perl-devel, perl-generators, perl-interpreter, python3-devel
 BuildRequires: redhat-rpm-config, tar, which, xz
+
+## https://access.redhat.com/solutions/7117163
+BuildRequires: libxslt <= 1.1.34-9.el9_5.1
 
 %ifarch x86_64 || aarch64
 BuildRequires: bpftool, openssl-devel
@@ -1519,6 +1522,14 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Sun Apr 27 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.0-rc4
+- Updated with the 6.15-rc4 source tarball.
+- Use a lower version of libxslt
+  https://access.redhat.com/solutions/7117163
+
+* Sun Apr 20 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.0-rc3
+- Updated with the 6.15-rc3 source tarball.
+
 * Sun Apr 13 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.0-rc2
 - Updated with the 6.15-rc2 source tarball.
 

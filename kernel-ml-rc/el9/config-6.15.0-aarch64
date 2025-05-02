@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.15.0-0.rc2.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.15.0-0.rc4.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-5)"
 CONFIG_CC_IS_GCC=y
@@ -239,9 +239,9 @@ CONFIG_LD_ORPHAN_WARN=y
 CONFIG_LD_ORPHAN_WARN_LEVEL="warn"
 CONFIG_SYSCTL=y
 CONFIG_SYSCTL_EXCEPTION_TRACE=y
+CONFIG_SYSFS_SYSCALL=y
 # CONFIG_EXPERT is not set
 CONFIG_MULTIUSER=y
-CONFIG_SYSFS_SYSCALL=y
 CONFIG_FHANDLE=y
 CONFIG_POSIX_TIMERS=y
 CONFIG_PRINTK=y
