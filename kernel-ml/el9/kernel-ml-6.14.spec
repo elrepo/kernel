@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.14.4
+%global LKAver 6.14.5
 
 # Define the buildid, if required.
 #global buildid .local
@@ -179,9 +179,6 @@ BuildRequires: findutils, flex, gawk, gcc, gcc-c++, gcc-plugin-devel, git-core, 
 BuildRequires: gzip, hmaccalc, hostname, kernel-rpm-macros >= 185-9, kmod, m4, make, net-tools
 BuildRequires: patch, perl-Carp, perl-devel, perl-generators, perl-interpreter, python3-devel
 BuildRequires: redhat-rpm-config, tar, which, xz
-
-### to workaround a known issue https://access.redhat.com/solutions/7117163
-BuildRequires: libxslt <= 1.1.34-9.el9_5.1
 
 %ifarch x86_64 || aarch64
 BuildRequires: bpftool, openssl-devel
@@ -1514,6 +1511,11 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Fri May 02 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.5-1
+- Updated with the 6.14.5 source tarball.
+- Revert libxslt to the current version.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.5]
+
 * Fri Apr 25 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.4-1
 - Updated with the 6.14.4 source tarball.
 - Use a lower version of libxslt.
