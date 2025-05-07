@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.15.0-rc4 Kernel Configuration
+# Linux/x86 6.15.0-rc5 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
 CONFIG_CC_IS_GCC=y
@@ -3742,7 +3742,8 @@ CONFIG_MT7921E=m
 CONFIG_MT7921S=m
 CONFIG_MT7921U=m
 CONFIG_MT7996E=m
-# CONFIG_MT7925E is not set
+CONFIG_MT7925_COMMON=m
+CONFIG_MT7925E=m
 # CONFIG_MT7925U is not set
 CONFIG_WLAN_VENDOR_MICROCHIP=y
 # CONFIG_WILC1000_SDIO is not set
