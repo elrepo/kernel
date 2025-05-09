@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.14.5-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.14.6-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-5)"
 CONFIG_CC_IS_GCC=y
@@ -3884,7 +3884,8 @@ CONFIG_MT7921E=m
 CONFIG_MT7921S=m
 CONFIG_MT7921U=m
 CONFIG_MT7996E=m
-# CONFIG_MT7925E is not set
+CONFIG_MT7925_COMMON=m
+CONFIG_MT7925E=m
 # CONFIG_MT7925U is not set
 CONFIG_WLAN_VENDOR_MICROCHIP=y
 CONFIG_WILC1000=m
