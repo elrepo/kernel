@@ -25,7 +25,7 @@
 
 # Define the version of the Linux Kernel Archive tarball.
 ### BCAT
-%global LKAver 6.15-rc5
+%global LKAver 6.15-rc6
 ### BCAT
 
 # Define the buildid, if required.
@@ -45,7 +45,7 @@
 # Set pkg_release.
 %global pkg_release 1%{?buildid}%{?dist}
 ### BCAT
-%global pkg_release 0.rc5%{?buildid}%{?dist}
+%global pkg_release 0.rc6%{?buildid}%{?dist}
 ### BCAT
 
 # Architectures upon which we can sign the kernel
@@ -675,8 +675,10 @@ RPM_VMLINUX_H=vmlinux.h
 # Make sure that check-headers.sh is executable.
 chmod +x tools/perf/check-headers.sh
 
+%ifarch aarch64
 ## Do not error out on the first run of make
 %{perf_make} -i all
+%endif
 
 ## Go for the real run
 %{perf_make} all
@@ -1523,6 +1525,11 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Sun May 11 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.0-rc6
+- Updated with the 6.15-rc6 source tarball.
+- Run make_perf twice on aarch64
+  [https://elrepo.org/bugs/view.php?id=1523]
+
 * Sun May 04 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.0-rc5
 - Updated with the 6.15-rc5 source tarball.
 - Reverted the version of libxslt
