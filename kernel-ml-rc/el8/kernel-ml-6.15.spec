@@ -82,9 +82,9 @@
 %define initrd_prereq  dracut >= 027
 
 # rc-specific definitions/overrides (Update rcX)
-%global LKAver 6.15-rc5
+%global LKAver 6.15-rc6
 %global pkg_version 6.15.0
-%global pkg_release 0.rc5%{?buildid}%{?dist}
+%global pkg_release 0.rc6%{?buildid}%{?dist}
 
 Name: kernel-ml
 Summary: The Linux kernel. (The core of any Linux-based operating system.)
@@ -1193,6 +1193,9 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sun May 11 2025 S.Tindall <s10dal@elrepo.org> - 6.15.0-0.rc6
+- Updated with the 6.15-rc6 source tarball.
+
 * Sun May 04 2025 S.Tindall <s10dal@elrepo.org> - 6.15.0-0.rc5
 - Updated with the 6.15-rc5 source tarball.
 - Added: CONFIG_MT7925_COMMON=m

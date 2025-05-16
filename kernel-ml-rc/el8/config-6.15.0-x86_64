@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.15.0-rc5 Kernel Configuration
+# Linux/x86 6.15.0-rc6 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
 CONFIG_CC_IS_GCC=y
@@ -5750,7 +5750,6 @@ CONFIG_MEDIA_PLATFORM_DRIVERS=y
 #
 # Sunxi media platform drivers
 #
-# CONFIG_VIDEO_SYNOPSYS_HDMIRX is not set
 
 #
 # Texas Instruments drivers
