@@ -1511,9 +1511,36 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
-* Sat May 31 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.9-1
+* Tue Jun 03 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.9-1
 - Updated with the 6.14.9 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.9]
+
+* Thu May 22 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.8-1
+- Updated with the 6.14.8 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.8]
+
+* Sun May 18 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.7-1
+- Updated with the 6.14.7 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.7]
+
+* Fri May 09 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.6-1
+- Updated with the 6.14.6 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.6]
+
+* Fri May 02 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.5-1
+- Updated with the 6.14.5 source tarball.
+- Revert libxslt to the current version.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.5]
+
+* Fri Apr 25 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.4-1
+- Updated with the 6.14.4 source tarball.
+- Use a lower version of libxslt.
+  https://access.redhat.com/solutions/7117163
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.4]
+
+* Sun Apr 20 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.3-1
+- Updated with the 6.14.3 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.3]
 
 * Wed Apr 16 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.2-2
 - Upgraded from el9 to el10
