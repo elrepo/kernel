@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.14.9
+%global LKAver 6.15.1
 
 # Define the buildid, if required.
 #global buildid .local
@@ -1420,7 +1420,7 @@ fi
 
 %files -n %{name}-tools-libs
 %{_libdir}/libcpupower.so.1
-%{_libdir}/libcpupower.so.0.0.1
+%{_libdir}/libcpupower.so.1.0.1
 
 %files -n %{name}-tools-libs-devel
 %{_includedir}/cpufreq.h
@@ -1449,6 +1449,7 @@ fi
 %{_mandir}/man1/rv-mon-wwnr.1.gz
 %{_mandir}/man1/rv-mon.1.gz
 %{_mandir}/man1/rv.1.gz
+%{_mandir}/man1/rv-mon-sched.1.gz
 
 # with_tools
 %endif
@@ -1511,6 +1512,10 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Thu Jun 05 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.1-1
+- Updated with the 6.15.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.15.1]
+
 * Tue Jun 03 2025 Akemi Yagi <toracat@elrepo.org> - 6.14.9-1
 - Updated with the 6.14.9 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.14.9]
