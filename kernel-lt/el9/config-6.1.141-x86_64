@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.1.140-1.el9.elrepo.x86_64 Kernel Configuration
+# Linux/x86 6.1.141-1.el9.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-5)"
 CONFIG_CC_IS_GCC=y
@@ -1148,7 +1148,6 @@ CONFIG_SKB_EXTENSIONS=y
 CONFIG_PACKET=y
 CONFIG_PACKET_DIAG=y
 CONFIG_UNIX=y
-CONFIG_UNIX_SCM=y
 CONFIG_AF_UNIX_OOB=y
 CONFIG_UNIX_DIAG=y
 CONFIG_TLS=m
