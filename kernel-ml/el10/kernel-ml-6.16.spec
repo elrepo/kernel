@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.15.9
+%global LKAver 6.16.1
 
 # Define the buildid, if required.
 #global buildid .local
@@ -1112,7 +1112,10 @@ rm -fr %{buildroot}%{_libdir}/traceevent
 %if %{with_tools}
 %{__make} -s -C tools/power/cpupower DESTDIR=%{buildroot} libdir=%{_libdir} mandir=%{_mandir} CPUFREQ_BENCH=false install
 
-rm -f %{buildroot}%{_libdir}/*.{a,la}
+%{__rm} -f $RPM_BUILD_ROOT%{_libdir}/*.{a,la}
+%{__rm} -f $RPM_BUILD_ROOT%{_sysconfdir}/cpupower-service.conf
+%{__rm} -f $RPM_BUILD_ROOT%{_libexecdir}/cpupower
+%{__rm} -f $RPM_BUILD_ROOT%{_unitdir}/cpupower.service
 
 %find_lang cpupower
 mv cpupower.lang ../
@@ -1512,9 +1515,13 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
-* Fri Aug 01 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.9-1
-- Updated with the 6.15.9 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.15.9]
+* Fri Aug 15 2025 Akemi Yagi <toracat@elrepo.org> - 6.16.1-1
+- Updated with the 6.16.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.16.1]
+
+* Sun Jul 27 2025 Akemi Yagi <toracat@elrepo.org> - 6.16.0-1
+- Updated with the 6.16 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.16]
 
 * Thu Jul 24 2025 Akemi Yagi <toracat@elrepo.org> - 6.15.8-1
 - Updated with the 6.15.8 source tarball.
