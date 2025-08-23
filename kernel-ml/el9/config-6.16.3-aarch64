@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.16.2-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.16.3-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-5)"
 CONFIG_CC_IS_GCC=y
@@ -2353,7 +2353,6 @@ CONFIG_ARM_SMCCC_SOC_ID=y
 #
 # Tegra firmware driver
 #
-# CONFIG_TEGRA_IVC is not set
 # end of Tegra firmware driver
 # end of Firmware Drivers
 
