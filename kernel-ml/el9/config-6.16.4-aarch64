@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.16.3-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.16.4-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-5)"
 CONFIG_CC_IS_GCC=y
@@ -292,7 +292,6 @@ CONFIG_KEXEC=y
 CONFIG_KEXEC_FILE=y
 CONFIG_KEXEC_SIG=y
 CONFIG_KEXEC_IMAGE_VERIFY_SIG=y
-# CONFIG_KEXEC_HANDOVER is not set
 CONFIG_CRASH_DUMP=y
 # CONFIG_CRASH_DM_CRYPT is not set
 # end of Kexec and crash features
