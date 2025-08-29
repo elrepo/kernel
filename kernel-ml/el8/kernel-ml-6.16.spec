@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.16.3
+%define LKAver 6.16.4
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,6 +1191,13 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Thu Aug 28 2025 S.Tindall <s10dal@elrepo.org> - 6.16.4
+- Updated with the 6.16.4 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.16.4]
+- Added: CONFIG_AMD_HSMP_ACPI=m
+- Added: CONFIG_AMD_HSMP=m
+- Added: CONFIG_AMD_HSMP_PLAT=m
+
 * Sat Aug 23 2025 S.Tindall <s10dal@elrepo.org> - 6.16.3
 - Updated with the 6.16.3 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.16.3]
