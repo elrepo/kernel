@@ -1,10 +1,10 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.4.296 Kernel Configuration
+# Linux/x86 5.4.297 Kernel Configuration
 #
 
 #
-# Compiler: gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-26)
+# Compiler: gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-28)
 #
 CONFIG_CC_IS_GCC=y
 CONFIG_GCC_VERSION=80500
@@ -7610,7 +7610,7 @@ CONFIG_ORANGEFS_FS=m
 # CONFIG_AFFS_FS is not set
 # CONFIG_ECRYPT_FS is not set
 # CONFIG_HFS_FS is not set
-# CONFIG_HFSPLUS_FS is not set
+CONFIG_HFSPLUS_FS=m
 # CONFIG_BEFS_FS is not set
 # CONFIG_BFS_FS is not set
 # CONFIG_EFS_FS is not set
