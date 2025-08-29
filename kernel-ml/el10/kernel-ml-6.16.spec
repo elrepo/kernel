@@ -24,10 +24,12 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.16.3
+%global LKAver 6.16.4
 
 # Define the buildid, if required.
 #global buildid .local
+
+%global buildid .test
 
 # Determine the sublevel number and set pkg_version.
 %define sublevel %(echo %{LKAver} | %{__awk} -F\. '{ print $3 }')
@@ -1515,6 +1517,13 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Fri Aug 29 2025 Akemi Yagi <toracat@elrepo.org> - 6.16.4-1.test
+- Config reverted to 6.16.3
+
+* Thu Aug 28 2025 Akemi Yagi <toracat@elrepo.org> - 6.16.4-1
+- Updated with the 6.16.4 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.16.4]
+
 * Sat Aug 23 2025 Akemi Yagi <toracat@elrepo.org> - 6.16.3-1
 - Updated with the 6.16.3 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.16.3]
