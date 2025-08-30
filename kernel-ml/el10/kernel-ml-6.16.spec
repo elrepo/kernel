@@ -29,6 +29,7 @@
 # Define the buildid, if required.
 #global buildid .local
 
+
 # Determine the sublevel number and set pkg_version.
 %define sublevel %(echo %{LKAver} | %{__awk} -F\. '{ print $3 }')
 %if "%{sublevel}" == ""
@@ -38,7 +39,7 @@
 %endif
 
 # Set pkg_release.
-%global pkg_release 1%{?buildid}%{?dist}
+%global pkg_release 1.1%{?buildid}%{?dist}
 
 ### BCAT
 # Further investigation is required before these features
@@ -1515,6 +1516,9 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Fri Aug 29 2025 Akemi Yagi <toracat@elrepo.org> - 6.16.4-1.1
+- Config reverted to 6.16.3
+
 * Thu Aug 28 2025 Akemi Yagi <toracat@elrepo.org> - 6.16.4-1
 - Updated with the 6.16.4 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.16.4]
