@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.298
+%define LKAver 5.4.299
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1147,6 +1147,10 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Tue Sep 09 2025 S.Tindall <s10dal@elrepo.org> - 5.4.299-1
+- Updated with the 5.4.299 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.299]
+
 * Thu Sep 04 2025 S.Tindall <s10dal@elrepo.org> - 5.4.298-1
 - Updated with the 5.4.298 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.298]
