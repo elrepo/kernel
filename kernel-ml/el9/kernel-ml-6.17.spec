@@ -181,7 +181,7 @@ BuildRequires: patch, perl-Carp, perl-devel, perl-generators, perl-interpreter, 
 BuildRequires: redhat-rpm-config, tar, which, xz
 
 %ifarch x86_64 || aarch64
-BuildRequires: bpftool, openssl-devel
+BuildRequires: bpftool, openssl-devel, clang
 %endif
 
 %if %{with_headers}
@@ -205,6 +205,8 @@ BuildRequires: opencsd-devel >= 1.0.0
 %if %{with_tools}
 BuildRequires: asciidoc, gettext, libcap-devel, libcap-ng-devel, libnl3-devel
 BuildRequires: ncurses-devel, openssl-devel, pciutils-devel
+BuildRequires: elfutils-debuginfod-client-devel, llvm-devel, capstone-devel, 
+BuildRequires: libpfm-devel, libtracefs-devel 
 %endif
 
 %if %{with_bpftool}
