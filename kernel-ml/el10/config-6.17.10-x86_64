@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.17.9-1.el10.elrepo.x86_64 Kernel Configuration
+# Linux/x86 6.17.10-1.el10.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 14.3.1 20250617 (Red Hat 14.3.1-2)"
 CONFIG_CC_IS_GCC=y
@@ -2999,7 +2999,7 @@ CONFIG_BONDING=m
 CONFIG_DUMMY=m
 CONFIG_WIREGUARD=m
 # CONFIG_WIREGUARD_DEBUG is not set
-# CONFIG_OVPN is not set
+CONFIG_OVPN=m
 # CONFIG_EQUALIZER is not set
 CONFIG_NET_FC=y
 CONFIG_IFB=m
