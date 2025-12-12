@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.17.11
+%define LKAver 6.18.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,14 +1191,112 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Sat Dec 06 2025 S.Tindall <s10dal@elrepo.org> - 6.17.11-1
-- Updated with the 6.17.11 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.17.11]
+* Fri Dec 12 2025 S.Tindall <s10dal@elrepo.org> - 6.18.1-1
+- Updated with the 6.18.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.18.1]
+- Added: CONFIG_IP6_NF_FILTER=m
+- Added: CONFIG_IP6_NF_IPTABLES_LEGACY=m
+- Added: CONFIG_IP6_NF_MANGLE=m
+- Added: CONFIG_IP_NF_FILTER=m
+- Added: CONFIG_IP_NF_IPTABLES_LEGACY=m
+- Added: CONFIG_IP_NF_MANGLE=m
+- Added: CONFIG_NETFILTER_XTABLES_LEGACY=y
 
-* Mon Dec 01 2025 S.Tindall <s10dal@elrepo.org> - 6.17.10-1
-- Updated with the 6.17.10 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.17.10]
+* Sun Nov 30 2025 S.Tindall <s10dal@elrepo.org> - 6.18.0-1
+- Updated with the 6.18 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.18]
+- Removed: CONFIG_ARCH_SUPPORTS_CFI_CLANG=y
+- Removed: CONFIG_AS_AVX512=y
+- Removed: CONFIG_AS_GFNI=y
+- Removed: CONFIG_AS_VAES=y
+- Removed: CONFIG_AS_VPCLMULQDQ=y
+- Removed: CONFIG_BCACHEFS_FS=m
+- Removed: CONFIG_BCACHEFS_SIX_OPTIMISTIC_SPIN=y
+- Removed: CONFIG_CRYPTO_ARCH_HAVE_LIB_BLAKE2S=y
+- Removed: CONFIG_CRYPTO_ARCH_HAVE_LIB_CHACHA=y
+- Removed: CONFIG_CRYPTO_ARCH_HAVE_LIB_CURVE25519=y
+- Removed: CONFIG_CRYPTO_ARCH_HAVE_LIB_POLY1305=y
+- Removed: CONFIG_CRYPTO_BLAKE2S_X86=y
+- Removed: CONFIG_CRYPTO_CHACHA20_X86_64=m
+- Removed: CONFIG_CRYPTO_CURVE25519=m
+- Removed: CONFIG_CRYPTO_CURVE25519_X86=m
+- Removed: CONFIG_CRYPTO_LIB_BLAKE2S_GENERIC=y
+- Removed: CONFIG_CRYPTO_LIB_CHACHA_GENERIC=m
+- Removed: CONFIG_CRYPTO_LIB_CURVE25519_GENERIC=m
+- Removed: CONFIG_CRYPTO_LIB_CURVE25519_INTERNAL=m
+- Removed: CONFIG_CRYPTO_LIB_POLY1305_GENERIC=m
+- Removed: CONFIG_CRYPTO_LIB_POLY1305_RSIZE=11
+- Removed: CONFIG_CRYPTO_POLY1305_X86_64=m
+- Removed: CONFIG_FB_HYPERV=m
+- Removed: CONFIG_FB_IOMEM_HELPERS_DEFERRED=y
+- Removed: CONFIG_GENERIC_VDSO_DATA_STORE=y
+- Removed: CONFIG_GENERIC_VDSO_TIME_NS=y
+- Removed: CONFIG_HID_HYPERV_MOUSE=m
+- Removed: CONFIG_HYPERV_BALLOON=m
+- Removed: CONFIG_HYPERV_IOMMU=y
+- Removed: CONFIG_HYPERV_KEYBOARD=m
+- Removed: CONFIG_HYPERV=m
+- Removed: CONFIG_HYPERV_NET=m
+- Removed: CONFIG_HYPERV_STORAGE=m
+- Removed: CONFIG_HYPERV_TIMER=y
+- Removed: CONFIG_HYPERV_UTILS=m
+- Removed: CONFIG_HYPERV_VSOCKETS=m
+- Removed: CONFIG_KVM_GENERIC_PRIVATE_MEM=y
+- Removed: CONFIG_KVM_PRIVATE_MEM=y
+- Removed: CONFIG_KVM_XFER_TO_GUEST_WORK=y
+- Removed: CONFIG_MANA_INFINIBAND=m
+- Removed: CONFIG_MDIO_BUS=y
+- Removed: CONFIG_MICREL_KS8995MA=m
+- Removed: CONFIG_MICROSOFT_MANA=m
+- Removed: CONFIG_MIN_HEAP=y
+- Removed: CONFIG_PANIC_ON_OOPS_VALUE=1
+- Removed: CONFIG_PCI_HYPERV_INTERFACE=m
+- Removed: CONFIG_PCI_HYPERV=m
+- Removed: CONFIG_RTC_DRV_GOLDFISH=m
+- Removed: CONFIG_SCHED_CLUSTER=y
+- Removed: CONFIG_SCHED_MC=y
+- Removed: CONFIG_SCHED_SMT=y
+- Removed: CONFIG_SCTP_COOKIE_HMAC_MD5=y
+- Removed: CONFIG_SCTP_COOKIE_HMAC_SHA1=y
+- Removed: CONFIG_SCTP_DEFAULT_COOKIE_HMAC_SHA1=y
+- Removed: CONFIG_SMC_DIAG=m
+- Removed: CONFIG_SMC=m
+- Removed: CONFIG_UIO_HV_GENERIC=m
+- Removed: CONFIG_X86_64_SMP=y
+- Removed: CONFIG_X86_DISABLED_FEATURE_FRED=y
+- Removed: CONFIG_XEN_SAVE_RESTORE=y
+- Removed: CONFIG_ZPOOL=y
+- Removed: CONFIG_ZSWAP_ZPOOL_DEFAULT="zsmalloc"
+- Removed: CONFIG_ZSWAP_ZPOOL_DEFAULT_ZSMALLOC=y
+- Added: CONFIG_ARCH_SUPPORTS_CFI=y
+- Added: CONFIG_ARCH_SUPPORTS_SCHED_CLUSTER=y
+- Added: CONFIG_ARCH_SUPPORTS_SCHED_MC=y
+- Added: CONFIG_ARCH_SUPPORTS_SCHED_SMT=y
+- Added: CONFIG_CRYPTO_LIB_BLAKE2S_ARCH=y
+- Added: CONFIG_CRYPTO_LIB_CHACHA_ARCH=y
+- Added: CONFIG_CRYPTO_LIB_CURVE25519_ARCH=y
+- Added: CONFIG_CRYPTO_LIB_CURVE25519_GENERIC=y
+- Added: CONFIG_CRYPTO_LIB_MD5=y
+- Added: CONFIG_CRYPTO_LIB_POLY1305_ARCH=y
+- Added: CONFIG_CRYPTO_LIB_POLY1305_GENERIC=y
+- Added: CONFIG_CRYPTO_LIB_POLY1305_RSIZE=11
+- Added: CONFIG_FIND_NORMAL_PAGE=y
+- Added: CONFIG_HAVE_GENERIC_TIF_BITS=y
+- Added: CONFIG_HAVE_GIGANTIC_FOLIOS=y
+- Added: CONFIG_HAVE_KVM_ARCH_GMEM_POPULATE=y
+- Added: CONFIG_KVM_GUEST_MEMFD=y
+- Added: CONFIG_LIBETH_XDP=m
+- Added: CONFIG_LIBIE_FWLOG=m
+- Added: CONFIG_MD_BITMAP=y
+- Added: CONFIG_MDIO_BUS=y
 - Added: CONFIG_OVPN=m
+- Added: CONFIG_RTC_DRV_GOLDFISH=m
+- Added: CONFIG_SCHED_CLUSTER=y
+- Added: CONFIG_SCHED_MC=y
+- Added: CONFIG_SCHED_SMT=y
+- Added: CONFIG_SCTP_DEFAULT_COOKIE_HMAC_SHA256=y
+- Added: CONFIG_VIRT_XFER_TO_GUEST_WORK=y
+- Added: CONFIG_X86_FRED=y
 
 * Mon Nov 24 2025 S.Tindall <s10dal@elrepo.org> - 6.17.9-1
 - Updated with the 6.17.9 source tarball.
