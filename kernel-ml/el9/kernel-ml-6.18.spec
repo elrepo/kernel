@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.17.11
+%global LKAver 6.18.1
 
 # Define the buildid, if required.
 #global buildid .local
@@ -205,6 +205,8 @@ BuildRequires: opencsd-devel >= 1.0.0
 %if %{with_tools}
 BuildRequires: asciidoc, gettext, libcap-devel, libcap-ng-devel, libnl3-devel
 BuildRequires: ncurses-devel, openssl-devel, pciutils-devel
+BuildRequires: llvm-devel
+BuildRequires: clang-devel
 %endif
 
 %if %{with_bpftool}
@@ -1458,6 +1460,7 @@ fi
 %{_mandir}/man8/bpftool-feature.8.gz
 %{_mandir}/man8/bpftool-btf.8.gz
 %{_mandir}/man8/bpftool-struct_ops.8.gz
+%{_mandir}/man8/bpftool-token.8.gz
 %endif
 
 # Empty meta-package.
@@ -1519,13 +1522,13 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
-* Sat Dec 06 2025 Akemi Yagi <toracat@elrepo.org> - 6.17.11-1
-- Updated with the 6.17.11 source tarball.
-  [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.17.11]
+* Fri Dec 12 2025 Akemi Yagi <toracat@elrepo.org> - 6.18.1-1
+- Updated with the 6.18.1 source tarball.
+  [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.18.1]
 
-* Mon Dec 01 2025 Akemi Yagi <toracat@elrepo.org> - 6.17.10-1
-- Updated with the 6.17.10 source tarball.
-  [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.17.10]
+* Sun Nov 30 2025 Akemi Yagi <toracat@elrepo.org> - 6.18.0-1
+- Updated with the 6.18 source tarball.
+  [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.18]
 
 * Wed Nov 26 2025 Akemi Yagi <toracat@elrepo.org> - 6.17.9-2
 - Enabled OVPN
