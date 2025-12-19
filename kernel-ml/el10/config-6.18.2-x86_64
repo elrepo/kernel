@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.18.1-1.el10.elrepo.x86_64 Kernel Configuration
+# Linux/x86 6.18.2-1.el10.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 14.3.1 20250617 (Red Hat 14.3.1-2)"
 CONFIG_CC_IS_GCC=y
@@ -7755,6 +7755,7 @@ CONFIG_SND_SOC_MT6351=m
 CONFIG_SND_SOC_MT6358=m
 CONFIG_SND_SOC_MT6660=m
 CONFIG_SND_SOC_NAU8315=m
+# CONFIG_SND_SOC_NAU8325 is not set
 CONFIG_SND_SOC_NAU8540=m
 CONFIG_SND_SOC_NAU8810=m
 CONFIG_SND_SOC_NAU8821=m
