@@ -39,7 +39,7 @@
 %endif
 
 # Set pkg_release.
-%global pkg_release 1%{?buildid}%{?dist}
+%global pkg_release 2%{?buildid}%{?dist}
 
 ### BCAT
 # Further investigation is required before these features
@@ -1518,6 +1518,10 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Wed Dec 24 2025 Akemi Yagi <toracat@elrepo.org> - 6.18.2-2
+- Hyper-V related kernel optioned enabled
+  [https://elrepo.org/bugs/view.php?id=1577]
+
 * Thu Dec 18 2025 Akemi Yagi <toracat@elrepo.org> - 6.18.2-1
 - Updated with the 6.18.2 source tarball.
   [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.18.2]
