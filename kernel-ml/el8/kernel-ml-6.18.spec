@@ -72,7 +72,7 @@
 %endif
 
 # Set pkg_release.
-%define pkg_release 1%{?dist}%{?buildid}
+%define pkg_release 2%{?dist}%{?buildid}
 
 %define KVERREL %{pkg_version}-%{pkg_release}.%{_target_cpu}
 
@@ -1191,6 +1191,17 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Tue Dec 23 2025 S.Tindall <s10dal@elrepo.org> - 6.18.2-2
+- Updated with the 6.18.2 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.18.2]
+- Added: CONFIG_HYPERV_IOMMU=y
+- Added: CONFIG_HYPERV_KEYBOARD=m
+- Added: CONFIG_HYPERV_NET=m
+- Added: CONFIG_HYPERV_STORAGE=m
+- Added: CONFIG_HYPERV_TIMER=y
+- Added: CONFIG_HYPERV_VMBUS=m
+- Added: CONFIG_HYPERV=y
+
 * Thu Dec 18 2025 S.Tindall <s10dal@elrepo.org> - 6.18.2-1
 - Updated with the 6.18.2 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.18.2]
