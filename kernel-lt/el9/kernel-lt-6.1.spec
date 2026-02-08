@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.1.161
+%global LKAver 6.1.162
 
 # Define the buildid, if required.
 #global buildid .local
@@ -1500,6 +1500,10 @@ fi
 %kernel_lt_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Fri Feb 06 2026 Akemi Yagi <toracat@elrepo.org> - 6.1.162
+- Updated with the 6.1.162 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.162]
+
 * Sat Jan 17 2026 Akemi Yagi <toracat@elrepo.org> - 6.1.161
 - Updated with the 6.1.161 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.161]
