@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.4.302
+%define LKAver 5.15.199
 
 # Define the buildid, if required.
 #define buildid .local
@@ -635,8 +635,6 @@ fi
 %{__cp} -a --parents arch/x86/boot/string.h $RPM_BUILD_ROOT/lib/modules/$KernelVer/build/
 %{__cp} -a --parents arch/x86/entry/syscalls/syscall_32.tbl $RPM_BUILD_ROOT/lib/modules/$KernelVer/build/
 %{__cp} -a --parents arch/x86/entry/syscalls/syscall_64.tbl $RPM_BUILD_ROOT/lib/modules/$KernelVer/build/
-%{__cp} -a --parents arch/x86/entry/syscalls/syscallhdr.sh $RPM_BUILD_ROOT/lib/modules/$KernelVer/build/
-%{__cp} -a --parents arch/x86/entry/syscalls/syscalltbl.sh $RPM_BUILD_ROOT/lib/modules/$KernelVer/build/
 %{__cp} -a --parents arch/x86/purgatory/entry64.S $RPM_BUILD_ROOT/lib/modules/$KernelVer/build/
 %{__cp} -a --parents arch/x86/purgatory/purgatory.c $RPM_BUILD_ROOT/lib/modules/$KernelVer/build/
 %{__cp} -a --parents arch/x86/purgatory/setup-x86_64.S $RPM_BUILD_ROOT/lib/modules/$KernelVer/build/
@@ -1059,6 +1057,7 @@ fi
 %{_bindir}/lsgpio
 %{_bindir}/gpio-hammer
 %{_bindir}/gpio-event-mon
+%{_bindir}/gpio-watch
 %{_bindir}/kvm_stat
 %config(noreplace) %{_sysconfdir}/sysconfig/cpupower
 %{_unitdir}/cpupower.service
@@ -1082,7 +1081,7 @@ fi
 %files -n bpftool
 %{_sbindir}/bpftool
 %{_sysconfdir}/bash_completion.d/bpftool
-%{_mandir}/man7/bpf-helpers.7.gz
+# %%{_mandir}/man7/bpf-helpers.7.gz
 %{_mandir}/man8/bpftool*
 %endif
 
@@ -1147,6 +1146,18 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Fri Feb 06 2026 S.Tindall <s10dal@elrepo.org> - 5.15.199
+- Updated with the 5.15.199 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.199]
+
+* Thu Feb 05 2026 Akemi Yagi <toracat@elrepo.org> - 5.15.198
+- Updated with the 5.15.198 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.198]
+
+* Tue Dec 16 2025 Akemi Yagi <toracat@elrepo.org> - 5.15.197
+- Updated with the 5.15.197 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.197]
+
 * Wed Dec 03 2025 S.Tindall <s10dal@elrepo.org> - 5.4.302-1
 - Updated with the 5.4.302 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.302]
