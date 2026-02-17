@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.18.10
+%define LKAver 6.19.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,9 +1191,54 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Wed Feb 11 2026 S.Tindall <s10dal@elrepo.org> - 6.18.10-1
-- Updated with the 6.18.10 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.18.10]
+* Mon Feb 16 2026 S.Tindall <s10dal@elrepo.org> - 6.19.1-1
+- Updated with the 6.19.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.19.1]
+
+* Sun Feb 08 2026 S.Tindall <s10dal@elrepo.org> - 6.19.0-1
+- Updated with the 6.19 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.19]
+- Removed: CONFIG_ACPI_WMI=m
+- Removed: CONFIG_CRYPTO_ANSI_CPRNG=m
+- Removed: CONFIG_CRYPTO_POLYVAL_CLMUL_NI=m
+- Removed: CONFIG_CRYPTO_POLYVAL=m
+- Removed: CONFIG_EDAC_LEGACY_SYSFS=y
+- Removed: CONFIG_IOMMU_IO_PGTABLE=y
+- Removed: CONFIG_TCP_SIGPOOL=y
+- Added: CONFIG_ACPI_WMI=m
+- Added: CONFIG_ASUS_WMI_DEPRECATED_ATTRS=y
+- Added: CONFIG_BOOTPARAM_HUNG_TASK_PANIC=0
+- Added: CONFIG_CMDLINE_LOG_WRAP_IDEAL_LEN=1021
+- Added: CONFIG_CRYPTO_DF80090A=y
+- Added: CONFIG_CRYPTO_LIB_BLAKE2B=m
+- Added: CONFIG_CRYPTO_LIB_POLYVAL_ARCH=y
+- Added: CONFIG_CRYPTO_LIB_POLYVAL=m
+- Added: CONFIG_CRYPTO_LIB_SHA3=y
+- Added: CONFIG_DYNAMIC_FTRACE_WITH_JMP=y
+- Added: CONFIG_GENERIC_PT=y
+- Added: CONFIG_HAVE_DYNAMIC_FTRACE_WITH_JMP=y
+- Added: CONFIG_HAVE_KLP_BUILD=y
+- Added: CONFIG_HAVE_UNWIND_USER_FP=y
+- Added: CONFIG_IOMMU_PT_AMDV1=y
+- Added: CONFIG_IOMMU_PT_VTDSS=y
+- Added: CONFIG_IOMMU_PT_X86_64=y
+- Added: CONFIG_IOMMU_PT=y
+- Added: CONFIG_KLP_BUILD=y
+- Added: CONFIG_NET_VENDOR_MUCSE=y
+- Added: CONFIG_PCI_IDE=y
+- Added: CONFIG_PCI_TSM=y
+- Added: CONFIG_RAMDAX=m
+- Added: CONFIG_SECURITY_SELINUX_AVC_HASH_BITS=9
+- Added: CONFIG_SND_SOC_SDCA_FDL=y
+- Added: CONFIG_SND_SOC_SDW_UTILS=m
+- Added: CONFIG_SND_SOC_SOF_INTEL_NVL=m
+- Added: CONFIG_SND_SOC_SOF_NOVALAKE=m
+- Added: CONFIG_STMMAC_LIBPCI=m
+- Added: CONFIG_TRACE_SYSCALL_BUF_SIZE_DEFAULT=63
+- Added: CONFIG_TRANSPARENT_HUGEPAGE_SHMEM_HUGE_NEVER=y
+- Added: CONFIG_TRANSPARENT_HUGEPAGE_TMPFS_HUGE_NEVER=y
+- Added: CONFIG_TSM=y
+- Added: CONFIG_UNWIND_USER=y
 
 * Fri Feb 06 2026 S.Tindall <s10dal@elrepo.org> - 6.18.9-1
 - Updated with the 6.18.9 source tarball.
