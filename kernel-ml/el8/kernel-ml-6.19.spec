@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 6.19.5
+%define LKAver 6.19.6
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,6 +1191,10 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Wed Mar 04 2026 S.Tindall <s10dal@elrepo.org> - 6.19.6-1
+- Updated with the 6.19.6 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.19.6]
+
 * Fri Feb 27 2026 S.Tindall <s10dal@elrepo.org> - 6.19.5-1
 - Updated with the 6.19.5 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.19.5]
