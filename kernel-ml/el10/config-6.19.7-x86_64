@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 6.19.6-1.el10.elrepo.x86_64 Kernel Configuration
+# Linux/x86 6.19.7-1.el10.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 14.3.1 20250617 (Red Hat 14.3.1-2)"
 CONFIG_CC_IS_GCC=y
@@ -2261,9 +2261,9 @@ CONFIG_PCI_SW_SWITCHTEC=m
 # CONFIG_PCI_PWRCTRL_SLOT is not set
 # CONFIG_PCI_PWRCTRL_TC9563 is not set
 CONFIG_CXL_BUS=y
-CONFIG_CXL_PCI=y
+CONFIG_CXL_PCI=m
 CONFIG_CXL_MEM_RAW_COMMANDS=y
-CONFIG_CXL_ACPI=y
+CONFIG_CXL_ACPI=m
 CONFIG_CXL_PMEM=m
 CONFIG_CXL_MEM=m
 # CONFIG_CXL_FEATURES is not set
@@ -10080,7 +10080,7 @@ CONFIG_IDLE_INJECT=y
 # Performance monitor support
 #
 # CONFIG_DWC_PCIE_PMU is not set
-CONFIG_CXL_PMU=y
+CONFIG_CXL_PMU=m
 # end of Performance monitor support
 
 CONFIG_RAS=y
