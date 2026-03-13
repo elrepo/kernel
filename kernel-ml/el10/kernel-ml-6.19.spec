@@ -25,7 +25,7 @@
 
 # Define the version of the Linux Kernel Archive tarball.
 
-%global LKAver 6.19.7
+%global LKAver 6.19.8
 
 # Define the buildid, if required.
 #global buildid .local
@@ -1518,6 +1518,10 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Fri Mar 13 2026 Akemi Yagi <toracat@elrepo.org> - 6.19.8-1
+- Updated with the 6.19.8 source tarball.
+  [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.19.8]
+
 * Thu Mar 12 2026 Akemi Yagi <toracat@elrepo.org> - 6.19.7-1
 - Updated with the 6.19.7 source tarball.
   [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.19.7]
