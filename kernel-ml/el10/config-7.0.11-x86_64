@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 7.0.10-1.el10.elrepo.x86_64 Kernel Configuration
+# Linux/x86 7.0.11-1.el10.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 14.3.1 20251022 (Red Hat 14.3.1-4)"
 CONFIG_CC_IS_GCC=y
@@ -4940,7 +4940,6 @@ CONFIG_GPIO_VIRTIO=m
 # CONFIG_GPIO_VIRTUSER is not set
 # end of GPIO Debugging utilities
 
-CONFIG_DEV_SYNC_PROBE=m
 # CONFIG_W1 is not set
 CONFIG_POWER_RESET=y
 CONFIG_POWER_RESET_GPIO=y
