@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.0.12
+%define LKAver 7.1.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,10 +1191,100 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Tue Jun 09 2026 S.Tindall <s10dal@elrepo.org> - 7.0.12-1
-- Updated with the 7.0.12 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.0.12]
-- Added: CONFIG_BT_INTEL_PCIE=m
+* Fri Jun 19 2026 S.Tindall <s10dal@elrepo.org> - 7.1.1-1
+- Updated with the 7.1.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.1.1]
+
+* Sun Jun 14 2026 S.Tindall <s10dal@elrepo.org> - 7.1.0-1
+- Updated with the 7.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.1]
+- Removed: CONFIG_6PACK=m
+- Removed: CONFIG_ACENIC=m
+- Removed: CONFIG_ACPI_PLATFORM_PROFILE=m
+- Removed: CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE=y
+- Removed: CONFIG_ATM_CLIP=m
+- Removed: CONFIG_ATM_LANE=m
+- Removed: CONFIG_AX25_DAMA_SLAVE=y
+- Removed: CONFIG_AX25=m
+- Removed: CONFIG_BAYCOM_PAR=m
+- Removed: CONFIG_BAYCOM_SER_FDX=m
+- Removed: CONFIG_BAYCOM_SER_HDX=m
+- Removed: CONFIG_BPQETHER=m
+- Removed: CONFIG_CLOCKSOURCE_WATCHDOG_MAX_SKEW_US=100
+- Removed: CONFIG_CRYPTO_DES3_EDE_X86_64=m
+- Removed: CONFIG_CRYPTO_GHASH_CLMUL_NI_INTEL=m
+- Removed: CONFIG_CRYPTO_GHASH=y
+- Removed: CONFIG_CRYPTO_LIB_POLYVAL_ARCH=y
+- Removed: CONFIG_CRYPTO_LIB_POLYVAL=m
+- Removed: CONFIG_CRYPTO_LIB_SM3=m
+- Removed: CONFIG_CRYPTO_MICHAEL_MIC=m
+- Removed: CONFIG_CRYPTO_RNG_DEFAULT=y
+- Removed: CONFIG_CRYPTO_SM3_AVX_X86_64=m
+- Removed: CONFIG_CRYPTO_SM3_GENERIC=m
+- Removed: CONFIG_HAMACHI=m
+- Removed: CONFIG_HAMRADIO=y
+- Removed: CONFIG_INFINIBAND_OPA_VNIC=m
+- Removed: CONFIG_ISDN_CAPI=y
+- Removed: CONFIG_ISDN=y
+- Removed: CONFIG_MDIO_BUS=y
+- Removed: CONFIG_MISDN_AVMFRITZ=m
+- Removed: CONFIG_MISDN_DSP=m
+- Removed: CONFIG_MISDN_HDLC=m
+- Removed: CONFIG_MISDN_HFCMULTI=m
+- Removed: CONFIG_MISDN_HFCPCI=m
+- Removed: CONFIG_MISDN_HFCUSB=m
+- Removed: CONFIG_MISDN_INFINEON=m
+- Removed: CONFIG_MISDN_IPAC=m
+- Removed: CONFIG_MISDN_ISAR=m
+- Removed: CONFIG_MISDN_L1OIP=m
+- Removed: CONFIG_MISDN=m
+- Removed: CONFIG_MISDN_NETJET=m
+- Removed: CONFIG_MISDN_SPEEDFAX=m
+- Removed: CONFIG_MISDN_W6692=m
+- Removed: CONFIG_MKISS=m
+- Removed: CONFIG_MULTIPLEXER=m
+- Removed: CONFIG_NETROM=m
+- Removed: CONFIG_NET_VENDOR_ALTEON=y
+- Removed: CONFIG_NET_VENDOR_PACKET_ENGINES=y
+- Removed: CONFIG_NF_CT_PROTO_UDPLITE=y
+- Removed: CONFIG_PHY_CAN_TRANSCEIVER=m
+- Removed: CONFIG_PHY_INTEL_LGM_EMMC=m
+- Removed: CONFIG_PHY_PACKAGE=m
+- Removed: CONFIG_POLYNOMIAL=m
+- Removed: CONFIG_ROSE=m
+- Removed: CONFIG_SND_SOC_AMD_RPL_ACP6x=m
+- Removed: CONFIG_XOR_BLOCKS=m
+- Removed: CONFIG_YAM=m
+- Removed: CONFIG_YELLOWFIN=m
+- Added: CONFIG_ACPI_PLATFORM_PROFILE=y
+- Added: CONFIG_ARCH_WANTS_CLOCKSOURCE_READ_INLINE=y
+- Added: CONFIG_CC_MS_EXTENSIONS="-fms-extensions"
+- Added: CONFIG_CRYPTO_ACOMP=m
+- Added: CONFIG_CRYPTO_LIB_AES_CBC_MACS=m
+- Added: CONFIG_CRYPTO_LIB_GF128HASH_ARCH=y
+- Added: CONFIG_CRYPTO_LIB_GF128HASH=y
+- Added: CONFIG_DEV_DAX_FSDEV=m
+- Added: CONFIG_DRIVER_DEFERRED_PROBE_TIMEOUT=10
+- Added: CONFIG_GENERIC_CLOCKEVENTS_COUPLED_INLINE=y
+- Added: CONFIG_GENERIC_CLOCKEVENTS_COUPLED=y
+- Added: CONFIG_GPU_BUDDY=y
+- Added: CONFIG_HAVE_ARCH_GET_SECUREBOOT=y
+- Added: CONFIG_HRTIMER_REARM_DEFERRED=y
+- Added: CONFIG_IO_URING_BPF_OPS=y
+- Added: CONFIG_MULTIPLEXER=y
+- Added: CONFIG_NUMA_MIGRATION=y
+- Added: CONFIG_PHY_CAN_TRANSCEIVER=m
+- Added: CONFIG_PHY_INTEL_LGM_EMMC=m
+- Added: CONFIG_PHY_PACKAGE=y
+- Added: CONFIG_POLYNOMIAL=m
+- Added: CONFIG_RUSTC_LLVM_MAJOR_VERSION=0
+- Added: CONFIG_TIME_NS_VDSO=y
+- Added: CONFIG_XOR_BLOCKS_ARCH=y
+- Added: CONFIG_XOR_BLOCKS=m
+
+* Tue Jun 09 2026 S.Tindall <s10dal@elrepo.org> - 7.1.1-1
+- Updated with the 7.1.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.1.1]
 
 * Mon Jun 01 2026 S.Tindall <s10dal@elrepo.org> - 7.0.11-1
 - Updated with the 7.0.11 source tarball.
