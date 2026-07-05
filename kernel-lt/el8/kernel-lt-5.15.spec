@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.15.210
+%define LKAver 5.15.211
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1146,6 +1146,21 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sat Jul 04 2026 S.Tindall <s10dal@elrepo.org> - 5.15.211
+- Updated with the 5.15.211 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.211]
+- Added: CONFIG_CEPH_FS_SECURITY_LABEL=y
+- Added: CONFIG_NTFS3_FS=m
+- Added: CONFIG_NTFS3_FS_POSIX_ACL=y
+- Added: CONFIG_NTFS_FS=m
+- Added: CONFIG_OCFS2_DEBUG_MASKLOG=y
+- Added: CONFIG_OCFS2_FS=m
+- Added: CONFIG_OCFS2_FS_O2CB=m
+- Added: CONFIG_OCFS2_FS_STATS=y
+- Added: CONFIG_OCFS2_FS_USERSPACE_CLUSTER=m
+- Added: CONFIG_SMB_SERVER_CHECK_CAP_NET_ADMIN=y
+- Added: CONFIG_SMB_SERVER=m
+
 * Fri Jun 19 2026 S.Tindall <s10dal@elrepo.org> - 5.15.210
 - Updated with the 5.15.210 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.210]
