@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.1.4
+%define LKAver 7.1.5
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,6 +1191,14 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Fri Jul 24 2026 S.Tindall <s10dal@elrepo.org> - 7.1.5-1
+- Updated with the 7.1.5 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.1.5]
+- Removed: CONFIG_CRYPTO_LIB_AES_CBC_MACS=m
+- Added: CONFIG_CRYPTO_LIB_AES_CBC_MACS=y
+- Added: CONFIG_DRM_ACCEL_IVPU=m
+- Added: CONFIG_DRM_ACCEL=y
+
 * Sat Jul 18 2026 S.Tindall <s10dal@elrepo.org> - 7.1.4-1
 - Updated with the 7.1.4 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.1.4]
