@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.1.7
+%define LKAver 7.1.8
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,6 +1191,11 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Sun Aug 09 2026 S.Tindall <s10dal@elrepo.org> - 7.1.8-1
+- Updated with the 7.1.8 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.1.8]
+- Added: CONFIG_EROFS_FS_ZIP_LZMA_DEFAULT_MAX_STREAMS=16
+
 * Thu Aug 06 2026 S.Tindall <s10dal@elrepo.org> - 7.1.7-1
 - Updated with the 7.1.7 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.1.7]
