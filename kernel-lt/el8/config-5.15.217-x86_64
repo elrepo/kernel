@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.15.216 Kernel Configuration
+# Linux/x86 5.15.217 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-28)"
 CONFIG_CC_IS_GCC=y
@@ -1810,7 +1810,7 @@ CONFIG_CAN_MCP251X=m
 #
 CONFIG_CAN_8DEV_USB=m
 CONFIG_CAN_EMS_USB=m
-CONFIG_CAN_ESD_USB2=m
+# CONFIG_CAN_ESD_USB is not set
 # CONFIG_CAN_ETAS_ES58X is not set
 CONFIG_CAN_GS_USB=m
 CONFIG_CAN_KVASER_USB=m
