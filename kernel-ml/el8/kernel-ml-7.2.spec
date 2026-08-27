@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.1.10
+%define LKAver 7.2.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,15 +1191,56 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Sun Aug 23 2026 S.Tindall <s10dal@elrepo.org> - 7.1.10-1
-- Updated with the 7.1.10 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.1.10]
+* Thu Aug 27 2026 S.Tindall <s10dal@elrepo.org> - 7.2.1-1
+- Updated with the 7.2.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.1]
 
-* Wed Aug 19 2026 S.Tindall <s10dal@elrepo.org> - 7.1.9-1
-- Updated with the 7.1.9 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.1.9]
+* Mon Aug 17 2026 S.Tindall <s10dal@elrepo.org> - 7.2.0-1
+- Updated with the 7.2 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2]
+- Removed: CONFIG_ARCH_SUPPORTS_AUTOFDO_CLANG=y
+- Removed: CONFIG_ARCH_SUPPORTS_PROPELLER_CLANG=y
+- Removed: CONFIG_CRYPTO_DF80090A=y
+- Removed: CONFIG_CRYPTO_DRBG_CTR=y
+- Removed: CONFIG_CRYPTO_DRBG_HASH=y
+- Removed: CONFIG_CRYPTO_DRBG_HMAC=y
+- Removed: CONFIG_CRYPTO_DRBG_MENU=y
+- Removed: CONFIG_CRYPTO_FCRYPT=m
+- Removed: CONFIG_CRYPTO_LZ4=m
+- Removed: CONFIG_CRYPTO_PCBC=m
+- Removed: CONFIG_GENERIC_TIME_VSYSCALL=y
+- Removed: CONFIG_HYPERV_IOMMU=y
+- Removed: CONFIG_LZ4_COMPRESS=m
+- Removed: CONFIG_MACHZ_WDT=m
+- Removed: CONFIG_NETFILTER_NETLINK=m
+- Removed: CONFIG_PREFIX_SYMBOLS=y
+- Removed: CONFIG_RAID6_PQ_BENCHMARK=y
+- Removed: CONFIG_RAID6_PQ=m
+- Removed: CONFIG_RPCSEC_GSS_KRB5_ENCTYPES_AES_SHA1=y
+- Removed: CONFIG_RPCSEC_GSS_KRB5_ENCTYPES_AES_SHA2=y
+- Removed: CONFIG_RPCSEC_GSS_KRB5_ENCTYPES_CAMELLIA=y
+- Removed: CONFIG_SENSORS_APDS990X=m
+- Removed: CONFIG_WIZNET_BUS_ANY=y
+- Removed: CONFIG_WIZNET_W5100_SPI=m
+- Removed: CONFIG_WIZNET_W5300=m
+- Added: CONFIG_ARCH_MEMORY_ORDER_TSO=y
+- Added: CONFIG_CRYPTO_LZ4=y
+- Added: CONFIG_FUTEX_ROBUST_UNLOCK=y
+- Added: CONFIG_GENERIC_BITREVERSE=y
+- Added: CONFIG_HAVE_FUTEX_ROBUST_UNLOCK=y
+- Added: CONFIG_HAVE_TRUSTED_KEYS_DEBUG=y
+- Added: CONFIG_INFINIBAND_USER_ACCESS_CORE=y
+- Added: CONFIG_LZ4_COMPRESS=y
+- Added: CONFIG_NETFILTER_NETLINK=y
+- Added: CONFIG_NET_VENDOR_ALIBABA=y
+- Added: CONFIG_PPPOX=m
+- Added: CONFIG_RAID6_PQ_ARCH=y
+- Added: CONFIG_RAID6_PQ_BENCHMARK=y
+- Added: CONFIG_RAID6_PQ=m
 - Added: CONFIG_RTW89_8851BE=m
 - Added: CONFIG_RTW89_8851B=m
+- Added: CONFIG_SCHED_CACHE=y
+- Added: CONFIG_USB4_CONFIGFS=m
 
 * Sun Aug 09 2026 S.Tindall <s10dal@elrepo.org> - 7.1.8-1
 - Updated with the 7.1.8 source tarball.
