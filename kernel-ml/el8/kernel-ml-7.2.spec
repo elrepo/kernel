@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.2.1
+%define LKAver 7.2.2
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,6 +1191,10 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Fri Aug 28 2026 S.Tindall <s10dal@elrepo.org> - 7.2.2-1
+- Updated with the 7.2.2 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.2]
+
 * Thu Aug 27 2026 S.Tindall <s10dal@elrepo.org> - 7.2.1-1
 - Updated with the 7.2.1 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.1]
