@@ -40,7 +40,7 @@
 %endif
 
 # Set pkg_release.
-%global pkg_release 1%{?buildid}%{?dist}
+%global pkg_release 2%{?buildid}%{?dist}
 
 # Architectures upon which we can sign the kernel
 # for secure boot authentication.
@@ -729,7 +729,7 @@ popd > /dev/null
 
 %if %{with_bpftool}
 %global bpftool_make \
-	%{__make} -s EXTRA_CFLAGS="${RPM_OPT_FLAGS}" EXTRA_LDFLAGS="%{__global_ldflags}" DESTDIR=$RPM_BUILD_ROOT VMLINUX_H="${RPM_VMLINUX_H}"
+	%{__make} -s EXTRA_CFLAGS="${RPM_OPT_FLAGS}" EXTRA_LDFLAGS="%{__global_ldflags}" DESTDIR=$RPM_BUILD_ROOT VMLINUX_H="${RPM_VMLINUX_H}" HOST_EXTRACFLAGS="-fPIE"
 
 pushd tools/bpf/bpftool > /dev/null
 %{bpftool_make}
@@ -1524,6 +1524,10 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Wed Sep 02 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.3-2
+- Fixed the bpftool build error
+  [https://elrepo.org/bugs/view.php?id=1604]
+
 * Wed Sep 02 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.3-1
 - Updated with the 7.2.3 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.3]
