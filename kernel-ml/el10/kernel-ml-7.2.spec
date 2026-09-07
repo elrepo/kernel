@@ -25,7 +25,7 @@
 
 # Define the version of the Linux Kernel Archive tarball.
 
-%global LKAver 7.2.3
+%global LKAver 7.2.4
 
 # Define the buildid, if required.
 #global buildid .local
@@ -81,6 +81,9 @@
 # tools
 %define with_tools        %{?_without_tools:        0} %{?!_without_tools:        1}
 #
+# bpf tool
+%define with_bpftool      %{?_without_bpftool:      0} %{?!_without_bpftool:      1}
+#
 # control whether to install the vdso directories
 %define with_vdso_install %{?_without_vdso_install: 0} %{?!_without_vdso_install: 1}
 #
@@ -95,6 +98,7 @@
 %define with_doc 0
 %define with_perf 0
 %define with_tools 0
+%define with_bpftool 0
 %define with_vdso_install 0
 %endif
 
@@ -104,6 +108,7 @@
 %define with_cross_headers 0
 %define with_perf 0
 %define with_tools 0
+%define with_bpftool 0
 %define with_vdso_install 0
 %endif
 
@@ -166,6 +171,7 @@ BuildRequires: gzip, hmaccalc, hostname, kernel-rpm-macros >= 185-9, kmod, m4, m
 BuildRequires: patch, perl-Carp, perl-devel, perl-generators, perl-interpreter, python3-devel
 BuildRequires: redhat-rpm-config, tar, which, xz
 
+BuildRequires: bpftool
 BuildRequires: openssl-devel openssl
 BuildRequires: zlib-devel binutils-devel newt-devel perl(ExtUtils::Embed) bison flex xz-devel
 BuildRequires: audit-libs-devel python3-setuptools
@@ -396,6 +402,15 @@ The rv tool is the interface for a collection of monitors that aim
 analysing the logical and timing behavior of Linux.
 
 # with_tools
+%endif
+
+%if %{with_bpftool}
+%package -n bpftool
+Summary: Inspection and simple manipulation of eBPF programs and maps.
+License: GPLv2
+%description -n bpftool
+This package contains the bpftool, which allows inspection
+and simple manipulation of eBPF programs and maps.
 %endif
 
 #
@@ -633,6 +648,11 @@ cp config-%{version}-%{_target_cpu} .config
 %{make} %{?_smp_mflags} ARCH=%{bldarch} dtbs
 %endif
 
+%if %{with_bpftool}
+# Generate a vmlinux.h file.
+bpftool btf dump file vmlinux format c > tools/bpf/bpftool/vmlinux.h
+RPM_VMLINUX_H=vmlinux.h
+%endif
 %endif
 
 %if %{with_perf}
@@ -641,7 +661,7 @@ cp config-%{version}-%{_target_cpu} .config
 %endif
 
 %global perf_make \
-	%{__make} -s EXTRA_CFLAGS="%{?build_cflags}" EXTRA_CXXFLAGS="%{?build_cxxflags}"  LDFLAGS="%{?build_ldflags} -Wl,-E" -C tools/perf V=1 NO_PERF_READ_VDSO32=1 NO_PERF_READ_VDSOX32=1 WERROR=0 NO_LIBUNWIND=1 HAVE_CPLUS_DEMANGLE=1 NO_GTK2=1 NO_STRLCPY=1 NO_BIONIC=1 LIBBPF_DYNAMIC=1 LIBTRACEEVENT_DYNAMIC=1 %{?perf_build_extra_opts} prefix=%{_prefix} PYTHON=%{__python3}
+	%{__make} -s EXTRA_CFLAGS="%{?build_cflags}" EXTRA_CXXFLAGS="%{?build_cxxflags}"  LDFLAGS="%{?build_ldflags} -Wl,-E" -C tools/perf V=1 NO_PERF_READ_VDSO32=1 NO_PERF_READ_VDSOX32=1 WERROR=0 NO_LIBUNWIND=1 HAVE_CPLUS_DEMANGLE=1 NO_GTK2=1 NO_STRLCPY=1 NO_BIONIC=1 LIBBPF_DYNAMIC=1 LIBTRACEEVENT_DYNAMIC=1 %{?perf_build_extra_opts} prefix=%{_prefix} PYTHON=%{__python3} HOST_EXTRACFLAGS="-fPIE"
 
 # Make sure that check-headers.sh is executable.
 chmod +x tools/perf/check-headers.sh
@@ -709,6 +729,14 @@ popd
 
 %endif
 
+%if %{with_bpftool}
+%global bpftool_make \
+        %{__make} -s EXTRA_CFLAGS="${RPM_OPT_FLAGS}" EXTRA_LDFLAGS="%{__global_ldflags}" DESTDIR=$RPM_BUILD_ROOT VMLINUX_H="${RPM_VMLINUX_H}" HOST_EXTRACFLAGS="-fPIE"
+
+pushd tools/bpf/bpftool > /dev/null
+%{bpftool_make}
+popd > /dev/null
+%endif
 %endif
 
 popd > /dev/null
@@ -1037,9 +1065,9 @@ mv %{buildroot}/lib/modules/%{KVERREL}/build %{buildroot}/usr/src/kernels/%{KVER
 ln -sf /usr/src/kernels/%{KVERREL} %{buildroot}/lib/modules/%{KVERREL}/build
 
 # Move the generated vmlinux.h file into the kernel-ml-devel directory structure.
-### if [ -f tools/bpf/bpftool/vmlinux.h ]; then
-###	mv tools/bpf/bpftool/vmlinux.h %{buildroot}/usr/src/kernels/%{KVERREL}/
-### fi
+if [ -f tools/bpf/bpftool/vmlinux.h ]; then
+mv tools/bpf/bpftool/vmlinux.h %{buildroot}/usr/src/kernels/%{KVERREL}/
+fi
 
 # Purge the kernel-ml-devel tree of leftover junk.
 find %{buildroot}/usr/src/kernels -name ".*.cmd" -type f -delete
@@ -1191,6 +1219,11 @@ popd
 
 %endif
 
+%if %{with_bpftool}
+pushd tools/bpf/bpftool > /dev/null 
+%{bpftool_make} prefix=%{_prefix} bash_compdir=%{_sysconfdir}/bash_completion.d/ mandir=%{_mandir} install doc-install
+popd > /dev/null
+%endif
 %endif
 
 %ifarch noarch
@@ -1461,6 +1494,25 @@ fi
 # with_tools
 %endif
 
+%if %{with_bpftool}
+%files -n bpftool
+%{_sbindir}/bpftool
+%{_sysconfdir}/bash_completion.d/bpftool
+%{_mandir}/man8/bpftool-cgroup.8.gz
+%{_mandir}/man8/bpftool-gen.8.gz
+%{_mandir}/man8/bpftool-iter.8.gz
+%{_mandir}/man8/bpftool-link.8.gz
+%{_mandir}/man8/bpftool-map.8.gz
+%{_mandir}/man8/bpftool-prog.8.gz
+%{_mandir}/man8/bpftool-perf.8.gz
+%{_mandir}/man8/bpftool.8.gz
+%{_mandir}/man8/bpftool-net.8.gz
+%{_mandir}/man8/bpftool-feature.8.gz
+%{_mandir}/man8/bpftool-btf.8.gz
+%{_mandir}/man8/bpftool-struct_ops.8.gz
+%{_mandir}/man8/bpftool-token.8.gz
+%endif
+
 # Empty meta-package.
 %ifarch x86_64 || aarch64
 %files
@@ -1519,6 +1571,17 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Mon Sep 07 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.4-1
+- Updated with the 7.2.4 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.4]
+
+* Sat Sep 05 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.3-3
+- Restore bpftool
+
+* Fri Sep 04 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.3-2
+- Fixed the perf build error
+  [https://elrepo.org/bugs/view.php?id=1604]
+
 * Wed Sep 02 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.3-1
 - Updated with the 7.2.3 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.3]
