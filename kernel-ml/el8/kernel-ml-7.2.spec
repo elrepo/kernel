@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.2.4
+%define LKAver 7.2.5
 
 # Define the buildid, if required.
 #define buildid .local
@@ -41,8 +41,6 @@
 %define with_doc 0
 %define doc_build_fail true
 %define zipmodules 1
-### as of kernel-ml-6.5.4, no more bpftool -ay
-%define with_bpftool 0
 %endif
 
 # Documentation.
@@ -540,7 +538,7 @@ popd > /dev/null
 %endif
 
 %global bpftool_make \
-    %{__make} -s EXTRA_CFLAGS="${RPM_OPT_FLAGS}" EXTRA_LDFLAGS="%{__global_ldflags}" DESTDIR=$RPM_BUILD_ROOT
+    %{__make} -s EXTRA_CFLAGS="${RPM_OPT_FLAGS}" EXTRA_LDFLAGS="%{__global_ldflags}" DESTDIR=$RPM_BUILD_ROOT HOST_EXTRACFLAGS="-fPIE"
 
 %if %{with_bpftool} && %{with_default}
 pushd tools/bpf/bpftool > /dev/null
@@ -1191,6 +1189,20 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Fri Sep 11 2026 S.Tindall <s10dal@elrepo.org> - 7.2.5-1
+- Updated with the 7.2.5 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.5]
+
+* Mon Sep 07 2026 S.Tindall <s10dal@elrepo.org> - 7.2.4-2
+- Enable bpftool make (add HOST_EXTRACFLAGS="-fPIE"):
+-  %global bpftool_make \
+-  - %{__make} -s EXTRA_CFLAGS="${RPM_OPT_FLAGS}" EXTRA_LDFLAGS="%{__global_ldflags}" DESTDIR=$RPM_BUILD_ROOT
+-  + %{__make} -s EXTRA_CFLAGS="${RPM_OPT_FLAGS}" EXTRA_LDFLAGS="%{__global_ldflags}" DESTDIR=$RPM_BUILD_ROOT HOST_EXTRACFLAGS="-fPIE"
+- Enable bpftool build:
+-  %ifarch x86_64
+-  - %define with_bpftool 0
+-  %endif
+
 * Mon Sep 07 2026 S.Tindall <s10dal@elrepo.org> - 7.2.4-1
 - Updated with the 7.2.4 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.4]
