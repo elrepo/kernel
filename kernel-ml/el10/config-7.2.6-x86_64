@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 7.2.5-1.el10.elrepo.x86_64 Kernel Configuration
+# Linux/x86 7.2.6-1.el10.elrepo.x86_64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 14.3.1 20251022 (Red Hat 14.3.1-4)"
 CONFIG_CC_IS_GCC=y
@@ -5945,7 +5945,7 @@ CONFIG_VIDEO_SOLO6X10=m
 # CONFIG_VIDEO_CX25821 is not set
 # CONFIG_VIDEO_CX88 is not set
 # CONFIG_VIDEO_SAA7134 is not set
-# CONFIG_VIDEO_SAA7164 is not set
+CONFIG_VIDEO_SAA7164=m
 
 #
 # Media digital TV PCI Adapters
