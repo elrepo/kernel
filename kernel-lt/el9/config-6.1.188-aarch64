@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.1.187-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 6.1.188-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)"
 CONFIG_CC_IS_GCC=y
@@ -7954,6 +7954,7 @@ CONFIG_SM_GCC_8150=m
 CONFIG_SM_GCC_8250=m
 CONFIG_SM_GCC_8350=m
 CONFIG_SM_GCC_8450=m
+# CONFIG_SM_GCC_8550 is not set
 CONFIG_SM_GPUCC_6350=m
 CONFIG_SM_GPUCC_8150=m
 CONFIG_SM_GPUCC_8250=m
