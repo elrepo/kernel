@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 7.2.5-1.el9.elrepo.aarch64 Kernel Configuration
+# Linux/arm64 7.2.6-1.el9.elrepo.aarch64 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)"
 CONFIG_CC_IS_GCC=y
@@ -6013,7 +6013,7 @@ CONFIG_VIDEO_SOLO6X10=m
 # CONFIG_VIDEO_CX25821 is not set
 # CONFIG_VIDEO_CX88 is not set
 # CONFIG_VIDEO_SAA7134 is not set
-# CONFIG_VIDEO_SAA7164 is not set
+CONFIG_VIDEO_SAA7164=m
 
 #
 # Media digital TV PCI Adapters
