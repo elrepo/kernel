@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.2.5
+%define LKAver 7.2.6
 
 # Define the buildid, if required.
 #define buildid .local
@@ -487,7 +487,7 @@ pushd linux-%{KVERREL} > /dev/null
 %endif
 
 %global perf_make \
-    %{__make} -s -C tools/perf prefix=%{_prefix} EXTRA_CFLAGS="${RPM_OPT_FLAGS}" LDFLAGS="%{__global_ldflags}" PYTHON=%{__python3} WERROR=0 HAVE_CPLUS_DEMANGLE=1 NO_BIONIC=1 NO_GTK2=1 NO_LIBBABELTRACE=1 NO_LIBUNWIND=1 NO_PERF_READ_VDSO32=1 NO_PERF_READ_VDSOX32=1 NO_STRLCPY=1
+    %{__make} -s -C tools/perf prefix=%{_prefix} EXTRA_CFLAGS="${RPM_OPT_FLAGS}" LDFLAGS="%{__global_ldflags}" PYTHON=%{__python3} WERROR=0 HAVE_CPLUS_DEMANGLE=1 NO_BIONIC=1 NO_GTK2=1 NO_LIBBABELTRACE=1 NO_LIBUNWIND=1 NO_PERF_READ_VDSO32=1 NO_PERF_READ_VDSOX32=1 NO_STRLCPY=1 HOST_EXTRACFLAGS="-fPIE"
 
 %if %{with_perf}
 # Make sure that check-headers.sh is executable.
@@ -1189,6 +1189,15 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Mon Sep 14 2026 S.Tindall <s10dal@elrepo.org> - 7.2.6-1
+- Updated with the 7.2.6 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.6]
+- Added: CONFIG_VIDEO_SAA7164=m
+- Update perf_make for future build capability (perf does not build even with added HOST_EXTRACFLAGS="-fPIE"):
+-  %global perf_make \
+-   - %{__make} -s -C tools/perf prefix=%{_prefix} EXTRA_CFLAGS="${RPM_OPT_FLAGS}" LDFLAGS="%{__global_ldflags}" PYTHON=%{__python3} WERROR=0 HAVE_CPLUS_DEMANGLE=1 NO_BIONIC=1 NO_GTK2=1 NO_LIBBABELTRACE=1 NO_LIBUNWIND=1 NO_PERF_READ_VDSO32=1 NO_PERF_READ_VDSOX32=1 NO_STRLCPY=1
+-   + %{__make} -s -C tools/perf prefix=%{_prefix} EXTRA_CFLAGS="${RPM_OPT_FLAGS}" LDFLAGS="%{__global_ldflags}" PYTHON=%{__python3} WERROR=0 HAVE_CPLUS_DEMANGLE=1 NO_BIONIC=1 NO_GTK2=1 NO_LIBBABELTRACE=1 NO_LIBUNWIND=1 NO_PERF_READ_VDSO32=1 NO_PERF_READ_VDSOX32=1 NO_STRLCPY=1 HOST_EXTRACFLAGS="-fPIE"
+
 * Fri Sep 11 2026 S.Tindall <s10dal@elrepo.org> - 7.2.5-1
 - Updated with the 7.2.5 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.5]

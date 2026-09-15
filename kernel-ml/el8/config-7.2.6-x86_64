@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 7.2.5 Kernel Configuration
+# Linux/x86 7.2.6 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
 CONFIG_CC_IS_GCC=y
@@ -5701,7 +5701,7 @@ CONFIG_MEDIA_PCI_SUPPORT=y
 # CONFIG_VIDEO_CX25821 is not set
 # CONFIG_VIDEO_CX88 is not set
 # CONFIG_VIDEO_SAA7134 is not set
-# CONFIG_VIDEO_SAA7164 is not set
+CONFIG_VIDEO_SAA7164=m
 
 #
 # Media digital TV PCI Adapters
