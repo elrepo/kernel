@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.15.220
+%define LKAver 5.15.221
 
 # Define the buildid, if required.
 #define buildid .local
@@ -39,6 +39,10 @@
 %define with_doc 0
 %define doc_build_fail true
 %define zipmodules 1
+# perf disabled as of 5.15.221-2
+%define with_perf 0
+# bpftool disabled as of 5.15.221-3
+%define with_bpftool 0
 %endif
 
 # Documentation.
@@ -68,7 +72,7 @@
 %endif
 
 # Set pkg_release.
-%define pkg_release 1%{?dist}%{?buildid}
+%define pkg_release 3%{?dist}%{?buildid}
 
 %define KVERREL %{pkg_version}-%{pkg_release}.%{_target_cpu}
 
@@ -1146,44 +1150,60 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Wed Sep 02 2026 S.Tindall <s10dal@elrepo.org> - 5.15.220
+* Tue Sep 15 2026 S.Tindall <s10dal@elrepo.org> - 5.15.221-3
+- Disabled bpftool
+- %ifarch x86_64
+-  + %define with_bpftool 0
+- %endif
+
+* Tue Sep 15 2026 S.Tindall <s10dal@elrepo.org> - 5.15.221-2
+- Disabled perf
+- %ifarch x86_64
+-  + %define with_perf 0
+- %endif
+
+* Mon Sep 14 2026 S.Tindall <s10dal@elrepo.org> - 5.15.221-1
+- Updated with the 5.15.221 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.221]
+
+* Wed Sep 02 2026 S.Tindall <s10dal@elrepo.org> - 5.15.220-1
 - Updated with the 5.15.220 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.220]
 
-* Fri Aug 28 2026 S.Tindall <s10dal@elrepo.org> - 5.15.219
+* Fri Aug 28 2026 S.Tindall <s10dal@elrepo.org> - 5.15.219-1
 - Updated with the 5.15.219 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.219]
 
-* Thu Aug 27 2026 S.Tindall <s10dal@elrepo.org> - 5.15.218
+* Thu Aug 27 2026 S.Tindall <s10dal@elrepo.org> - 5.15.218-1
 - Updated with the 5.15.218 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.218]
 
-* Sun Aug 23 2026 S.Tindall <s10dal@elrepo.org> - 5.15.217
+* Sun Aug 23 2026 S.Tindall <s10dal@elrepo.org> - 5.15.217-1
 - Updated with the 5.15.217 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.217]
 - Removed: CONFIG_CAN_ESD_USB2=m
 
-* Wed Aug 19 2026 S.Tindall <s10dal@elrepo.org> - 5.15.216
+* Wed Aug 19 2026 S.Tindall <s10dal@elrepo.org> - 5.15.216-1
 - Updated with the 5.15.216 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.216]
 
-* Fri Aug 07 2026 S.Tindall <s10dal@elrepo.org> - 5.15.215
+* Fri Aug 07 2026 S.Tindall <s10dal@elrepo.org> - 5.15.215-1
 - Updated with the 5.15.215 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.215]
 
-* Thu Aug 06 2026 S.Tindall <s10dal@elrepo.org> - 5.15.214
+* Thu Aug 06 2026 S.Tindall <s10dal@elrepo.org> - 5.15.214-1
 - Updated with the 5.15.214 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.214]
 
-* Thu Jul 30 2026 S.Tindall <s10dal@elrepo.org> - 5.15.213
+* Thu Jul 30 2026 S.Tindall <s10dal@elrepo.org> - 5.15.213-1
 - Updated with the 5.15.213 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.213]
 
-* Fri Jul 24 2026 S.Tindall <s10dal@elrepo.org> - 5.15.212
+* Fri Jul 24 2026 S.Tindall <s10dal@elrepo.org> - 5.15.212-1
 - Updated with the 5.15.212 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.212]
 
-* Sat Jul 04 2026 S.Tindall <s10dal@elrepo.org> - 5.15.211
+* Sat Jul 04 2026 S.Tindall <s10dal@elrepo.org> - 5.15.211-1
 - Updated with the 5.15.211 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.211]
 - Added: CONFIG_CEPH_FS_SECURITY_LABEL=y
@@ -1198,55 +1218,55 @@ fi
 - Added: CONFIG_SMB_SERVER_CHECK_CAP_NET_ADMIN=y
 - Added: CONFIG_SMB_SERVER=m
 
-* Fri Jun 19 2026 S.Tindall <s10dal@elrepo.org> - 5.15.210
+* Fri Jun 19 2026 S.Tindall <s10dal@elrepo.org> - 5.15.210-1
 - Updated with the 5.15.210 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.210]
 
-* Mon Jun 01 2026 S.Tindall <s10dal@elrepo.org> - 5.15.209
+* Mon Jun 01 2026 S.Tindall <s10dal@elrepo.org> - 5.15.209-1
 - Updated with the 5.15.209 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.209]
 
-* Sat May 23 2026 S.Tindall <s10dal@elrepo.org> - 5.15.208
+* Sat May 23 2026 S.Tindall <s10dal@elrepo.org> - 5.15.208-1
 - Updated with the 5.15.208 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.208]
 
-* Fri May 15 2026 Akemi Yagi <toracat@elrepo.org> - 5.15.207
+* Fri May 15 2026 Akemi Yagi <toracat@elrepo.org> - 5.15.207-1
 - Updated with the 5.15.207 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.207]
 
-* Fri May 08 2026 S.Tindall <s10dal@elrepo.org> - 5.15.206
+* Fri May 08 2026 S.Tindall <s10dal@elrepo.org> - 5.15.206-1
 - Updated with the 5.15.206 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.206]
 
-* Thu Apr 30 2026 S.Tindall <s10dal@elrepo.org> - 5.15.204
+* Thu Apr 30 2026 S.Tindall <s10dal@elrepo.org> - 5.15.204-1
 - Updated with the 5.15.204 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.204]
 
-* Sat Apr 18 2026 Akemi Yagi <toracat@elrepo.org> - 5.15.203
+* Sat Apr 18 2026 Akemi Yagi <toracat@elrepo.org> - 5.15.203-1
 - Updated with the 5.15.203 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.203]
 
-* Wed Mar 04 2026 S.Tindall <s10dal@elrepo.org> - 5.15.202
+* Wed Mar 04 2026 S.Tindall <s10dal@elrepo.org> - 5.15.202-1
 - Updated with the 5.15.202 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.202]
 
-* Thu Feb 19 2026 S.Tindall <s10dal@elrepo.org> - 5.15.201
+* Thu Feb 19 2026 S.Tindall <s10dal@elrepo.org> - 5.15.201-1
 - Updated with the 5.15.201 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.201]
 
-* Wed Feb 11 2026 S.Tindall <s10dal@elrepo.org> - 5.15.200
+* Wed Feb 11 2026 S.Tindall <s10dal@elrepo.org> - 5.15.200-1
 - Updated with the 5.15.200 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.200]
 
-* Fri Feb 06 2026 S.Tindall <s10dal@elrepo.org> - 5.15.199
+* Fri Feb 06 2026 S.Tindall <s10dal@elrepo.org> - 5.15.199-1
 - Updated with the 5.15.199 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.199]
 
-* Thu Feb 05 2026 Akemi Yagi <toracat@elrepo.org> - 5.15.198
+* Thu Feb 05 2026 Akemi Yagi <toracat@elrepo.org> - 5.15.198-1
 - Updated with the 5.15.198 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.198]
 
-* Tue Dec 16 2025 Akemi Yagi <toracat@elrepo.org> - 5.15.197
+* Tue Dec 16 2025 Akemi Yagi <toracat@elrepo.org> - 5.15.197-1
 - Updated with the 5.15.197 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.197]
 
