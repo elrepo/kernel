@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.15.221
+%define LKAver 5.15.222
 
 # Define the buildid, if required.
 #define buildid .local
@@ -39,8 +39,6 @@
 %define with_doc 0
 %define doc_build_fail true
 %define zipmodules 1
-# perf disabled as of 5.15.221-2
-%define with_perf 0
 # bpftool disabled as of 5.15.221-3
 %define with_bpftool 0
 %endif
@@ -72,7 +70,7 @@
 %endif
 
 # Set pkg_release.
-%define pkg_release 3%{?dist}%{?buildid}
+%define pkg_release 4%{?dist}%{?buildid}
 
 %define KVERREL %{pkg_version}-%{pkg_release}.%{_target_cpu}
 
@@ -1150,6 +1148,30 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Tue Sep 15 2026 S.Tindall <s10dal@elrepo.org> - 5.15.222-4
+- Disabled bpftool
+- %ifarch x86_64
+-  + %define with_bpftool 0
+- %endif
+
+* Tue Sep 15 2026 S.Tindall <s10dal@elrepo.org> - 5.15.222-3
+- Enable perf
+- %ifarch x86_64
+-  - %define with_perf 0
+- %endif
+
+* Tue Sep 15 2026 S.Tindall <s10dal@elrepo.org> - 5.15.222-2
+- Enable bpftool
+- %ifarch x86_64
+-  - %define with_bpftool 0
+- %endif
+
+* Tue Sep 15 2026 S.Tindall <s10dal@elrepo.org> - 5.15.222-1
+- Updated with the 5.15.222 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.222]
+- Removed: CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-28)"
+- Added: CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-29)"
+
 * Tue Sep 15 2026 S.Tindall <s10dal@elrepo.org> - 5.15.221-3
 - Disabled bpftool
 - %ifarch x86_64
