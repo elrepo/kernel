@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.1.188
+%global LKAver 6.1.189
 
 # Define the buildid, if required.
 #global buildid .local
@@ -127,7 +127,6 @@
 %ifarch x86_64 || aarch64
 %define with_doc 0
 %define with_perf 0
-%define with_bpftool 0
 %endif
 
 %ifarch x86_64
@@ -1502,6 +1501,11 @@ fi
 %kernel_lt_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Sat Oct 03 2026 Akemi Yagi <toracat@elrepo.org> - 6.1.189
+- Updated with the 6.1.189 source tarball.
+- bpftool re-enabled
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.189]
+
 * Mon Sep 14 2026 Akemi Yagi <toracat@elrepo.org> - 6.1.188
 - Updated with the 6.1.188 source tarball.
 - perf and bpftool disabled due to build errors
