@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.2.10
+%define LKAver 7.2.11
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1189,6 +1189,12 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Thu Oct 15 2026 S.Tindall <s10dal@elrepo.org> - 7.2.11-1
+- Updated with the 7.2.11 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.11]
+- Removed: CONFIG_ZRAM_BACKEND_FORCE_LZO=y
+- Added: CONFIG_ZRAM_BACKEND_ZSTD=y
+
 * Sun Oct 11 2026 S.Tindall <s10dal@elrepo.org> - 7.2.10-1
 - Updated with the 7.2.10 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.10]
