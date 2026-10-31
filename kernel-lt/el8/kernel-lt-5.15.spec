@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.15.223
+%define LKAver 5.15.224
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1148,6 +1148,12 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Fri Oct 30 2026 S.Tindall <s10dal@elrepo.org> - 5.15.224-1
+- Updated with the 5.15.224 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.224]
+- Removed: CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-29)"
+- Added: CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-30)"
+
 * Thu Oct 15 2026 S.Tindall <s10dal@elrepo.org> - 5.15.223-1
 - Updated with the 5.15.223 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.223]
