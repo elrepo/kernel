@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.2.13
+%define LKAver 7.3.1
 
 # Define the buildid, if required.
 #define buildid .local
@@ -41,6 +41,8 @@
 %define with_doc 0
 %define doc_build_fail true
 %define zipmodules 1
+### as of kernel-ml-7.3.0, no more perf -st
+%define with_perf 0
 %endif
 
 # Documentation.
@@ -1189,13 +1191,20 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
-* Mon Oct 26 2026 S.Tindall <s10dal@elrepo.org> - 7.2.13-1
-- Updated with the 7.2.13 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.13]
+* Fri Oct 30 2026 S.Tindall <s10dal@elrepo.org> - 7.3.1-1
+- Updated with the 7.3.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.1]
+- Added: CONFIG_RTW88_8812A=m
+- Added: CONFIG_RTW88_8812AU=m
+- Added: CONFIG_RTW88_8814A=m
+- Added: CONFIG_RTW88_8814AU=m
+- Added: CONFIG_RTW88_8821A=m
+- Added: CONFIG_RTW88_8821AU=m
+- Added: CONFIG_RTW88_88XXA=m
 
-* Wed Oct 21 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.12-1
-- Updated with the 7.2.12 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.12]
+* Sun Oct 18 2026 Akemi Yagi <toracat@elrepo.org> - 7.3.0-1
+- Updated with the 7.3 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3]
 
 * Thu Oct 15 2026 S.Tindall <s10dal@elrepo.org> - 7.2.11-1
 - Updated with the 7.2.11 source tarball.
