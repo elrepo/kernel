@@ -24,7 +24,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.1.190
+%global LKAver 6.1.191
 
 # Define the buildid, if required.
 #global buildid .local
@@ -293,6 +293,10 @@ AutoProv: yes\
 Summary: Header files for the Linux kernel, used by glibc.
 Obsoletes: glibc-kernheaders < 3.0-46
 Provides: glibc-kernheaders = 3.0-46
+Provides: %{name}-headers = %{version}-%{release}
+Obsoletes: %{name}-headers < %{version}-%{release}
+Provides: kernel-headers = %{version}-%{release}
+Conflicts: kernel-headers < %{version}-%{release}
 %description headers
 The Linux kernel headers includes the C header files that specify
 the interface between the Linux kernel and userspace libraries and
@@ -1501,6 +1505,10 @@ fi
 %kernel_lt_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Fri Oct 30 2026 Akemi Yagi <toracat@elrepo.org> - 6.1.191
+- Updated with the 6.1.191 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.191]
+
 * Thu Oct 15 2026 Akemi Yagi <toracat@elrepo.org> - 6.1.190
 - Updated with the 6.1.190 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.190]
