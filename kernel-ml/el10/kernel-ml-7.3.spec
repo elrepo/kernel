@@ -25,7 +25,7 @@
 
 # Define the version of the Linux Kernel Archive tarball.
 
-%global LKAver 7.2.13
+%global LKAver 7.3.1
 
 # Define the buildid, if required.
 #global buildid .local
@@ -258,6 +258,10 @@ AutoProv: yes\
 Summary: Header files for the Linux kernel, used by glibc.
 Obsoletes: glibc-kernheaders < 3.0-46
 Provides: glibc-kernheaders = 3.0-46
+Provides: %{name}-headers = %{version}-%{release}
+Obsoletes: %{name}-headers < %{version}-%{release}
+Provides: kernel-headers = %{version}-%{release}
+Conflicts: kernel-headers < %{version}-%{release}
 %description headers
 The Linux kernel headers includes the C header files that specify
 the interface between the Linux kernel and userspace libraries and
@@ -1571,13 +1575,13 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
-* Mon Oct 26 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.13-1
-- Updated with the 7.2.13 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.13]
+* Fri Oct 30 2026 Akemi Yagi <toracat@elrepo.org> - 7.3.1-1
+- Updated with the 7.3.1 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.1]
 
-* Wed Oct 21 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.12-1
-- Updated with the 7.2.12 source tarball.
-- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.2.12]
+* Sun Oct 18 2026 Akemi Yagi <toracat@elrepo.org> - 7.3.0-1
+- Updated with the 7.3 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3]
 
 * Thu Oct 15 2026 Akemi Yagi <toracat@elrepo.org> - 7.2.11-1
 - Updated with the 7.2.11 source tarball.
