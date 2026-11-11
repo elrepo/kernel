@@ -25,7 +25,7 @@
 
 # Define the version of the Linux Kernel Archive tarball.
 
-%global LKAver 7.3.3
+%global LKAver 7.3.4
 
 # Define the buildid, if required.
 #global buildid .local
@@ -1575,6 +1575,10 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Tue Nov 10 2026 Akemi Yagi <toracat@elrepo.org> - 7.3.4-1
+- Updated with the 7.3.4 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.4]
+
 * Fri Nov 06 2026 Akemi Yagi <toracat@elrepo.org> - 7.3.3-1
 - Updated with the 7.3.3 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.3]
