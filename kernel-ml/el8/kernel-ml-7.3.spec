@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.3.4
+%define LKAver 7.3.5
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1191,6 +1191,25 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Tue Nov 17 2026 S.Tindall <s10dal@elrepo.org> - 7.3.5-1
+- Updated with the 7.3.5 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.5]
+- Added: CONFIG_MT7925U=m
+- Added: CONFIG_SND_SOC_AMD_LEGACY_SDW_MACH=m
+- Added: CONFIG_SND_SOC_AMD_SDW_MACH_COMMON=m
+- Added: CONFIG_SND_SOC_RT1316_SDW=m
+- Added: CONFIG_SND_SOC_RT1320_SDW=m
+- Added: CONFIG_SND_SOC_RT711=m
+- Added: CONFIG_SND_SOC_RT711_SDCA_SDW=m
+- Added: CONFIG_SND_SOC_RT711_SDW=m
+- Added: CONFIG_SND_SOC_RT712_SDCA_DMIC_SDW=m
+- Added: CONFIG_SND_SOC_RT712_SDCA_SDW=m
+- Added: CONFIG_SND_SOC_RT715=m
+- Added: CONFIG_SND_SOC_RT715_SDCA_SDW=m
+- Added: CONFIG_SND_SOC_RT715_SDW=m
+- Added: CONFIG_SND_SOC_RT722_SDCA_SDW=m
+- Added: CONFIG_SND_SOC_TAS2783_SDW=m
+
 * Tue Nov 10 2026 S.Tindall <s10dal@elrepo.org> - 7.3.4-1
 - Updated with the 7.3.4 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.4]
