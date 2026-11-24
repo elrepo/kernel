@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 7.3.5 Kernel Configuration
+# Linux/x86 7.3.6 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-7)"
 CONFIG_CC_IS_GCC=y
@@ -6315,6 +6315,7 @@ CONFIG_DRM_AMD_ACP=y
 CONFIG_DRM_AMD_DC=y
 CONFIG_DRM_AMD_DC_FP=y
 CONFIG_DRM_AMD_DC_SI=y
+CONFIG_DRM_AMD_DC_DCE=y
 # CONFIG_DEBUG_KERNEL_DC is not set
 # CONFIG_DRM_AMD_SECURE_DISPLAY is not set
 # end of Display Engine Configuration

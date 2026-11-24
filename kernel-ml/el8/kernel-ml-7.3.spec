@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 7.3.5
+%define LKAver 7.3.6
 
 # Define the buildid, if required.
 #define buildid .local
@@ -72,7 +72,7 @@
 %endif
 
 # Set pkg_release.
-%define pkg_release 1%{?dist}%{?buildid}
+%define pkg_release 2%{?dist}%{?buildid}
 
 %define KVERREL %{pkg_version}-%{pkg_release}.%{_target_cpu}
 
@@ -1191,6 +1191,13 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Mon Nov 23 2026 S.Tindall <s10dal@elrepo.org> - 7.3.6-2
+- Added: CONFIG_DRM_AMD_DC_DCE=y
+
+* Mon Nov 23 2026 S.Tindall <s10dal@elrepo.org> - 7.3.6-1
+- Updated with the 7.3.6 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.6]
+
 * Tue Nov 17 2026 S.Tindall <s10dal@elrepo.org> - 7.3.5-1
 - Updated with the 7.3.5 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.5]
