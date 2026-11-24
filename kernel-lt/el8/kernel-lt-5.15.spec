@@ -10,7 +10,7 @@
 %global _binary_payload w3T.xzdio
 
 # Define the version of the Linux Kernel Archive tarball.
-%define LKAver 5.15.225
+%define LKAver 5.15.226
 
 # Define the buildid, if required.
 #define buildid .local
@@ -1148,6 +1148,23 @@ fi
 %kernel_variant_files %{with_vdso_install} %{with_default}
 
 %changelog
+* Mon Nov 23 2026 S.Tindall <s10dal@elrepo.org> - 5.15.226-1
+- Updated with the 5.15.226 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.226]
+- Removed: CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-30)"
+- Removed: CONFIG_SATA_INIC162X=m
+- Added: CONFIG_CC_VERSION_TEXT="gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-31)"
+- Added: CONFIG_CRYPTO_ARCH_HAVE_LIB_BLAKE2S=y
+- Added: CONFIG_CRYPTO_ARCH_HAVE_LIB_CURVE25519=m
+- Added: CONFIG_CRYPTO_BLAKE2S_X86=y
+- Added: CONFIG_CRYPTO_CURVE25519_X86=m
+- Added: CONFIG_CRYPTO_LIB_CHACHA20POLY1305=m
+- Added: CONFIG_CRYPTO_LIB_CHACHA=m
+- Added: CONFIG_CRYPTO_LIB_CURVE25519_GENERIC=m
+- Added: CONFIG_CRYPTO_LIB_CURVE25519=m
+- Added: CONFIG_CRYPTO_LIB_POLY1305=m
+- Added: CONFIG_WIREGUARD=m
+
 * Fri Nov 06 2026 S.Tindall <s10dal@elrepo.org> - 5.15.225-1
 - Updated with the 5.15.225 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.225]
